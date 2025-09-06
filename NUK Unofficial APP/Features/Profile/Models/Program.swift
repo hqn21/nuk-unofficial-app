@@ -1,0 +1,13 @@
+//
+//  Program.swift
+//  NUK Unofficial APP
+//
+//  Created by Hao-Quan Liu on 2025/3/1.
+//
+
+import Foundation
+
+struct Program: Codable, Identifiable {
+    let id: String
+    let name: String
+}

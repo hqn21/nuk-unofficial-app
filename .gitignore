@@ -151,3 +151,6 @@ xcuserdata
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+
+### NUK Unofficial APP ###
+NUK Unofficial APP/App/Configuration/Secrets.xcconfig
