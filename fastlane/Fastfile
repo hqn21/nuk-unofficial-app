@@ -39,7 +39,15 @@ platform :ios do
         "com.haoquan.nukapp.score"
       ]
     )
-    increment_build_number(xcodeproj: "NUK Unofficial APP.xcodeproj")
+    increment_build_number({
+      build_number: latest_testflight_build_number(
+        version: get_version_number(
+          xcodeproj: "NUK Unofficial APP.xcodeproj",
+          target: "NUK Unofficial APP"
+        ),
+        app_identifier: "com.haoquan.nukapp"
+      ) + 1
+    })
     build_app(
       scheme: "NUK Unofficial APP",
       export_method: "app-store",
