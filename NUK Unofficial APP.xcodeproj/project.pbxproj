@@ -1,0 +1,1625 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3500CDE92CF44F310021BDE0 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350E393E2CF25700007C6E52 /* UniformTypeIdentifiers.framework */; };
+		3500CDF52CF44F310021BDE0 /* TimetableAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3500CDE82CF44F310021BDE0 /* TimetableAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3500FE002E34D8E500F4A9AE /* CourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3500FDFF2E34D8E500F4A9AE /* CourseTests.swift */; };
+		351D97C52D51DAA2009700BE /* AirViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97C42D51DA9B009700BE /* AirViewModel.swift */; };
+		351D97C72D51DB03009700BE /* Air.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97C62D51DB01009700BE /* Air.swift */; };
+		351D97CB2D525271009700BE /* AirCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97CA2D525271009700BE /* AirCardView.swift */; };
+		351D97CF2D52540C009700BE /* AirPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97CE2D52540C009700BE /* AirPopupView.swift */; };
+		351D97D12D54BDC5009700BE /* YouBike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97D02D54BDC1009700BE /* YouBike.swift */; };
+		351D97D32D54BECC009700BE /* YouBikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97D22D54BEC3009700BE /* YouBikeViewModel.swift */; };
+		351D97D52D54C356009700BE /* YouBikeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97D42D54C356009700BE /* YouBikeCardView.swift */; };
+		351D97D92D54C679009700BE /* YouBikeStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97D82D54C679009700BE /* YouBikeStationView.swift */; };
+		351D97DB2D54FF19009700BE /* Broadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97DA2D54FF13009700BE /* Broadcast.swift */; };
+		351D97DD2D54FF94009700BE /* BroadcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97DC2D54FF8E009700BE /* BroadcastViewModel.swift */; };
+		351D97DF2D5500F3009700BE /* BroadcastItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97DE2D5500F3009700BE /* BroadcastItemView.swift */; };
+		351D97E12D550440009700BE /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97E02D550431009700BE /* SafariView.swift */; };
+		351D97E32D5504D5009700BE /* BroadcastCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97E22D5504D5009700BE /* BroadcastCardView.swift */; };
+		351ECD802D7B489400561D55 /* CourseInfoPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351ECD7F2D7B489400561D55 /* CourseInfoPopupView.swift */; };
+		35227A332D3FBBAB0009DAA1 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227A292D3FBBAB0009DAA1 /* KeyChainService.swift */; };
+		35227A342D3FBBAB0009DAA1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227A2C2D3FBBAB0009DAA1 /* ActionViewController.swift */; };
+		35227A352D3FBBAB0009DAA1 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 35227A2B2D3FBBAB0009DAA1 /* Action.js */; };
+		35227A382D3FBBAB0009DAA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35227A312D3FBBAB0009DAA1 /* Media.xcassets */; };
+		35227A412D3FBBAD0009DAA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */; };
+		35227A422D3FBBAD0009DAA1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */; };
+		354A7A802D4D174D00C0E5F0 /* WeatherPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */; };
+		3584572E2D56C2B200C41530 /* AuthorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572D2D56C2B200C41530 /* AuthorScreen.swift */; };
+		358457302D5747C400C41530 /* DonationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572F2D5747C400C41530 /* DonationScreen.swift */; };
+		358457342D5747EF00C41530 /* ReferenceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457332D5747EF00C41530 /* ReferenceScreen.swift */; };
+		358457362D57480500C41530 /* CopyrightScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457352D57480500C41530 /* CopyrightScreen.swift */; };
+		358457382D57484500C41530 /* PrivacyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457372D57484500C41530 /* PrivacyScreen.swift */; };
+		3584573A2D57485800C41530 /* ContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457392D57485800C41530 /* ContactScreen.swift */; };
+		35891A252D72D81E0039B548 /* CourseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A242D72D81A0039B548 /* CourseInfo.swift */; };
+		35891A272D72D9220039B548 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A262D72D9200039B548 /* Course.swift */; };
+		35891A292D72EF270039B548 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A282D72EF230039B548 /* Department.swift */; };
+		35891A2B2D72EF5A0039B548 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A2A2D72EF570039B548 /* Program.swift */; };
+		35891A2D2D72EF770039B548 /* CourseEnrollment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A2C2D72EF710039B548 /* CourseEnrollment.swift */; };
+		35891A2F2D72F8810039B548 /* NavigationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A2E2D72F8810039B548 /* NavigationCardView.swift */; };
+		35891A312D72FAE80039B548 /* TimetableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A302D72FAE80039B548 /* TimetableScreen.swift */; };
+		35891A332D72FF6E0039B548 /* CourseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A322D72FF6E0039B548 /* CourseScreen.swift */; };
+		35891A352D72FF780039B548 /* ScoreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A342D72FF780039B548 /* ScoreScreen.swift */; };
+		35891A372D72FF810039B548 /* CreditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A362D72FF810039B548 /* CreditScreen.swift */; };
+		35891A392D730AB80039B548 /* LinkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A382D730AB80039B548 /* LinkCardView.swift */; };
+		35891A3B2D7344B20039B548 /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A3A2D7344B20039B548 /* TimetableView.swift */; };
+		35891A3D2D73484C0039B548 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A3C2D7348450039B548 /* TimetableViewModel.swift */; };
+		35913E4C290956FC00B12D70 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35913E4B290956FC00B12D70 /* KeyChainService.swift */; };
+		35913E4F2909577800B12D70 /* CourseInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35913E4E2909577800B12D70 /* CourseInformation.swift */; };
+		359624AE2D56284D00853EB0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624AD2D56284900853EB0 /* MapViewModel.swift */; };
+		359624B02D564D5F00853EB0 /* AnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624AF2D564D5900853EB0 /* AnnotationItem.swift */; };
+		359624B22D565EF200853EB0 /* AnnotationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624B12D565EF200853EB0 /* AnnotationItemView.swift */; };
+		359624B42D56653700853EB0 /* MapSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624B32D56653700853EB0 /* MapSheetView.swift */; };
+		3597A6ED2D4CD27700665ED7 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597A6EC2D4CD27300665ED7 /* WeatherViewModel.swift */; };
+		359E20AA2E3C85210022D001 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 359E20A92E3C85210022D001 /* SwiftSoup */; };
+		35A4C10A2D41098300FD7C1B /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1092D41097E00FD7C1B /* KeychainManager.swift */; };
+		35A4C10C2D411F8E00FD7C1B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C10B2D411F8600FD7C1B /* ContentViewModel.swift */; };
+		35A4C1152D41E5A700FD7C1B /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1142D41E5A300FD7C1B /* NavigationManager.swift */; };
+		35A4C11B2D42051200FD7C1B /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1192D42051200FD7C1B /* StringProtocol.swift */; };
+		35A4C11C2D42051200FD7C1B /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C11A2D42051200FD7C1B /* Float.swift */; };
+		35A4C11D2D42051200FD7C1B /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1162D42051200FD7C1B /* UIDevice.swift */; };
+		35A4C11E2D42051200FD7C1B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1172D42051200FD7C1B /* View.swift */; };
+		35A4C11F2D42051200FD7C1B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1182D42051200FD7C1B /* String.swift */; };
+		35A4C13A2D4206C500FD7C1B /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1392D4206C500FD7C1B /* HomeScreen.swift */; };
+		35A4C13E2D4206E500FD7C1B /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C13D2D4206E500FD7C1B /* MapScreen.swift */; };
+		35A4C1402D4206F500FD7C1B /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C13F2D4206F500FD7C1B /* ProfileScreen.swift */; };
+		35A4C1422D42070100FD7C1B /* InformationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1412D42070100FD7C1B /* InformationScreen.swift */; };
+		35A4C1442D42156F00FD7C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A4C1432D42156F00FD7C1B /* Assets.xcassets */; };
+		35A4C1A12D421B7300FD7C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A4C1A02D421B7300FD7C1B /* LaunchScreen.storyboard */; };
+		35A4C1A32D424A3300FD7C1B /* PopupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1A22D424A2E00FD7C1B /* PopupManager.swift */; };
+		35A4C1A72D42767800FD7C1B /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1A62D42767800FD7C1B /* WeatherCardView.swift */; };
+		35A4C1A92D42783000FD7C1B /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1A82D42782C00FD7C1B /* Weather.swift */; };
+		35A4C1B82D44BA5A00FD7C1B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1B72D44BA5700FD7C1B /* APIService.swift */; };
+		35A4C1BA2D44BB5100FD7C1B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1B92D44BB5000FD7C1B /* Config.swift */; };
+		35A5DA752D578983005225A4 /* DonationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A5DA742D57897F005225A4 /* DonationButtonView.swift */; };
+		35A858812CF5FE8B00875B3F /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350E393E2CF25700007C6E52 /* UniformTypeIdentifiers.framework */; };
+		35A8588D2CF5FE8B00875B3F /* ScoreAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 35A858802CF5FE8B00875B3F /* ScoreAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		35CB55272D795D1F00FFCAA5 /* CourseDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB55262D795D1F00FFCAA5 /* CourseDraftView.swift */; };
+		35CB55292D795D2A00FFCAA5 /* TimetableDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */; };
+		35CB552B2D795D4800FFCAA5 /* CreditDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */; };
+		35CB552D2D7960F500FFCAA5 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */; };
+		35D842BA28917E53003FB984 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D842B928917E53003FB984 /* WidgetKit.framework */; };
+		35D842BC28917E53003FB984 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D842BB28917E53003FB984 /* SwiftUI.framework */; };
+		35D842BF28917E53003FB984 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D842BE28917E53003FB984 /* Timetable.swift */; };
+		35D842C128917E56003FB984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D842C028917E56003FB984 /* Assets.xcassets */; };
+		35D842C528917E56003FB984 /* TimetableWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 35D842B728917E52003FB984 /* TimetableWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		35E471B5283F7E8B0027ABE6 /* NUK Unofficial APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E471B4283F7E8B0027ABE6 /* NUK Unofficial APP.swift */; };
+		35E471B7283F7E8B0027ABE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E471B6283F7E8B0027ABE6 /* ContentView.swift */; };
+		35E471BC283F7E8D0027ABE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E471BB283F7E8D0027ABE6 /* Preview Assets.xcassets */; };
+		35F7255D2E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
+		35F7255E2E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
+		35F725602E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
+		35F725612E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
+		35F725652E6B1793002B69CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F725642E6B1793002B69CD /* MainInterface.storyboard */; };
+		35F725672E6B1799002B69CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F725662E6B1799002B69CD /* MainInterface.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3500CDF32CF44F310021BDE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35E471A9283F7E8B0027ABE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3500CDE72CF44F310021BDE0;
+			remoteInfo = ImportTimetable;
+		};
+		3500FDF72E34D8C600F4A9AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35E471A9283F7E8B0027ABE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35E471B0283F7E8B0027ABE6;
+			remoteInfo = "NUK Unofficial APP";
+		};
+		35A8588B2CF5FE8B00875B3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35E471A9283F7E8B0027ABE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35A8587F2CF5FE8B00875B3F;
+			remoteInfo = ImportScore;
+		};
+		35D842C328917E56003FB984 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35E471A9283F7E8B0027ABE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35D842B628917E52003FB984;
+			remoteInfo = TimetableExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		35D842C928917E56003FB984 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				35A8588D2CF5FE8B00875B3F /* ScoreAction.appex in Embed Foundation Extensions */,
+				35D842C528917E56003FB984 /* TimetableWidget.appex in Embed Foundation Extensions */,
+				3500CDF52CF44F310021BDE0 /* TimetableAction.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3500CDE82CF44F310021BDE0 /* TimetableAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimetableAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3500FDF32E34D8C600F4A9AE /* NUK Unofficial APP Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NUK Unofficial APP Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3500FDFF2E34D8E500F4A9AE /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
+		350E393E2CF25700007C6E52 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		351D97C42D51DA9B009700BE /* AirViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirViewModel.swift; sourceTree = "<group>"; };
+		351D97C62D51DB01009700BE /* Air.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air.swift; sourceTree = "<group>"; };
+		351D97CA2D525271009700BE /* AirCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirCardView.swift; sourceTree = "<group>"; };
+		351D97CE2D52540C009700BE /* AirPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPopupView.swift; sourceTree = "<group>"; };
+		351D97D02D54BDC1009700BE /* YouBike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBike.swift; sourceTree = "<group>"; };
+		351D97D22D54BEC3009700BE /* YouBikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeViewModel.swift; sourceTree = "<group>"; };
+		351D97D42D54C356009700BE /* YouBikeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeCardView.swift; sourceTree = "<group>"; };
+		351D97D82D54C679009700BE /* YouBikeStationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouBikeStationView.swift; sourceTree = "<group>"; };
+		351D97DA2D54FF13009700BE /* Broadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Broadcast.swift; sourceTree = "<group>"; };
+		351D97DC2D54FF8E009700BE /* BroadcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastViewModel.swift; sourceTree = "<group>"; };
+		351D97DE2D5500F3009700BE /* BroadcastItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastItemView.swift; sourceTree = "<group>"; };
+		351D97E02D550431009700BE /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		351D97E22D5504D5009700BE /* BroadcastCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastCardView.swift; sourceTree = "<group>"; };
+		351ECD7F2D7B489400561D55 /* CourseInfoPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoPopupView.swift; sourceTree = "<group>"; };
+		35227A292D3FBBAB0009DAA1 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		35227A2B2D3FBBAB0009DAA1 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		35227A2C2D3FBBAB0009DAA1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		35227A2D2D3FBBAB0009DAA1 /* TimetableAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimetableAction.entitlements; sourceTree = "<group>"; };
+		35227A2E2D3FBBAB0009DAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35227A312D3FBBAB0009DAA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		35227A3A2D3FBBAD0009DAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPopupView.swift; sourceTree = "<group>"; };
+		35689C312E65CCDB0017BC43 /* LICENSE-ASSETS */ = {isa = PBXFileReference; lastKnownFileType = text; path = "LICENSE-ASSETS"; sourceTree = "<group>"; };
+		3584572D2D56C2B200C41530 /* AuthorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorScreen.swift; sourceTree = "<group>"; };
+		3584572F2D5747C400C41530 /* DonationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationScreen.swift; sourceTree = "<group>"; };
+		358457332D5747EF00C41530 /* ReferenceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceScreen.swift; sourceTree = "<group>"; };
+		358457352D57480500C41530 /* CopyrightScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightScreen.swift; sourceTree = "<group>"; };
+		358457372D57484500C41530 /* PrivacyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyScreen.swift; sourceTree = "<group>"; };
+		358457392D57485800C41530 /* ContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactScreen.swift; sourceTree = "<group>"; };
+		35891A242D72D81A0039B548 /* CourseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfo.swift; sourceTree = "<group>"; };
+		35891A262D72D9200039B548 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		35891A282D72EF230039B548 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		35891A2A2D72EF570039B548 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		35891A2C2D72EF710039B548 /* CourseEnrollment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseEnrollment.swift; sourceTree = "<group>"; };
+		35891A2E2D72F8810039B548 /* NavigationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCardView.swift; sourceTree = "<group>"; };
+		35891A302D72FAE80039B548 /* TimetableScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableScreen.swift; sourceTree = "<group>"; };
+		35891A322D72FF6E0039B548 /* CourseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseScreen.swift; sourceTree = "<group>"; };
+		35891A342D72FF780039B548 /* ScoreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScreen.swift; sourceTree = "<group>"; };
+		35891A362D72FF810039B548 /* CreditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScreen.swift; sourceTree = "<group>"; };
+		35891A382D730AB80039B548 /* LinkCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkCardView.swift; sourceTree = "<group>"; };
+		35891A3A2D7344B20039B548 /* TimetableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableView.swift; sourceTree = "<group>"; };
+		35891A3C2D7348450039B548 /* TimetableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewModel.swift; sourceTree = "<group>"; };
+		3589B8982D5544CB0019BDAE /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		3589B89D2D55EA290019BDAE /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		3589B89F2D55EA380019BDAE /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		35910F9D2E69880F00CC32CE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		35913E4B290956FC00B12D70 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		35913E4E2909577800B12D70 /* CourseInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInformation.swift; sourceTree = "<group>"; };
+		35913E5029095A5100B12D70 /* NUK Unofficial APP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "NUK Unofficial APP.entitlements"; sourceTree = "<group>"; };
+		359624AD2D56284900853EB0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		359624AF2D564D5900853EB0 /* AnnotationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationItem.swift; sourceTree = "<group>"; };
+		359624B12D565EF200853EB0 /* AnnotationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationItemView.swift; sourceTree = "<group>"; };
+		359624B32D56653700853EB0 /* MapSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSheetView.swift; sourceTree = "<group>"; };
+		3597A6EC2D4CD27300665ED7 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		35A4C1092D41097E00FD7C1B /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		35A4C10B2D411F8600FD7C1B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		35A4C1142D41E5A300FD7C1B /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		35A4C1162D42051200FD7C1B /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		35A4C1172D42051200FD7C1B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		35A4C1182D42051200FD7C1B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		35A4C1192D42051200FD7C1B /* StringProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocol.swift; sourceTree = "<group>"; };
+		35A4C11A2D42051200FD7C1B /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		35A4C1392D4206C500FD7C1B /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		35A4C13D2D4206E500FD7C1B /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
+		35A4C13F2D4206F500FD7C1B /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		35A4C1412D42070100FD7C1B /* InformationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationScreen.swift; sourceTree = "<group>"; };
+		35A4C1432D42156F00FD7C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35A4C1A02D421B7300FD7C1B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		35A4C1A22D424A2E00FD7C1B /* PopupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupManager.swift; sourceTree = "<group>"; };
+		35A4C1A62D42767800FD7C1B /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
+		35A4C1A82D42782C00FD7C1B /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		35A4C1B72D44BA5700FD7C1B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		35A4C1B92D44BB5000FD7C1B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		35A5DA742D57897F005225A4 /* DonationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationButtonView.swift; sourceTree = "<group>"; };
+		35A858802CF5FE8B00875B3F /* ScoreAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScoreAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		35AEEA8E29100FEC006EE3DA /* TimetableWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimetableWidget.entitlements; sourceTree = "<group>"; };
+		35CB55262D795D1F00FFCAA5 /* CourseDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDraftView.swift; sourceTree = "<group>"; };
+		35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDraftView.swift; sourceTree = "<group>"; };
+		35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditDraftView.swift; sourceTree = "<group>"; };
+		35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		35D4C1B62E3CB71800CB0CA4 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		35D6B8E82E6A1BAD00E54458 /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
+		35D842B728917E52003FB984 /* TimetableWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimetableWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		35D842B928917E53003FB984 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		35D842BB28917E53003FB984 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		35D842BE28917E53003FB984 /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
+		35D842C028917E56003FB984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35D842C228917E56003FB984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35E471B1283F7E8B0027ABE6 /* NUK Unofficial APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NUK Unofficial APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E471B4283F7E8B0027ABE6 /* NUK Unofficial APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NUK Unofficial APP.swift"; sourceTree = "<group>"; };
+		35E471B6283F7E8B0027ABE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		35E471BB283F7E8D0027ABE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		35F7255C2E6B170A002B69CD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		35F725642E6B1793002B69CD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		35F725662E6B1799002B69CD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3500CDE52CF44F310021BDE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3500CDE92CF44F310021BDE0 /* UniformTypeIdentifiers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3500FDF02E34D8C600F4A9AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35A8587D2CF5FE8B00875B3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35A858812CF5FE8B00875B3F /* UniformTypeIdentifiers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35D842B428917E52003FB984 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35D842BC28917E53003FB984 /* SwiftUI.framework in Frameworks */,
+				35D842BA28917E53003FB984 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35E471AE283F7E8B0027ABE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				359E20AA2E3C85210022D001 /* SwiftSoup in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3500FDFD2E34D8CD00F4A9AE /* NUK Unofficial APP Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3500FDFF2E34D8E500F4A9AE /* CourseTests.swift */,
+			);
+			path = "NUK Unofficial APP Tests";
+			sourceTree = "<group>";
+		};
+		35227A2A2D3FBBAB0009DAA1 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				35227A292D3FBBAB0009DAA1 /* KeyChainService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		35910F9C2E69803700CC32CE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				35C0A12C2E69BDC300EE0699 /* Configuration */,
+				35E471B6283F7E8B0027ABE6 /* ContentView.swift */,
+				35A4C10B2D411F8600FD7C1B /* ContentViewModel.swift */,
+				35E471B4283F7E8B0027ABE6 /* NUK Unofficial APP.swift */,
+				35A4C1A02D421B7300FD7C1B /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		35913E4A290956EC00B12D70 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				35913E4B290956FC00B12D70 /* KeyChainService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		35913E4D2909573D00B12D70 /* struct */ = {
+			isa = PBXGroup;
+			children = (
+				35913E4E2909577800B12D70 /* CourseInformation.swift */,
+			);
+			path = struct;
+			sourceTree = "<group>";
+		};
+		35A4C0F52D40CEF800FD7C1B /* NUK Unofficial APP */ = {
+			isa = PBXGroup;
+			children = (
+				35910F9C2E69803700CC32CE /* App */,
+				35C0A1282E69BB9B00EE0699 /* Features */,
+				35C0A1292E69BBD700EE0699 /* Shared */,
+				35C0A12B2E69BCA100EE0699 /* Extensions */,
+				35A4C1012D40D55600FD7C1B /* Resources */,
+				35E471BA283F7E8D0027ABE6 /* Preview Content */,
+			);
+			path = "NUK Unofficial APP";
+			sourceTree = "<group>";
+		};
+		35A4C0FB2D40D07000FD7C1B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1222D42065700FD7C1B /* Models */,
+				35A4C1212D42065000FD7C1B /* Screens */,
+				35A4C1232D42065F00FD7C1B /* ViewModels */,
+				35A4C1202D42064500FD7C1B /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		35A4C0FC2D40D09400FD7C1B /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C12B2D4206A700FD7C1B /* Models */,
+				35A4C12C2D4206A700FD7C1B /* Screens */,
+				35A4C12D2D4206A700FD7C1B /* ViewModels */,
+				35A4C12E2D4206A700FD7C1B /* Views */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		35A4C0FD2D40D0A700FD7C1B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1302D4206A800FD7C1B /* Models */,
+				35A4C1312D4206A800FD7C1B /* Screens */,
+				35A4C1322D4206A800FD7C1B /* ViewModels */,
+				35A4C1332D4206A800FD7C1B /* Views */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		35A4C0FE2D40D0E800FD7C1B /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1352D4206AA00FD7C1B /* Models */,
+				35A4C1362D4206AA00FD7C1B /* Screens */,
+				35A4C1372D4206AA00FD7C1B /* ViewModels */,
+				35A4C1382D4206AA00FD7C1B /* Views */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		35A4C1012D40D55600FD7C1B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1432D42156F00FD7C1B /* Assets.xcassets */,
+				35F7255C2E6B170A002B69CD /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		35A4C1032D40D6FA00FD7C1B /* TimetableWidget */ = {
+			isa = PBXGroup;
+			children = (
+				35913E4D2909573D00B12D70 /* struct */,
+				35913E4A290956EC00B12D70 /* service */,
+				35D842BE28917E53003FB984 /* Timetable.swift */,
+				35D842C028917E56003FB984 /* Assets.xcassets */,
+				35D842C228917E56003FB984 /* Info.plist */,
+				35AEEA8E29100FEC006EE3DA /* TimetableWidget.entitlements */,
+			);
+			path = TimetableWidget;
+			sourceTree = "<group>";
+		};
+		35A4C1042D40D74600FD7C1B /* TimetableAction */ = {
+			isa = PBXGroup;
+			children = (
+				35227A2A2D3FBBAB0009DAA1 /* service */,
+				35227A2B2D3FBBAB0009DAA1 /* Action.js */,
+				35227A2C2D3FBBAB0009DAA1 /* ActionViewController.swift */,
+				35227A2D2D3FBBAB0009DAA1 /* TimetableAction.entitlements */,
+				35227A2E2D3FBBAB0009DAA1 /* Info.plist */,
+				35F725642E6B1793002B69CD /* MainInterface.storyboard */,
+				35227A312D3FBBAB0009DAA1 /* Media.xcassets */,
+			);
+			path = TimetableAction;
+			sourceTree = "<group>";
+		};
+		35A4C1062D40D82A00FD7C1B /* ScoreAction */ = {
+			isa = PBXGroup;
+			children = (
+				35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */,
+				35227A3A2D3FBBAD0009DAA1 /* Info.plist */,
+				35F725662E6B1799002B69CD /* MainInterface.storyboard */,
+				35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */,
+			);
+			path = ScoreAction;
+			sourceTree = "<group>";
+		};
+		35A4C1202D42064500FD7C1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1A62D42767800FD7C1B /* WeatherCardView.swift */,
+				354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */,
+				351D97CA2D525271009700BE /* AirCardView.swift */,
+				351D97CE2D52540C009700BE /* AirPopupView.swift */,
+				351D97D42D54C356009700BE /* YouBikeCardView.swift */,
+				351D97D82D54C679009700BE /* YouBikeStationView.swift */,
+				351D97DE2D5500F3009700BE /* BroadcastItemView.swift */,
+				351D97E22D5504D5009700BE /* BroadcastCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35A4C1212D42065000FD7C1B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1392D4206C500FD7C1B /* HomeScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		35A4C1222D42065700FD7C1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				351D97DA2D54FF13009700BE /* Broadcast.swift */,
+				351D97C62D51DB01009700BE /* Air.swift */,
+				35A4C1A82D42782C00FD7C1B /* Weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35A4C1232D42065F00FD7C1B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				351D97DC2D54FF8E009700BE /* BroadcastViewModel.swift */,
+				351D97C42D51DA9B009700BE /* AirViewModel.swift */,
+				3597A6EC2D4CD27300665ED7 /* WeatherViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		35A4C12B2D4206A700FD7C1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				359624AF2D564D5900853EB0 /* AnnotationItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35A4C12C2D4206A700FD7C1B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C13D2D4206E500FD7C1B /* MapScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		35A4C12D2D4206A700FD7C1B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				359624AD2D56284900853EB0 /* MapViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		35A4C12E2D4206A700FD7C1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				359624B12D565EF200853EB0 /* AnnotationItemView.swift */,
+				359624B32D56653700853EB0 /* MapSheetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35A4C1302D4206A800FD7C1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35891A2C2D72EF710039B548 /* CourseEnrollment.swift */,
+				35891A2A2D72EF570039B548 /* Program.swift */,
+				35891A282D72EF230039B548 /* Department.swift */,
+				35891A262D72D9200039B548 /* Course.swift */,
+				35891A242D72D81A0039B548 /* CourseInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35A4C1312D4206A800FD7C1B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C13F2D4206F500FD7C1B /* ProfileScreen.swift */,
+				3584572F2D5747C400C41530 /* DonationScreen.swift */,
+				35891A322D72FF6E0039B548 /* CourseScreen.swift */,
+				35891A302D72FAE80039B548 /* TimetableScreen.swift */,
+				35891A342D72FF780039B548 /* ScoreScreen.swift */,
+				35891A362D72FF810039B548 /* CreditScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		35A4C1322D4206A800FD7C1B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */,
+				35891A3C2D7348450039B548 /* TimetableViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		35A4C1332D4206A800FD7C1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35A5DA742D57897F005225A4 /* DonationButtonView.swift */,
+				35891A2E2D72F8810039B548 /* NavigationCardView.swift */,
+				35891A382D730AB80039B548 /* LinkCardView.swift */,
+				35891A3A2D7344B20039B548 /* TimetableView.swift */,
+				35CB55262D795D1F00FFCAA5 /* CourseDraftView.swift */,
+				35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */,
+				35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */,
+				351ECD7F2D7B489400561D55 /* CourseInfoPopupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35A4C1352D4206AA00FD7C1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35A4C1362D4206AA00FD7C1B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1412D42070100FD7C1B /* InformationScreen.swift */,
+				3584572D2D56C2B200C41530 /* AuthorScreen.swift */,
+				358457332D5747EF00C41530 /* ReferenceScreen.swift */,
+				358457352D57480500C41530 /* CopyrightScreen.swift */,
+				358457372D57484500C41530 /* PrivacyScreen.swift */,
+				358457392D57485800C41530 /* ContactScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		35A4C1372D4206AA00FD7C1B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		35A4C1382D4206AA00FD7C1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35C0A1282E69BB9B00EE0699 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C0FB2D40D07000FD7C1B /* Home */,
+				35A4C0FC2D40D09400FD7C1B /* Map */,
+				35A4C0FD2D40D0A700FD7C1B /* Profile */,
+				35A4C0FE2D40D0E800FD7C1B /* Information */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		35C0A1292E69BBD700EE0699 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				35C0A1342E69DDCB00EE0699 /* Views */,
+				35C0A1352E69DDD900EE0699 /* ViewModels */,
+				35C0A1312E69DC6400EE0699 /* Models */,
+				35C0A1322E69DC9700EE0699 /* Services */,
+				35C0A1332E69DDAE00EE0699 /* Managers */,
+				35C0A12D2E69DB7900EE0699 /* Extensions */,
+				35C0A1362E69DDF400EE0699 /* Utils */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		35C0A12B2E69BCA100EE0699 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1032D40D6FA00FD7C1B /* TimetableWidget */,
+				35A4C1042D40D74600FD7C1B /* TimetableAction */,
+				35A4C1062D40D82A00FD7C1B /* ScoreAction */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		35C0A12C2E69BDC300EE0699 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				35D6B8E82E6A1BAD00E54458 /* Secrets.example.xcconfig */,
+				3589B8982D5544CB0019BDAE /* Secrets.xcconfig */,
+				3589B89D2D55EA290019BDAE /* Release.xcconfig */,
+				3589B89F2D55EA380019BDAE /* Debug.xcconfig */,
+				35913E5029095A5100B12D70 /* NUK Unofficial APP.entitlements */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		35C0A12D2E69DB7900EE0699 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1182D42051200FD7C1B /* String.swift */,
+				35A4C1192D42051200FD7C1B /* StringProtocol.swift */,
+				35A4C11A2D42051200FD7C1B /* Float.swift */,
+				35A4C1172D42051200FD7C1B /* View.swift */,
+				35A4C1162D42051200FD7C1B /* UIDevice.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		35C0A1312E69DC6400EE0699 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				351D97D02D54BDC1009700BE /* YouBike.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35C0A1322E69DC9700EE0699 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1B72D44BA5700FD7C1B /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		35C0A1332E69DDAE00EE0699 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1092D41097E00FD7C1B /* KeychainManager.swift */,
+				35A4C1142D41E5A300FD7C1B /* NavigationManager.swift */,
+				35A4C1A22D424A2E00FD7C1B /* PopupManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		35C0A1342E69DDCB00EE0699 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				351D97E02D550431009700BE /* SafariView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35C0A1352E69DDD900EE0699 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				351D97D22D54BEC3009700BE /* YouBikeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		35C0A1362E69DDF400EE0699 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				35A4C1B92D44BB5000FD7C1B /* Config.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		35D842B828917E53003FB984 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35D842B928917E53003FB984 /* WidgetKit.framework */,
+				35D842BB28917E53003FB984 /* SwiftUI.framework */,
+				350E393E2CF25700007C6E52 /* UniformTypeIdentifiers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35E471A8283F7E8B0027ABE6 = {
+			isa = PBXGroup;
+			children = (
+				35A4C0F52D40CEF800FD7C1B /* NUK Unofficial APP */,
+				3500FDFD2E34D8CD00F4A9AE /* NUK Unofficial APP Tests */,
+				35E471B2283F7E8B0027ABE6 /* Products */,
+				35D842B828917E53003FB984 /* Frameworks */,
+				35910F9D2E69880F00CC32CE /* .gitignore */,
+				35D4C1B62E3CB71800CB0CA4 /* LICENSE */,
+				35689C312E65CCDB0017BC43 /* LICENSE-ASSETS */,
+			);
+			sourceTree = "<group>";
+		};
+		35E471B2283F7E8B0027ABE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35E471B1283F7E8B0027ABE6 /* NUK Unofficial APP.app */,
+				35D842B728917E52003FB984 /* TimetableWidget.appex */,
+				3500CDE82CF44F310021BDE0 /* TimetableAction.appex */,
+				35A858802CF5FE8B00875B3F /* ScoreAction.appex */,
+				3500FDF32E34D8C600F4A9AE /* NUK Unofficial APP Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35E471BA283F7E8D0027ABE6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				35E471BB283F7E8D0027ABE6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3500CDE72CF44F310021BDE0 /* TimetableAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3500CDF72CF44F310021BDE0 /* Build configuration list for PBXNativeTarget "TimetableAction" */;
+			buildPhases = (
+				3500CDE42CF44F310021BDE0 /* Sources */,
+				3500CDE52CF44F310021BDE0 /* Frameworks */,
+				3500CDE62CF44F310021BDE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimetableAction;
+			productName = ImportTimetable;
+			productReference = 3500CDE82CF44F310021BDE0 /* TimetableAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		3500FDF22E34D8C600F4A9AE /* NUK Unofficial APP Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3500FDF92E34D8C700F4A9AE /* Build configuration list for PBXNativeTarget "NUK Unofficial APP Tests" */;
+			buildPhases = (
+				3500FDEF2E34D8C600F4A9AE /* Sources */,
+				3500FDF02E34D8C600F4A9AE /* Frameworks */,
+				3500FDF12E34D8C600F4A9AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3500FDF82E34D8C600F4A9AE /* PBXTargetDependency */,
+			);
+			name = "NUK Unofficial APP Tests";
+			productName = NUK_Unofficial_APP_Tests;
+			productReference = 3500FDF32E34D8C600F4A9AE /* NUK Unofficial APP Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		35A8587F2CF5FE8B00875B3F /* ScoreAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35A8588F2CF5FE8B00875B3F /* Build configuration list for PBXNativeTarget "ScoreAction" */;
+			buildPhases = (
+				35A8587C2CF5FE8B00875B3F /* Sources */,
+				35A8587D2CF5FE8B00875B3F /* Frameworks */,
+				35A8587E2CF5FE8B00875B3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScoreAction;
+			productName = ImportScore;
+			productReference = 35A858802CF5FE8B00875B3F /* ScoreAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		35D842B628917E52003FB984 /* TimetableWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35D842C628917E56003FB984 /* Build configuration list for PBXNativeTarget "TimetableWidget" */;
+			buildPhases = (
+				35D842B328917E52003FB984 /* Sources */,
+				35D842B428917E52003FB984 /* Frameworks */,
+				35D842B528917E52003FB984 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimetableWidget;
+			productName = TimetableExtension;
+			productReference = 35D842B728917E52003FB984 /* TimetableWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		35E471B0283F7E8B0027ABE6 /* NUK Unofficial APP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35E471BF283F7E8D0027ABE6 /* Build configuration list for PBXNativeTarget "NUK Unofficial APP" */;
+			buildPhases = (
+				35E471AD283F7E8B0027ABE6 /* Sources */,
+				35E471AE283F7E8B0027ABE6 /* Frameworks */,
+				35E471AF283F7E8B0027ABE6 /* Resources */,
+				35D842C928917E56003FB984 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35D842C428917E56003FB984 /* PBXTargetDependency */,
+				3500CDF42CF44F310021BDE0 /* PBXTargetDependency */,
+				35A8588C2CF5FE8B00875B3F /* PBXTargetDependency */,
+			);
+			name = "NUK Unofficial APP";
+			productName = school;
+			productReference = 35E471B1283F7E8B0027ABE6 /* NUK Unofficial APP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35E471A9283F7E8B0027ABE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					3500CDE72CF44F310021BDE0 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					3500FDF22E34D8C600F4A9AE = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 35E471B0283F7E8B0027ABE6;
+					};
+					35A8587F2CF5FE8B00875B3F = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					35D842B628917E52003FB984 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					35E471B0283F7E8B0027ABE6 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+				};
+			};
+			buildConfigurationList = 35E471AC283F7E8B0027ABE6 /* Build configuration list for PBXProject "NUK Unofficial APP" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = "zh-Hant";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				"zh-Hant",
+			);
+			mainGroup = 35E471A8283F7E8B0027ABE6;
+			packageReferences = (
+				359E20A82E3C85210022D001 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
+			productRefGroup = 35E471B2283F7E8B0027ABE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35E471B0283F7E8B0027ABE6 /* NUK Unofficial APP */,
+				3500FDF22E34D8C600F4A9AE /* NUK Unofficial APP Tests */,
+				35D842B628917E52003FB984 /* TimetableWidget */,
+				3500CDE72CF44F310021BDE0 /* TimetableAction */,
+				35A8587F2CF5FE8B00875B3F /* ScoreAction */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3500CDE62CF44F310021BDE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35227A352D3FBBAB0009DAA1 /* Action.js in Resources */,
+				35F725652E6B1793002B69CD /* MainInterface.storyboard in Resources */,
+				35F725602E6B170A002B69CD /* Localizable.xcstrings in Resources */,
+				35227A382D3FBBAB0009DAA1 /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3500FDF12E34D8C600F4A9AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35A8587E2CF5FE8B00875B3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35F725672E6B1799002B69CD /* MainInterface.storyboard in Resources */,
+				35227A412D3FBBAD0009DAA1 /* Media.xcassets in Resources */,
+				35F725612E6B170A002B69CD /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35D842B528917E52003FB984 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35F7255E2E6B170A002B69CD /* Localizable.xcstrings in Resources */,
+				35D842C128917E56003FB984 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35E471AF283F7E8B0027ABE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35A4C1A12D421B7300FD7C1B /* LaunchScreen.storyboard in Resources */,
+				35A4C1442D42156F00FD7C1B /* Assets.xcassets in Resources */,
+				35F7255D2E6B170A002B69CD /* Localizable.xcstrings in Resources */,
+				35E471BC283F7E8D0027ABE6 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3500CDE42CF44F310021BDE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35227A332D3FBBAB0009DAA1 /* KeyChainService.swift in Sources */,
+				35227A342D3FBBAB0009DAA1 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3500FDEF2E34D8C600F4A9AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3500FE002E34D8E500F4A9AE /* CourseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35A8587C2CF5FE8B00875B3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35227A422D3FBBAD0009DAA1 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35D842B328917E52003FB984 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35913E4F2909577800B12D70 /* CourseInformation.swift in Sources */,
+				35D842BF28917E53003FB984 /* Timetable.swift in Sources */,
+				35913E4C290956FC00B12D70 /* KeyChainService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35E471AD283F7E8B0027ABE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35A4C10A2D41098300FD7C1B /* KeychainManager.swift in Sources */,
+				35CB552D2D7960F500FFCAA5 /* CourseViewModel.swift in Sources */,
+				35A4C13E2D4206E500FD7C1B /* MapScreen.swift in Sources */,
+				35CB55292D795D2A00FFCAA5 /* TimetableDraftView.swift in Sources */,
+				351D97DD2D54FF94009700BE /* BroadcastViewModel.swift in Sources */,
+				35A4C1A72D42767800FD7C1B /* WeatherCardView.swift in Sources */,
+				3584573A2D57485800C41530 /* ContactScreen.swift in Sources */,
+				35A4C1A92D42783000FD7C1B /* Weather.swift in Sources */,
+				35A4C1BA2D44BB5100FD7C1B /* Config.swift in Sources */,
+				351D97D32D54BECC009700BE /* YouBikeViewModel.swift in Sources */,
+				351D97CB2D525271009700BE /* AirCardView.swift in Sources */,
+				351ECD802D7B489400561D55 /* CourseInfoPopupView.swift in Sources */,
+				35891A272D72D9220039B548 /* Course.swift in Sources */,
+				35891A2D2D72EF770039B548 /* CourseEnrollment.swift in Sources */,
+				35A4C1152D41E5A700FD7C1B /* NavigationManager.swift in Sources */,
+				35A4C10C2D411F8E00FD7C1B /* ContentViewModel.swift in Sources */,
+				358457362D57480500C41530 /* CopyrightScreen.swift in Sources */,
+				358457342D5747EF00C41530 /* ReferenceScreen.swift in Sources */,
+				351D97DB2D54FF19009700BE /* Broadcast.swift in Sources */,
+				35A5DA752D578983005225A4 /* DonationButtonView.swift in Sources */,
+				359624AE2D56284D00853EB0 /* MapViewModel.swift in Sources */,
+				351D97D52D54C356009700BE /* YouBikeCardView.swift in Sources */,
+				351D97D12D54BDC5009700BE /* YouBike.swift in Sources */,
+				351D97C52D51DAA2009700BE /* AirViewModel.swift in Sources */,
+				359624B42D56653700853EB0 /* MapSheetView.swift in Sources */,
+				35A4C11B2D42051200FD7C1B /* StringProtocol.swift in Sources */,
+				35891A2F2D72F8810039B548 /* NavigationCardView.swift in Sources */,
+				351D97DF2D5500F3009700BE /* BroadcastItemView.swift in Sources */,
+				351D97E32D5504D5009700BE /* BroadcastCardView.swift in Sources */,
+				35A4C11C2D42051200FD7C1B /* Float.swift in Sources */,
+				35A4C11D2D42051200FD7C1B /* UIDevice.swift in Sources */,
+				35A4C11E2D42051200FD7C1B /* View.swift in Sources */,
+				35A4C11F2D42051200FD7C1B /* String.swift in Sources */,
+				35A4C1422D42070100FD7C1B /* InformationScreen.swift in Sources */,
+				3584572E2D56C2B200C41530 /* AuthorScreen.swift in Sources */,
+				35891A392D730AB80039B548 /* LinkCardView.swift in Sources */,
+				35E471B7283F7E8B0027ABE6 /* ContentView.swift in Sources */,
+				354A7A802D4D174D00C0E5F0 /* WeatherPopupView.swift in Sources */,
+				35891A2B2D72EF5A0039B548 /* Program.swift in Sources */,
+				35A4C1A32D424A3300FD7C1B /* PopupManager.swift in Sources */,
+				35A4C13A2D4206C500FD7C1B /* HomeScreen.swift in Sources */,
+				35E471B5283F7E8B0027ABE6 /* NUK Unofficial APP.swift in Sources */,
+				359624B22D565EF200853EB0 /* AnnotationItemView.swift in Sources */,
+				35A4C1B82D44BA5A00FD7C1B /* APIService.swift in Sources */,
+				358457302D5747C400C41530 /* DonationScreen.swift in Sources */,
+				358457382D57484500C41530 /* PrivacyScreen.swift in Sources */,
+				35891A352D72FF780039B548 /* ScoreScreen.swift in Sources */,
+				359624B02D564D5F00853EB0 /* AnnotationItem.swift in Sources */,
+				351D97D92D54C679009700BE /* YouBikeStationView.swift in Sources */,
+				35891A252D72D81E0039B548 /* CourseInfo.swift in Sources */,
+				35A4C1402D4206F500FD7C1B /* ProfileScreen.swift in Sources */,
+				35CB55272D795D1F00FFCAA5 /* CourseDraftView.swift in Sources */,
+				35891A3D2D73484C0039B548 /* TimetableViewModel.swift in Sources */,
+				351D97C72D51DB03009700BE /* Air.swift in Sources */,
+				35891A312D72FAE80039B548 /* TimetableScreen.swift in Sources */,
+				35891A372D72FF810039B548 /* CreditScreen.swift in Sources */,
+				351D97CF2D52540C009700BE /* AirPopupView.swift in Sources */,
+				35891A3B2D7344B20039B548 /* TimetableView.swift in Sources */,
+				351D97E12D550440009700BE /* SafariView.swift in Sources */,
+				35891A332D72FF6E0039B548 /* CourseScreen.swift in Sources */,
+				3597A6ED2D4CD27700665ED7 /* WeatherViewModel.swift in Sources */,
+				35CB552B2D795D4800FFCAA5 /* CreditDraftView.swift in Sources */,
+				35891A292D72EF270039B548 /* Department.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3500CDF42CF44F310021BDE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3500CDE72CF44F310021BDE0 /* TimetableAction */;
+			targetProxy = 3500CDF32CF44F310021BDE0 /* PBXContainerItemProxy */;
+		};
+		3500FDF82E34D8C600F4A9AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35E471B0283F7E8B0027ABE6 /* NUK Unofficial APP */;
+			targetProxy = 3500FDF72E34D8C600F4A9AE /* PBXContainerItemProxy */;
+		};
+		35A8588C2CF5FE8B00875B3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35A8587F2CF5FE8B00875B3F /* ScoreAction */;
+			targetProxy = 35A8588B2CF5FE8B00875B3F /* PBXContainerItemProxy */;
+		};
+		35D842C428917E56003FB984 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35D842B628917E52003FB984 /* TimetableWidget */;
+			targetProxy = 35D842C328917E56003FB984 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3500CDF82CF44F310021BDE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "NUK Unofficial APP/Extensions/TimetableAction/TimetableAction.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NUK Unofficial APP/Extensions/TimetableAction/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "匯入課表";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoquan.nukapp.timetable.action;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3500CDF92CF44F310021BDE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "NUK Unofficial APP/Extensions/TimetableAction/TimetableAction.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NUK Unofficial APP/Extensions/TimetableAction/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "匯入課表";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoquan.nukapp.timetable.action;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3500FDFA2E34D8C700F4A9AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haoquan.nukapp.NUK-Unofficial-APP-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NUK Unofficial APP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NUK Unofficial APP";
+			};
+			name = Debug;
+		};
+		3500FDFB2E34D8C700F4A9AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haoquan.nukapp.NUK-Unofficial-APP-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NUK Unofficial APP.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NUK Unofficial APP";
+			};
+			name = Release;
+		};
+		35A858902CF5FE8B00875B3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NUK Unofficial APP/Extensions/ScoreAction/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "匯入成績";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoquan.nukapp.score.action;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35A858912CF5FE8B00875B3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NUK Unofficial APP/Extensions/ScoreAction/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "匯入成績";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoquan.nukapp.score.action;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		35D842C728917E56003FB984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "NUK Unofficial APP/Extensions/TimetableWidget/TimetableWidget.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NUK Unofficial APP/Extensions/TimetableWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = TimetableWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoquan.nukapp.timetable.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35D842C828917E56003FB984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "NUK Unofficial APP/Extensions/TimetableWidget/TimetableWidget.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NUK Unofficial APP/Extensions/TimetableWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = TimetableWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoquan.nukapp.timetable.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		35E471BD283F7E8D0027ABE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		35E471BE283F7E8D0027ABE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		35E471C0283F7E8D0027ABE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3589B89F2D55EA380019BDAE /* Debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "NUK Unofficial APP/App/Configuration/NUK Unofficial APP.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NUK Unofficial APP/Preview Content\"";
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NUK Unofficial APP/App/Configuration/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NUK APP";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NUK Unofficial APP 會取得您的位置並用來標記在「地圖」的分頁中，透過點擊「地圖」分頁右上角的第二個圖示可以快速將地圖中心點移至您的位置，您可以在設定中隨時調整該項設定";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "NUK Unofficial APP 會使用您的相簿來儲存完整的課表，您可以在設定中隨時調整該項設定";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoquan.nukapp;
+				PRODUCT_NAME = "NUK Unofficial APP";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		35E471C1283F7E8D0027ABE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3589B89D2D55EA290019BDAE /* Release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "NUK Unofficial APP/App/Configuration/NUK Unofficial APP.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NUK Unofficial APP/Preview Content\"";
+				DEVELOPMENT_TEAM = 88HJ7X4BCT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NUK Unofficial APP/App/Configuration/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NUK APP";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NUK Unofficial APP 會取得您的位置並用來標記在「地圖」的分頁中，透過點擊「地圖」分頁右上角的第二個圖示可以快速將地圖中心點移至您的位置，您可以在設定中隨時調整該項設定";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "NUK Unofficial APP 會使用您的相簿來儲存完整的課表，您可以在設定中隨時調整該項設定";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haoquan.nukapp;
+				PRODUCT_NAME = "NUK Unofficial APP";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3500CDF72CF44F310021BDE0 /* Build configuration list for PBXNativeTarget "TimetableAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3500CDF82CF44F310021BDE0 /* Debug */,
+				3500CDF92CF44F310021BDE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3500FDF92E34D8C700F4A9AE /* Build configuration list for PBXNativeTarget "NUK Unofficial APP Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3500FDFA2E34D8C700F4A9AE /* Debug */,
+				3500FDFB2E34D8C700F4A9AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35A8588F2CF5FE8B00875B3F /* Build configuration list for PBXNativeTarget "ScoreAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35A858902CF5FE8B00875B3F /* Debug */,
+				35A858912CF5FE8B00875B3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35D842C628917E56003FB984 /* Build configuration list for PBXNativeTarget "TimetableWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35D842C728917E56003FB984 /* Debug */,
+				35D842C828917E56003FB984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35E471AC283F7E8B0027ABE6 /* Build configuration list for PBXProject "NUK Unofficial APP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35E471BD283F7E8D0027ABE6 /* Debug */,
+				35E471BE283F7E8D0027ABE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35E471BF283F7E8D0027ABE6 /* Build configuration list for PBXNativeTarget "NUK Unofficial APP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35E471C0283F7E8D0027ABE6 /* Debug */,
+				35E471C1283F7E8D0027ABE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		359E20A82E3C85210022D001 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		359E20A92E3C85210022D001 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 359E20A82E3C85210022D001 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 35E471A9283F7E8B0027ABE6 /* Project object */;
+}
