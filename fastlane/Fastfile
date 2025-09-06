@@ -28,6 +28,7 @@ platform :ios do
       key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
       is_key_content_base64: ENV["APP_STORE_CONNECT_API_KEY_IS_KEY_CONTENT_BASE64"] == "true"
     )
+    match(type: "appstore", readonly: true)
     increment_build_number(xcodeproj: "NUK Unofficial APP.xcodeproj")
     build_app(
       scheme: "NUK Unofficial APP",
