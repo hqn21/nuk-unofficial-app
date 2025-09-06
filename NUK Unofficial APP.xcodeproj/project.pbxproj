@@ -175,6 +175,7 @@
 		35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		35227A3A2D3FBBAD0009DAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		352388CC2E6C906A00ED1A1A /* deploy_testflight.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = deploy_testflight.yml; sourceTree = "<group>"; };
 		354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPopupView.swift; sourceTree = "<group>"; };
 		35689C312E65CCDB0017BC43 /* LICENSE-ASSETS */ = {isa = PBXFileReference; lastKnownFileType = text; path = "LICENSE-ASSETS"; sourceTree = "<group>"; };
 		3584572D2D56C2B200C41530 /* AuthorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorScreen.swift; sourceTree = "<group>"; };
@@ -315,6 +316,22 @@
 				35227A292D3FBBAB0009DAA1 /* KeyChainService.swift */,
 			);
 			path = service;
+			sourceTree = "<group>";
+		};
+		352388CA2E6C906000ED1A1A /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				352388CB2E6C906500ED1A1A /* workflows */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		352388CB2E6C906500ED1A1A /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				352388CC2E6C906A00ED1A1A /* deploy_testflight.yml */,
+			);
+			path = workflows;
 			sourceTree = "<group>";
 		};
 		35910F9C2E69803700CC32CE /* App */ = {
@@ -740,6 +757,7 @@
 		35E471A8283F7E8B0027ABE6 = {
 			isa = PBXGroup;
 			children = (
+				352388CA2E6C906000ED1A1A /* .github */,
 				35A4C0F52D40CEF800FD7C1B /* NUK Unofficial APP */,
 				3500FDFD2E34D8CD00F4A9AE /* NUK Unofficial APP Tests */,
 				35E471B2283F7E8B0027ABE6 /* Products */,
