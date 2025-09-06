@@ -1,0 +1,13 @@
+git_url("https://github.com/hqn21/fastlane-match")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["com.haoquan.nukapp", "com.haoquan.nukapp.widget", "com.haoquan.nukapp.timetable", "com.haoquan.nukapp.score"])
+# username("user@fastlane.tools") # Your Apple Developer Portal username
+
+# For all available options run `fastlane match --help`
+# Remove the # in the beginning of the line to enable the other options
+
+# The docs are available on https://docs.fastlane.tools/actions/match

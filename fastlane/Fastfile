@@ -1,0 +1,47 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Run Tests"
+  lane :tests do
+    run_tests(scheme: "NUK Unofficial APP")
+  end
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_API_KEY_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_API_KEY_ISSUER_ID"],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
+      is_key_content_base64: ENV["APP_STORE_CONNECT_API_KEY_IS_KEY_CONTENT_BASE64"] == "true"
+    )
+    increment_build_number(xcodeproj: "NUK Unofficial APP.xcodeproj")
+    build_app(
+      scheme: "NUK Unofficial APP",
+      export_method: "app-store",
+      export_options: {
+        signingStyle: "manual",
+        provisioningProfiles: {
+          "com.haoquan.nukapp" => "match AppStore com.haoquan.nukapp",
+          "com.haoquan.nukapp.widget" => "match AppStore com.haoquan.nukapp.widget",
+          "com.haoquan.nukapp.timetable" => "match AppStore com.haoquan.nukapp.timetable",
+          "com.haoquan.nukapp.score" => "match AppStore com.haoquan.nukapp.score"
+        }
+      }
+    )
+    upload_to_testflight
+  end
+end

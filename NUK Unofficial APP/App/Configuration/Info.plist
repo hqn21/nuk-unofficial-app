@@ -4,13 +4,15 @@
 <dict>
 	<key>BASE_URL</key>
 	<string>$(BASE_URL)</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.haoquan.nukapp</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>CFBundleURLIconFile</key>
-			<string></string>
+			<string/>
 			<key>CFBundleURLName</key>
 			<string>com.haoquan.nukapp.home</string>
 			<key>CFBundleURLSchemes</key>

@@ -144,4 +144,5 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 ### NUK Unofficial APP ###
+.env
 NUK Unofficial APP/App/Configuration/Secrets.xcconfig
