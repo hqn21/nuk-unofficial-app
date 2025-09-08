@@ -53,7 +53,7 @@ class CourseViewModel: ObservableObject {
         if await checkUpdate() == false {
             courseInfo = KeychainManager.shared.get(key: "course_info", type: CourseInfo.self)!
             course = KeychainManager.shared.get(key: "course", type: [Course].self)!
-            alertMessage = "您的課程資訊已是最新版本"
+            alertMessage = alertMessage ?? "您的課程資訊已是最新版本"
             return
         }
         do {
