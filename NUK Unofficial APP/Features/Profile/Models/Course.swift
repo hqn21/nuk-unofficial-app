@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Course: Codable, Identifiable {
     let id: String
@@ -242,5 +243,29 @@ struct Course: Codable, Identifiable {
             .other: "未分類"
         ]
         return courseCategoryNames[getCourseCategory()] ?? "未知"
+    }
+    
+    func getCourseCategoryColor() -> Color {
+        let courseCategoryColors: [CourseCategory: String] = [
+            .all: "COURSE_GRAY",
+            .requiredDepartment: "COURSE_RED",
+            .electiveDepartment: "COURSE_ORANGE",
+            .requiredTogether: "COURSE_YELLOW",
+            .electiveMain: "COURSE_GREEN",
+            .electiveMainThink: "COURSE_GREEN",
+            .electiveMainBeauty: "COURSE_GREEN",
+            .electiveMainCitizen: "COURSE_GREEN",
+            .electiveMainCulture: "COURSE_GREEN",
+            .electiveMainScience: "COURSE_GREEN",
+            .electiveMainEthics: "COURSE_GREEN",
+            .electiveMainOther: "COURSE_GREEN",
+            .electiveSub: "COURSE_BLUE",
+            .electiveSubPeople: "COURSE_BLUE",
+            .electiveSubSocial: "COURSE_BLUE",
+            .electiveSubScience: "COURSE_BLUE",
+            .electiveInterest: "COURSE_PURPLE",
+            .other: "COURSE_BROWN"
+        ]
+        return Color(courseCategoryColors[getCourseCategory()] ?? "TIMETABLE_LITTLE_DARK_GRAY")
     }
 }

@@ -163,7 +163,10 @@ struct CourseDraftView: View {
                                         .frame(alignment: .trailing)
                                         .lineLimit(1)
                                         Button(action: {
-                                            
+                                            popupManager.set(popup: AnyView(
+                                                CoursePopupView(course: course)
+                                                    .environmentObject(viewModel)
+                                            ))
                                         }, label: {
                                             Image(systemName: "info.circle")
                                                 .resizable()

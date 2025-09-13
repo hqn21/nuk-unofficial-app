@@ -98,6 +98,7 @@
 		35F725612E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
 		35F725652E6B1793002B69CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F725642E6B1793002B69CD /* MainInterface.storyboard */; };
 		35F725672E6B1799002B69CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F725662E6B1799002B69CD /* MainInterface.storyboard */; };
+		35FE70BC2E75635200ACB341 /* CoursePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FE70BB2E75635200ACB341 /* CoursePopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +257,7 @@
 		35F7255C2E6B170A002B69CD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		35F725642E6B1793002B69CD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		35F725662E6B1799002B69CD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		35FE70BB2E75635200ACB341 /* CoursePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -587,6 +589,7 @@
 				35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */,
 				35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */,
 				351ECD7F2D7B489400561D55 /* CourseInfoPopupView.swift */,
+				35FE70BB2E75635200ACB341 /* CoursePopupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1044,6 +1047,7 @@
 				35891A2D2D72EF770039B548 /* CourseEnrollment.swift in Sources */,
 				35A4C1152D41E5A700FD7C1B /* NavigationManager.swift in Sources */,
 				35A4C10C2D411F8E00FD7C1B /* ContentViewModel.swift in Sources */,
+				35FE70BC2E75635200ACB341 /* CoursePopupView.swift in Sources */,
 				358457362D57480500C41530 /* CopyrightScreen.swift in Sources */,
 				358457342D5747EF00C41530 /* ReferenceScreen.swift in Sources */,
 				351D97DB2D54FF19009700BE /* Broadcast.swift in Sources */,

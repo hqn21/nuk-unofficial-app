@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import OSLog
+import SwiftUI
 
 class CourseViewModel: ObservableObject {
     @Published var hasUpdate: Bool = false
@@ -15,6 +16,8 @@ class CourseViewModel: ObservableObject {
     @Published var course: [Course] = []
     @Published var department: [Department] = []
     @Published var program: [Program] = []
+    @Published var courseEnrollment: CourseEnrollment? = nil
+    @Published var courseEnrollmentError: Error? = nil
     @Published var showAlert: Bool = false
     @Published var alertMessage: String? = nil {
         didSet {
@@ -111,6 +114,11 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
+    func getDepartmentName(id: String) -> String? {
+        return department.first(where: { $0.id == id })?.name
+    }
+    
+    @MainActor
     func getProgram() async -> Void {
         do {
             let programFromAPI: [Program] = try await APIService.shared.fetch(endpoint: "/program")
@@ -135,6 +143,54 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
+    func getProgramName(id: String) -> String? {
+        return program.first(where: { $0.id == id })?.name
+    }
+    
+    @MainActor
+    func getCourseEnrollment(id: String) async -> Void {
+        courseEnrollment = nil
+        courseEnrollmentError = nil
+        do {
+            courseEnrollment = try await APIService.shared.fetch(endpoint: "/course_enrollment/\(id)")
+            courseEnrollmentError = nil
+        } catch {
+            courseEnrollment = nil
+            courseEnrollmentError = error
+        }
+    }
+    
+    @MainActor
+    func getCourseEnrollmentStatusMessage() -> String {
+        if let courseEnrollment = courseEnrollment {
+            return "成功獲取課程狀態資訊，資料最後更新時間為 \(getDateString(date: courseEnrollment.updatedAt))"
+        } else if let courseEnrollmentError = courseEnrollmentError {
+            return courseEnrollmentError.localizedDescription
+        }
+        return "正在取得課程即時人數資訊中"
+    }
+    
+    @MainActor
+    func getCourseEnrollmentStatusIconName() -> String {
+        if courseEnrollment != nil {
+            return "checkmark.circle.fill"
+        } else if courseEnrollmentError != nil {
+            return "xmark.circle.fill"
+        }
+        return "info.circle.fill"
+    }
+    
+    @MainActor
+    func getCourseEnrollmentStatusColor() -> Color {
+        if courseEnrollment != nil {
+            return Color("GREEN")
+        } else if courseEnrollmentError != nil {
+            return Color("RED")
+        }
+        return Color("YELLOW")
+    }
+    
+    @MainActor
     func selectCourse(course: Course) -> Void {
         courseSelected.append(course)
         if let time = course.time {
@@ -156,6 +212,13 @@ class CourseViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func getCourseWebsite(course: Course) -> String {
+        if courseInfo == nil {
+            return "https://course.nuk.edu.tw/QueryCourse/tcontent.asp?OpenYear=114&Helf=1&Sclass=\(course.departmentId)&Cono=\(course.courseCode)"
+        }
+        return "https://course.nuk.edu.tw/QueryCourse/tcontent.asp?OpenYear=\(courseInfo!.year)&Helf=\(courseInfo!.semester)&Sclass=\(course.departmentId)&Cono=\(course.courseCode)"
     }
     
     func isSelected(course: Course) -> Bool {

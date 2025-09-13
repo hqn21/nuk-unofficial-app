@@ -15,6 +15,7 @@ enum APIError: Error {
     case serverError(statusCode: Int, errorMessage: String?)
     case noData
     case decodingError(Error)
+    case unknown(Error)
 }
 
 extension APIError: LocalizedError {
@@ -37,6 +38,8 @@ extension APIError: LocalizedError {
             return "目前沒有可用的資料，請稍後再試。"
         case .decodingError:
             return "資料處理時發生錯誤，請稍後再試。"
+        case .unknown:
+            return "發生未知錯誤，請稍後再試。"
         }
     }
 }
