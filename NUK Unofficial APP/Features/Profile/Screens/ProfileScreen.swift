@@ -41,7 +41,7 @@ struct ProfileScreen: View {
                         }
                         HStack(spacing: 15) {
                             LinkCardView(link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: String(localized: "profile.link.dorm"))
-                            LinkCardView(link: "https://stu.nuk.edu.tw/eabsnew/login.asp", linkName: String(localized: "profile.link.dorm"))
+                            LinkCardView(link: "https://stu.nuk.edu.tw/eabsnew/login.asp", linkName: String(localized: "profile.link.leave"))
                         }
                     }
                     .padding(15)
