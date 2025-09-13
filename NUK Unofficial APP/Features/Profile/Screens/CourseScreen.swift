@@ -67,4 +67,5 @@ struct CourseScreen: View {
 
 #Preview {
     CourseScreen()
+        .environmentObject(PopupManager())
 }

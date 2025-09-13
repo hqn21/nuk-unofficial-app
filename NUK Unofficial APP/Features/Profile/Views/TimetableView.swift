@@ -13,6 +13,8 @@ enum TimetableType: Int {
 }
 
 struct TimetableCellView: View {
+    @EnvironmentObject private var viewModel: CourseViewModel
+    @EnvironmentObject private var popupManager: PopupManager
     let course: Course?
     let courseWidth: CGFloat
     let courseHeight: CGFloat
@@ -42,7 +44,12 @@ struct TimetableCellView: View {
             
             // 課程名稱
             Button(action: {
-                //
+                if let course = course {
+                    popupManager.set(popup: AnyView(
+                        CoursePopupView(course: course)
+                            .environmentObject(viewModel)
+                    ))
+                }
             }, label: {
                 VStack(spacing: 0) {
                     if let course = course {
@@ -156,5 +163,7 @@ struct TimetableView_Previews: PreviewProvider {
         
         TimetableView(timetableType: $timetableType, timetable: [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7))
             .previewLayout(.sizeThatFits)
+            .environmentObject(CourseViewModel())
+            .environmentObject(PopupManager())
     }
 }

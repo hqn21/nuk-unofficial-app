@@ -35,7 +35,7 @@ struct TimetableScreen: View {
                 .padding(.horizontal, 25)
                 ScrollView(.vertical, showsIndicators: false) {
                     ScrollView(.horizontal, showsIndicators: false) {
-                        TimetableView(timetableType: $timetableType, timetable: [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7))
+//                        TimetableView(timetableType: $timetableType, timetable: [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7))
                     }
                 }
             }
