@@ -116,12 +116,32 @@
         }
       }
     },
+    "%@/%@" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@/%2$@"
+          }
+        }
+      }
+    },
     "%@%@" : {
       "localizations" : {
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@%2$@"
+          }
+        }
+      }
+    },
+    "%@%@/%@" : {
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@/%3$@"
           }
         }
       }
@@ -497,6 +517,39 @@
         }
       }
     },
+    "profile.academic.course.credit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "學分統計"
+          }
+        }
+      }
+    },
+    "profile.academic.course.selection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "勾選課程"
+          }
+        }
+      }
+    },
+    "profile.academic.course.timetable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預覽課表"
+          }
+        }
+      }
+    },
     "profile.academic.credit" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -632,9 +685,6 @@
     "劉顥權 Hao-Quan Liu" : {
 
     },
-    "勾選課程" : {
-
-    },
     "問題回報" : {
 
     },
@@ -648,9 +698,6 @@
 
     },
     "學分分析" : {
-
-    },
-    "學分統計" : {
 
     },
     "您尚未獲取任何課程" : {
@@ -741,9 +788,6 @@
 
     },
     "隱私政策" : {
-
-    },
-    "預覽課表" : {
 
     }
   },

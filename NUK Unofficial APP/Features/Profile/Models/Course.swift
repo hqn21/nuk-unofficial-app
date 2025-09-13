@@ -54,6 +54,28 @@ struct Course: Codable, Identifiable {
         self.note = note
     }
     
+    enum CourseCategory {
+        case all
+        case requiredTogether
+        case requiredDepartment
+        case electiveMain
+        case electiveMainThink
+        case electiveMainBeauty
+        case electiveMainCitizen
+        case electiveMainCulture
+        case electiveMainScience
+        case electiveMainEthics
+        case electiveMainOther
+        case electiveSub
+        case electiveSubPeople
+        case electiveSubScience
+        case electiveSubSocial
+        case electiveInterest
+        case electiveDepartment
+        case other
+        case null
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case programId = "program_id"
@@ -97,5 +119,128 @@ struct Course: Codable, Identifiable {
         } else {
             time = nil
         }
+    }
+    
+    func getTimeString() -> String {
+        if time == nil {
+            return "未公佈"
+        }
+        let days: [String] = ["一", "二", "三", "四", "五", "六", "日"]
+        var timeString = ""
+        for (idx, periods) in time!.enumerated() {
+            if periods.isEmpty {
+                continue
+            }
+            timeString = "\(timeString)\(days[idx])\(periods.map { String($0) }.joined(separator: ","))"
+        }
+        return timeString
+    }
+    
+    func getCourseCategory() -> CourseCategory {
+        switch departmentId {
+        case "MI":
+            return .other
+        case "CD":
+            return .other
+        case "CHS":
+            return .other
+        case "CCL":
+            return .other
+        case "CCM":
+            return .other
+        case "CCS":
+            return .other
+        case "CCE":
+            return .other
+        case "ISP":
+            return .other
+        case "IFD":
+            return .other
+        case "NULL":
+            return .other
+        case "GR":
+            return .requiredTogether
+        case "CC":
+            switch name[0..<4] {
+            case "邏輯思維":
+                return .electiveMainThink
+            case "哲學基本":
+                return .electiveMainThink
+            case "藝術概論":
+                return .electiveMainBeauty
+            case "中國藝術":
+                return .electiveMainBeauty
+            case "西洋藝術":
+                return .electiveMainBeauty
+            case "台灣藝術":
+                return .electiveMainBeauty
+            case "法律與人":
+                return .electiveMainCitizen
+            case "媒體識讀":
+                return .electiveMainCitizen
+            case "全球化與":
+                return .electiveMainCulture
+            case "探索台灣":
+                return .electiveMainCulture
+            case "科普讀物":
+                return .electiveMainScience
+            case "科技與社":
+                return .electiveMainScience
+            case "環境倫理":
+                return .electiveMainEthics
+            case "企業倫理":
+                return .electiveMainEthics
+            case "職場倫理":
+                return .electiveMainEthics
+            case "科技與工":
+                return .electiveMainEthics
+            default:
+                return .electiveMainOther
+            }
+        case "LI":
+            return .electiveSubPeople
+        case "SC":
+            return .electiveSubScience
+        case "SO":
+            return .electiveSubSocial
+        case "IN":
+            return .electiveInterest
+        default:
+            if courseType == "必" {
+                return .requiredDepartment
+            } else if courseType == "選" {
+                return .electiveDepartment
+            } else {
+                if name.count > 0 {
+                    return .other
+                } else {
+                    return .null
+                }
+            }
+        }
+    }
+    
+    func getCourseCategoryName() -> String {
+        let courseCategoryNames: [CourseCategory: String] = [
+            .all: "學分總計",
+            .requiredDepartment: "系訂必修",
+            .electiveDepartment: "系訂選修",
+            .requiredTogether: "共同必修",
+            .electiveMain: "核心通識",
+            .electiveMainThink: "思維方法",
+            .electiveMainBeauty: "美學素養",
+            .electiveMainCitizen: "公民素養",
+            .electiveMainCulture: "文化素養",
+            .electiveMainScience: "科學素養",
+            .electiveMainEthics: "倫理素養",
+            .electiveMainOther: "未分類",
+            .electiveSub: "博雅通識",
+            .electiveSubPeople: "人文科學類",
+            .electiveSubSocial: "社會科學類",
+            .electiveSubScience: "自然科學類",
+            .electiveInterest: "興趣選修",
+            .other: "未分類"
+        ]
+        return courseCategoryNames[getCourseCategory()] ?? "未知"
     }
 }

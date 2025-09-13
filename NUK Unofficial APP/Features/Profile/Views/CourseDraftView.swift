@@ -151,6 +151,25 @@ struct CourseDraftView: View {
                                                 .foregroundColor(Color("DARK_GRAY"))
                                                 .lineLimit(1)
                                         }
+                                        Group {
+                                            if course.departmentId != "CC" {
+                                                Text("\(course.courseType)\(course.credit.formatted(.number))/\(course.getTimeString())")
+                                            } else {
+                                                Text("\(course.getCourseCategoryName())/\(course.getTimeString())")
+                                            }
+                                        }
+                                        .font(.system(size: 12, design: .monospaced))
+                                        .foregroundColor(Color("DARK_GRAY"))
+                                        .frame(alignment: .trailing)
+                                        .lineLimit(1)
+                                        Button(action: {
+                                            
+                                        }, label: {
+                                            Image(systemName: "info.circle")
+                                                .resizable()
+                                                .frame(width: 16, height: 16)
+                                                .foregroundColor(Color("DARK_GRAY"))
+                                        })
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(10)
