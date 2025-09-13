@@ -96,12 +96,12 @@ struct ContentView: View {
             "NUK Unofficial APP",
             isPresented: $showWelcomeAlert,
             actions: {
-                Button("common.confirm", action: {
+                Button("common.general.confirm", action: {
                     viewModel.setHasDisplayedWelcomeMessage()
                 })
             },
             message: {
-                Text("common.welcome")
+                Text("common.general.welcome")
             }
         )
         .onAppear() {
