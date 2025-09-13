@@ -11,7 +11,7 @@ struct PrivacyScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color("GRAY")
-            ScrollView(.vertical, showsIndicators: true) {
+            ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(alignment: .leading, spacing: 10) {
                     Text("發布日期：2023年1月31日")
                     Text("NUK Unofficial APP 是由 Hao-Quan Liu（下稱我們）所經營之App（下稱本App）各項服務與資訊。")

@@ -149,9 +149,6 @@
     "%@年級" : {
 
     },
-    "common.confirm" : {
-
-    },
     "common.date.daysago 0" : {
 
     },
@@ -275,9 +272,6 @@
           }
         }
       }
-    },
-    "common.welcome" : {
-
     },
     "common.youbike.available %lld" : {
       "extractionState" : "manual",
