@@ -39,6 +39,7 @@ struct CourseScreen: View {
                         .environmentObject(viewModel)
                 case .timetable:
                     TimetableDraftView()
+                        .environmentObject(viewModel)
                 case .credit:
                     CreditDraftView()
                 }

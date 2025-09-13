@@ -12,8 +12,85 @@ enum TimetableType: Int {
     case simplified = 1
 }
 
+struct TimetableCellView: View {
+    let course: Course?
+    let courseWidth: CGFloat
+    let courseHeight: CGFloat
+    let timetableType: TimetableType
+    
+    var body: some View {
+        // 每個課程
+        VStack(spacing: 0) {
+            // 課程類別顏色
+            VStack(spacing: 0) {
+            }
+            .frame(width: courseWidth, height: 14)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .foregroundColor(course?.getCourseCategoryColor() ?? Color("LITTLE_DARK_GRAY"))
+            )
+            
+            // 課程類別顏色
+            VStack(spacing: 0) {
+            }
+            .frame(width: courseWidth, height: 7)
+            .background(
+                Rectangle()
+                    .foregroundColor(course?.getCourseCategoryColor() ?? Color("LITTLE_DARK_GRAY"))
+            )
+            .offset(y: -7)
+            
+            // 課程名稱
+            Button(action: {
+                //
+            }, label: {
+                VStack(spacing: 0) {
+                    if let course = course {
+                        if timetableType == .normal {
+                            Text("\(course.name)")
+                                .font(.system(size: 10))
+                                .foregroundColor(Color("DARK_GRAY"))
+                                .multilineTextAlignment(.center)
+                                .padding(3)
+                                .padding(.top, -7)
+                            Spacer()
+                            Text("\(course.classroom ?? "未公佈")")
+                                .font(.system(size: 10, design: .monospaced))
+                                .foregroundColor(Color("DARK_GRAY"))
+                                .padding(3)
+                        } else {
+                            Text("\(course.name[0..<2])")
+                                .font(.system(size: 12))
+                                .foregroundColor(Color("DARK_GRAY"))
+                                .multilineTextAlignment(.center)
+                                .padding(3)
+                                .padding(.top, -7)
+                                .frame(maxHeight: .infinity, alignment: .center)
+                        }
+                    } else {
+                        Text("")
+                            .font(.system(size: 12))
+                            .foregroundColor(Color("DARK_GRAY"))
+                            .multilineTextAlignment(.center)
+                            .padding(3)
+                            .padding(.top, -7)
+                            .frame(maxHeight: .infinity, alignment: .center)
+                    }
+                }
+            })
+        }
+        .frame(width: courseWidth, height: courseHeight)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .foregroundColor(Color("WHITE"))
+                .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+        )
+    }
+}
+
 struct TimetableView: View {
     @Binding var timetableType: TimetableType
+    let timetable: [[Course?]]
     let courseWidth: [CGFloat] = [60, 50]
     let courseHeight: [CGFloat] = [100, 50]
     let coursePeriod: [String] = ["X", "1", "2", "3", "4", "Y", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
@@ -61,64 +138,7 @@ struct TimetableView: View {
                     ForEach(0..<7, id: \.self) { i in
                         VStack(spacing: 10) {
                             ForEach(0..<15, id: \.self) { k in
-                                // 每個課程
-                                VStack(spacing: 0) {
-                                    // 課程類別顏色
-                                    VStack(spacing: 0) {
-                                    }
-                                    .frame(width: courseWidth[timetableType.rawValue], height: 14)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .foregroundColor(Color("LITTLE_DARK_GRAY"))
-                                    )
-                                    
-                                    // 課程類別顏色
-                                    VStack(spacing: 0) {
-                                    }
-                                    .frame(width: courseWidth[timetableType.rawValue], height: 7)
-                                    .background(
-                                        Rectangle()
-                                            .foregroundColor(Color("LITTLE_DARK_GRAY"))
-                                    )
-                                    .offset(y: -7)
-                                    
-                                    // 課程名稱
-                                    Button(action: {
-                                        //
-                                    }, label: {
-                                        VStack(spacing: 0) {
-                                            if timetableType == .normal {
-                                                Text("測試課程測試課程")
-                                                    .font(.system(size: 10))
-                                                    .foregroundColor(Color("DARK_GRAY"))
-                                                    .multilineTextAlignment(.center)
-                                                    .padding(3)
-                                                    .padding(.top, -7)
-                                                
-                                                Spacer()
-                                                
-                                                Text("教室")
-                                                    .font(.system(size: 10, design: .monospaced))
-                                                    .foregroundColor(Color("DARK_GRAY"))
-                                                    .padding(3)
-                                            } else {
-                                                Text("測試")
-                                                    .font(.system(size: 12))
-                                                    .foregroundColor(Color("DARK_GRAY"))
-                                                    .multilineTextAlignment(.center)
-                                                    .padding(3)
-                                                    .padding(.top, -7)
-                                                    .frame(maxHeight: .infinity, alignment: .center)
-                                            }
-                                        }
-                                    })
-                                }
-                                .frame(width: courseWidth[timetableType.rawValue], height: courseHeight[timetableType.rawValue])
-                                .background(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .foregroundColor(Color("WHITE"))
-                                        .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
-                                )
+                                TimetableCellView(course: timetable[i][k], courseWidth: courseWidth[timetableType.rawValue], courseHeight: courseHeight[timetableType.rawValue], timetableType: timetableType)
                             }
                         }
                     }
@@ -134,7 +154,7 @@ struct TimetableView_Previews: PreviewProvider {
     static var previews: some View {
         @State var timetableType: TimetableType = .normal
         
-        TimetableView(timetableType: $timetableType)
+        TimetableView(timetableType: $timetableType, timetable: [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7))
             .previewLayout(.sizeThatFits)
     }
 }
