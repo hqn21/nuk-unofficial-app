@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CourseCategoryView: View {
+    @EnvironmentObject private var viewModel: CourseViewModel
+    @EnvironmentObject private var popupManager: PopupManager
     @State var targetCourses: [Course] = []
     @State var targetCoursesCredit: Double = 0
     let courses: [Course]
@@ -17,7 +19,10 @@ struct CourseCategoryView: View {
     
     var body: some View {
         Button(action: {
-            
+            popupManager.set(popup: AnyView(
+                CourseCategoryPopupView(courseCategory: courseCategory, targetCourses: targetCourses)
+                    .environmentObject(viewModel)
+            ))
         }, label: {
             ZStack {
                 HStack(spacing: 5) {
@@ -69,10 +74,17 @@ struct CourseCategoryView: View {
         .onAppear() {
             targetCourses = []
             targetCoursesCredit = 0
-            for course in courses {
-                if course.getCourseCategory().getParent() == courseCategory {
-                    targetCourses.append(course)
+            if courseCategory == .all {
+                targetCourses = courses
+                for course in courses {
                     targetCoursesCredit += course.credit
+                }
+            } else {
+                for course in courses {
+                    if course.getCourseCategory().getParent() == courseCategory {
+                        targetCourses.append(course)
+                        targetCoursesCredit += course.credit
+                    }
                 }
             }
         }
