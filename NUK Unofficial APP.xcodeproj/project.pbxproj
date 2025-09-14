@@ -52,6 +52,7 @@
 		35891A3D2D73484C0039B548 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A3C2D7348450039B548 /* TimetableViewModel.swift */; };
 		35913E4C290956FC00B12D70 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35913E4B290956FC00B12D70 /* KeyChainService.swift */; };
 		35913E4F2909577800B12D70 /* CourseInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35913E4E2909577800B12D70 /* CourseInformation.swift */; };
+		3595C79C2E769E9D0088F3D4 /* CourseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C79B2E769E9D0088F3D4 /* CourseCategoryView.swift */; };
 		359624AE2D56284D00853EB0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624AD2D56284900853EB0 /* MapViewModel.swift */; };
 		359624B02D564D5F00853EB0 /* AnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624AF2D564D5900853EB0 /* AnnotationItem.swift */; };
 		359624B22D565EF200853EB0 /* AnnotationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624B12D565EF200853EB0 /* AnnotationItemView.swift */; };
@@ -205,6 +206,7 @@
 		35913E4B290956FC00B12D70 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		35913E4E2909577800B12D70 /* CourseInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInformation.swift; sourceTree = "<group>"; };
 		35913E5029095A5100B12D70 /* NUK Unofficial APP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "NUK Unofficial APP.entitlements"; sourceTree = "<group>"; };
+		3595C79B2E769E9D0088F3D4 /* CourseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCategoryView.swift; sourceTree = "<group>"; };
 		359624AD2D56284900853EB0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		359624AF2D564D5900853EB0 /* AnnotationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationItem.swift; sourceTree = "<group>"; };
 		359624B12D565EF200853EB0 /* AnnotationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationItemView.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 				35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */,
 				351ECD7F2D7B489400561D55 /* CourseInfoPopupView.swift */,
 				35FE70BB2E75635200ACB341 /* CoursePopupView.swift */,
+				3595C79B2E769E9D0088F3D4 /* CourseCategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1055,6 +1058,7 @@
 				359624AE2D56284D00853EB0 /* MapViewModel.swift in Sources */,
 				351D97D52D54C356009700BE /* YouBikeCardView.swift in Sources */,
 				351D97D12D54BDC5009700BE /* YouBike.swift in Sources */,
+				3595C79C2E769E9D0088F3D4 /* CourseCategoryView.swift in Sources */,
 				351D97C52D51DAA2009700BE /* AirViewModel.swift in Sources */,
 				359624B42D56653700853EB0 /* MapSheetView.swift in Sources */,
 				35A4C11B2D42051200FD7C1B /* StringProtocol.swift in Sources */,

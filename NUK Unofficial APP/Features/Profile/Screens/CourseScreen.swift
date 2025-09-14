@@ -42,6 +42,7 @@ struct CourseScreen: View {
                         .environmentObject(viewModel)
                 case .credit:
                     CreditDraftView()
+                        .environmentObject(viewModel)
                 }
             }
             .alert(

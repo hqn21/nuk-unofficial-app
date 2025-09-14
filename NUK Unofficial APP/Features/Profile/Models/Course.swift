@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum CourseCategory {
+enum CourseCategory: Int {
     case all
     case requiredTogether
     case requiredDepartment
@@ -94,6 +94,17 @@ extension CourseCategory {
             return Color("COURSE_BROWN")
         case .null:
             return Color("TIMETABLE_LITTLE_DARK_GRAY")
+        }
+    }
+    
+    func getParent() -> CourseCategory {
+        switch self {
+        case .electiveMainThink, .electiveMainBeauty, .electiveMainCitizen, .electiveMainCulture, .electiveMainScience, .electiveMainEthics, .electiveMainOther:
+            return .electiveMain
+        case .electiveSubPeople, .electiveSubSocial, .electiveSubScience:
+            return .electiveSub
+        default:
+            return self
         }
     }
 }
