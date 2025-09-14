@@ -9,6 +9,8 @@ import Foundation
 import Combine
 import OSLog
 import SwiftUI
+import UIKit
+import Photos
 
 class CourseViewModel: ObservableObject {
     @Published var hasUpdate: Bool = false
@@ -190,6 +192,28 @@ class CourseViewModel: ObservableObject {
         return Color("YELLOW")
     }
     
+    func loadCourseSelected() {
+        let courseSelectedFromKeychain: [Course]? = KeychainManager.shared.get(key: "course_selected", type: [Course].self)
+        let timetableFromKeychain: [[Course?]]? = KeychainManager.shared.get(key: "timetable_draft", type: [[Course?]].self)
+        if let courseSelectedFromKeychain = courseSelectedFromKeychain, let timetableFromKeychain = timetableFromKeychain {
+            courseSelected = courseSelectedFromKeychain
+            timetable = timetableFromKeychain
+        } else {
+            courseSelected = []
+            timetable = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
+        }
+    }
+    
+    @MainActor
+    func resetCourseSelected() {
+        if !KeychainManager.shared.delete(key: "course_selected") || !KeychainManager.shared.delete(key: "timetable_draft") {
+            alertMessage = "清除勾選課程資訊時發生了錯誤"
+            return
+        }
+        loadCourseSelected()
+        alertMessage = "成功清除所有所選課程"
+    }
+    
     @MainActor
     func selectCourse(course: Course) -> Void {
         courseSelected.append(course)
@@ -199,6 +223,10 @@ class CourseViewModel: ObservableObject {
                     timetable[day][period] = course
                 }
             }
+        }
+        if !KeychainManager.shared.addOrUpdate(key: "course_selected", value: courseSelected) || !KeychainManager.shared.addOrUpdate(key: "timetable_draft", value: timetable) {
+            alertMessage = "儲存勾選課程資訊時發生了錯誤"
+            return
         }
     }
     
@@ -211,6 +239,10 @@ class CourseViewModel: ObservableObject {
                     timetable[day][period] = nil
                 }
             }
+        }
+        if !KeychainManager.shared.addOrUpdate(key: "course_selected", value: courseSelected) || !KeychainManager.shared.addOrUpdate(key: "timetable_draft", value: timetable) {
+            alertMessage = "儲存勾選課程資訊時發生了錯誤"
+            return
         }
     }
     
@@ -249,5 +281,32 @@ class CourseViewModel: ObservableObject {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let formattedDate = formatter.string(from: date)
         return formattedDate
+    }
+    
+    @MainActor
+    func saveTimetable(timetableType: TimetableType) -> Void {
+        let image: UIImage = TimetableView(timetableType: timetableType, timetable: timetable)
+            .preferredColorScheme(.light)
+            .environment(\.colorScheme, .light)
+            .ignoresSafeArea(.all)
+            .snapshot()
+        switch PHPhotoLibrary.authorizationStatus(for: .addOnly) {
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization(for: .addOnly) {
+                status in
+                switch status {
+                case .authorized:
+                    self.alertMessage = "成功將您的課表存入相簿中"
+                default:
+                    self.alertMessage = "存入相簿失敗，請至設定確認是否給予權限"
+                }
+            }
+            
+        case .authorized:
+            alertMessage = "成功將您的課表存入相簿中"
+        default:
+            alertMessage = "存入相簿失敗，請至設定確認是否給予權限"
+        }
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
 }

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
+import Photos
 
 struct TimetableDraftView: View {
     @EnvironmentObject private var viewModel: CourseViewModel
@@ -15,6 +17,23 @@ struct TimetableDraftView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 10) {
+                Button(action: {
+                    viewModel.resetCourseSelected()
+                }, label: {
+                    HStack(spacing: 0) {
+                        Text("清除所選課程")
+                            .font(.system(size: 15))
+                            .foregroundColor(Color("DARK_GRAY"))
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    .frame(height: 35)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor(Color("WHITE"))
+                            .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+                    )
+                })
+                
                 Menu {
                     ForEach(0...1, id: \.self) { i in
                         Button(action: {
@@ -40,12 +59,27 @@ struct TimetableDraftView: View {
                             .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
                     )
                 }
+                Button(action: {
+                    viewModel.saveTimetable(timetableType: timetableType)
+                }, label: {
+                    Image(systemName: "arrow.down.square")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 15)
+                        .foregroundColor(Color("DARK_GRAY"))
+                        .padding(10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .foregroundColor(Color("WHITE"))
+                                .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+                        )
+                })
             }
             .padding(.horizontal, 25)
             .padding(.bottom, 10)
             ScrollView(.vertical, showsIndicators: false) {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    TimetableView(timetableType: $timetableType, timetable: viewModel.timetable)
+                    TimetableView(timetableType: timetableType, timetable: viewModel.timetable)
                         .padding(.vertical, 5)
                 }
             }

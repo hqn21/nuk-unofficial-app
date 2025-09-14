@@ -55,6 +55,9 @@ struct CourseScreen: View {
                 }
             )
         }
+        .onAppear() {
+            viewModel.loadCourseSelected()
+        }
         .task {
             await viewModel.getCourseIfNeeded()
             await viewModel.getProgramIfNeeded()

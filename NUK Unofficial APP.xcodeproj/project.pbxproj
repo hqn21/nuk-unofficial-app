@@ -572,7 +572,6 @@
 		35A4C1322D4206A800FD7C1B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */,
 				35891A3C2D7348450039B548 /* TimetableViewModel.swift */,
 			);
 			path = ViewModels;
@@ -724,6 +723,7 @@
 		35C0A1352E69DDD900EE0699 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */,
 				351D97D22D54BEC3009700BE /* YouBikeViewModel.swift */,
 			);
 			path = ViewModels;

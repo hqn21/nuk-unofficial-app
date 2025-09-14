@@ -96,7 +96,7 @@ struct TimetableCellView: View {
 }
 
 struct TimetableView: View {
-    @Binding var timetableType: TimetableType
+    let timetableType: TimetableType
     let timetable: [[Course?]]
     let courseWidth: [CGFloat] = [60, 50]
     let courseHeight: [CGFloat] = [100, 50]
@@ -161,7 +161,7 @@ struct TimetableView_Previews: PreviewProvider {
     static var previews: some View {
         @State var timetableType: TimetableType = .normal
         
-        TimetableView(timetableType: $timetableType, timetable: [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7))
+        TimetableView(timetableType: timetableType, timetable: [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7))
             .previewLayout(.sizeThatFits)
             .environmentObject(CourseViewModel())
             .environmentObject(PopupManager())
