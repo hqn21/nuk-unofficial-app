@@ -14,6 +14,8 @@ struct InformationScreen: View {
     @State private var openPolicy: Bool = false
     @State private var openCalendar: Bool = false
     @State private var openMail: Bool = false
+    @State private var openAdmin: Bool = false
+    @State private var openAcademic: Bool = false
     @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
     let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "NULL"
     let buildVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "NULL"
@@ -97,10 +99,19 @@ struct InformationScreen: View {
                         }
                         Section(header: Text("關於國立高雄大學")) {
                             Button(action: {
-                                navigationManager.navigate(selection: .information, pathDestination: .contact)
+                                openAdmin = true
                             }, label: {
                                 HStack {
-                                    Text("聯繫資訊")
+                                    Text("行政單位")
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                }
+                            })
+                            Button(action: {
+                                openAcademic = true
+                            }, label: {
+                                HStack {
+                                    Text("教學單位")
                                     Spacer()
                                     Image(systemName: "chevron.right")
                                 }
@@ -122,6 +133,14 @@ struct InformationScreen: View {
                     })
                     .fullScreenCover(isPresented: $openCalendar, content: {
                         SafariView(url: URL(string: "https://sec.nuk.edu.tw/p/412-1002-525.php?Lang=zh-tw")!)
+                            .edgesIgnoringSafeArea(.all)
+                    })
+                    .fullScreenCover(isPresented: $openAdmin, content: {
+                        SafariView(url: URL(string: "https://www.nuk.edu.tw/p/412-1000-220.php?Lang=zh-tw")!)
+                            .edgesIgnoringSafeArea(.all)
+                    })
+                    .fullScreenCover(isPresented: $openAcademic, content: {
+                        SafariView(url: URL(string: "https://www.nuk.edu.tw/p/412-1000-221.php?Lang=zh-tw")!)
                             .edgesIgnoringSafeArea(.all)
                     })
                     .scrollContentBackground(.hidden)
@@ -159,8 +178,6 @@ struct InformationScreen: View {
                     ReferenceScreen()
                 case PathDestination.copyright:
                     CopyrightScreen()
-                case PathDestination.contact:
-                    ContactScreen()
                 }
             }
         }

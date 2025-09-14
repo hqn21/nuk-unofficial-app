@@ -68,8 +68,6 @@ struct ProfileScreen: View {
                     EmptyView()
                 case PathDestination.copyright:
                     EmptyView()
-                case PathDestination.contact:
-                    EmptyView()
                 }
             }
         }

@@ -117,7 +117,6 @@ struct ContentView: View {
             navigationManager.navigate(selection: .information, pathDestination: .donation)
             navigationManager.navigate(selection: .information, pathDestination: .reference)
             navigationManager.navigate(selection: .information, pathDestination: .copyright)
-            navigationManager.navigate(selection: .information, pathDestination: .contact)
 //            let param: String = String(url.absoluteString.dropFirst(9))
 //            self.alertT(title: "NUK Unofficial APP", message: "\(param)", primaryTitle: "確認", primaryAction: {})
         }

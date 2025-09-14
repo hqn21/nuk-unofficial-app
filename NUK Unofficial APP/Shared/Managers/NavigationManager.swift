@@ -26,7 +26,6 @@ enum PathDestination: Hashable {
     case author
     case reference
     case copyright
-    case contact
 }
 
 @MainActor

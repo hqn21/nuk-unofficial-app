@@ -35,7 +35,6 @@
 		358457302D5747C400C41530 /* DonationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572F2D5747C400C41530 /* DonationScreen.swift */; };
 		358457342D5747EF00C41530 /* ReferenceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457332D5747EF00C41530 /* ReferenceScreen.swift */; };
 		358457362D57480500C41530 /* CopyrightScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457352D57480500C41530 /* CopyrightScreen.swift */; };
-		3584573A2D57485800C41530 /* ContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457392D57485800C41530 /* ContactScreen.swift */; };
 		35891A252D72D81E0039B548 /* CourseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A242D72D81A0039B548 /* CourseInfo.swift */; };
 		35891A272D72D9220039B548 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A262D72D9200039B548 /* Course.swift */; };
 		35891A292D72EF270039B548 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A282D72EF230039B548 /* Department.swift */; };
@@ -186,7 +185,6 @@
 		3584572F2D5747C400C41530 /* DonationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationScreen.swift; sourceTree = "<group>"; };
 		358457332D5747EF00C41530 /* ReferenceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceScreen.swift; sourceTree = "<group>"; };
 		358457352D57480500C41530 /* CopyrightScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightScreen.swift; sourceTree = "<group>"; };
-		358457392D57485800C41530 /* ContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactScreen.swift; sourceTree = "<group>"; };
 		35891A242D72D81A0039B548 /* CourseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfo.swift; sourceTree = "<group>"; };
 		35891A262D72D9200039B548 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		35891A282D72EF230039B548 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -615,7 +613,6 @@
 				3584572D2D56C2B200C41530 /* AuthorScreen.swift */,
 				358457332D5747EF00C41530 /* ReferenceScreen.swift */,
 				358457352D57480500C41530 /* CopyrightScreen.swift */,
-				358457392D57485800C41530 /* ContactScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1046,7 +1043,6 @@
 				35CB55292D795D2A00FFCAA5 /* TimetableDraftView.swift in Sources */,
 				351D97DD2D54FF94009700BE /* BroadcastViewModel.swift in Sources */,
 				35A4C1A72D42767800FD7C1B /* WeatherCardView.swift in Sources */,
-				3584573A2D57485800C41530 /* ContactScreen.swift in Sources */,
 				35A4C1A92D42783000FD7C1B /* Weather.swift in Sources */,
 				35A4C1BA2D44BB5100FD7C1B /* Config.swift in Sources */,
 				351D97D32D54BECC009700BE /* YouBikeViewModel.swift in Sources */,
