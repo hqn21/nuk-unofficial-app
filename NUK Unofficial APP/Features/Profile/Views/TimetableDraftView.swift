@@ -51,7 +51,7 @@ struct TimetableDraftView: View {
                             .foregroundColor(Color("DARK_GRAY"))
                     }
                     .padding(10)
-                    .frame(height: 35)
+                    .frame(width: 85, height: 35)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
                             .foregroundColor(Color("WHITE"))
