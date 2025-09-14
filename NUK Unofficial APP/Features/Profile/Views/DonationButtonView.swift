@@ -84,7 +84,7 @@ struct DonationButtonView: View {
             }
         }
         .fullScreenCover(isPresented: $openSafari, content: {
-            SafariView(url: URL(string: "https://p.ecpay.com.tw/D5E6F1D")!)
+            SafariView(url: URL(string: "https://nukapp.haoquan.me/donate")!)
                 .edgesIgnoringSafeArea(.all)
         })
     }
