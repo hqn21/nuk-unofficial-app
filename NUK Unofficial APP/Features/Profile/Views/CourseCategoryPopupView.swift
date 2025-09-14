@@ -69,8 +69,6 @@ struct CourseCategoryPopupView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                 } else {
                     switch courseCategory {
-                    case .electiveMain, .electiveSub:
-                        EmptyView()
                     default:
                         ScrollView(.vertical, showsIndicators: false) {
                             VStack(spacing: 5) {
