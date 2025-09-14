@@ -11,7 +11,6 @@ import Photos
 
 struct TimetableDraftView: View {
     @EnvironmentObject private var viewModel: CourseViewModel
-    @State private var timetableType: TimetableType = .normal
     let timetableTypeString: [String] = ["完整", "簡略"]
     
     var body: some View {
@@ -37,14 +36,14 @@ struct TimetableDraftView: View {
                 Menu {
                     ForEach(0...1, id: \.self) { i in
                         Button(action: {
-                            timetableType = .init(rawValue: i)!
+                            viewModel.setTimetableType(timetableType: .init(rawValue: i)!)
                         }, label: {
                             Text("\(timetableTypeString[i])")
                         })
                     }
                 } label: {
                     HStack(spacing: 0) {
-                        Text("\(timetableTypeString[timetableType.rawValue])")
+                        Text("\(timetableTypeString[viewModel.timetableType.rawValue])")
                             .font(.system(size: 15))
                             .foregroundColor(Color("DARK_GRAY"))
                         Spacer()
@@ -60,7 +59,7 @@ struct TimetableDraftView: View {
                     )
                 }
                 Button(action: {
-                    viewModel.saveTimetable(timetableType: timetableType)
+                    viewModel.saveTimetable(timetableType: viewModel.timetableType)
                 }, label: {
                     Image(systemName: "arrow.down.square")
                         .resizable()
@@ -79,7 +78,7 @@ struct TimetableDraftView: View {
             .padding(.bottom, 10)
             ScrollView(.vertical, showsIndicators: false) {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    TimetableView(timetableType: timetableType, timetable: viewModel.timetable)
+                    TimetableView(timetableType: viewModel.timetableType, timetable: viewModel.timetable)
                         .padding(.vertical, 5)
                 }
             }

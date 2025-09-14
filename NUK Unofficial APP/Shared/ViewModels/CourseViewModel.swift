@@ -30,6 +30,7 @@ class CourseViewModel: ObservableObject {
     }
     @Published var courseSelected: [Course] = []
     @Published var timetable: [[Course?]] = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
+    @Published var timetableType: TimetableType = .normal
     
     @MainActor
     func checkUpdate() async -> Bool {
@@ -308,5 +309,23 @@ class CourseViewModel: ObservableObject {
             alertMessage = "存入相簿失敗，請至設定確認是否給予權限"
         }
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    
+    func loadTimetableType() {
+        let timetableTypeFromKeychain: TimetableType? = KeychainManager.shared.get(key: "timetable_draft_type", type: TimetableType.self)
+        if let timetableTypeFromKeychain = timetableTypeFromKeychain {
+            timetableType = timetableTypeFromKeychain
+        } else {
+            timetableType = .normal
+        }
+    }
+    
+    @MainActor
+    func setTimetableType(timetableType: TimetableType) {
+        self.timetableType = timetableType
+        if !KeychainManager.shared.addOrUpdate(key: "timetable_draft_type", value: self.timetableType) {
+            alertMessage = "儲存課表類型失敗"
+            return
+        }
     }
 }

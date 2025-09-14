@@ -57,6 +57,7 @@ struct CourseScreen: View {
         }
         .onAppear() {
             viewModel.loadCourseSelected()
+            viewModel.loadTimetableType()
         }
         .task {
             await viewModel.getCourseIfNeeded()

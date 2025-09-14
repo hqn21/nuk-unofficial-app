@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum TimetableType: Int {
+enum TimetableType: Int, Codable {
     case normal = 0
     case simplified = 1
 }
