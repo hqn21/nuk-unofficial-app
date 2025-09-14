@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct InformationScreen: View {
     @EnvironmentObject private var navigationManager: NavigationManager
+    @StateObject private var viewModel: InformationViewModel = InformationViewModel()
     @State private var openPolicy: Bool = false
     @State private var openCalendar: Bool = false
+    @State private var openMail: Bool = false
+    @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
     let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "NULL"
     let buildVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "NULL"
     
@@ -67,7 +71,11 @@ struct InformationScreen: View {
                                 }
                             })
                             Button(action: {
-                                
+                                if MFMailComposeViewController.canSendMail() {
+                                    openMail = true
+                                } else {
+                                    viewModel.alertMessage = "您需要安裝 Apple 官方的 Mail App 才能進行問題回報，如已下載請在 Mail App 登入您的電子郵件來忽視此警告"
+                                }
                             }, label: {
                                 HStack {
                                     Text("問題回報")
@@ -75,6 +83,10 @@ struct InformationScreen: View {
                                     Image(systemName: "chevron.right")
                                 }
                             })
+                            .sheet(isPresented: $openMail) {
+                                MailView(result: $mailResult)
+                                    .edgesIgnoringSafeArea(.bottom)
+                            }
                             ShareLink(item: URL(string: "https://nukapp.haoquan.me")!) {
                                 HStack {
                                     Text("推薦給他人")
@@ -117,6 +129,16 @@ struct InformationScreen: View {
                     .padding(.top, 0.2)
                 }
             }
+            .alert(
+                "關於",
+                isPresented: $viewModel.showAlert,
+                actions: {
+                    Button("確認", action: {})
+                },
+                message: {
+                    Text("\(viewModel.alertMessage ?? "未知錯誤")")
+                }
+            )
             .navigationTitle("關於")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: PathDestination.self) { destination in

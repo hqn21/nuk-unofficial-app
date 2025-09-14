@@ -82,6 +82,8 @@
 		35A5DA752D578983005225A4 /* DonationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A5DA742D57897F005225A4 /* DonationButtonView.swift */; };
 		35A858812CF5FE8B00875B3F /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350E393E2CF25700007C6E52 /* UniformTypeIdentifiers.framework */; };
 		35A8588D2CF5FE8B00875B3F /* ScoreAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 35A858802CF5FE8B00875B3F /* ScoreAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		35AA3C1A2E76E63100762A7D /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AA3C192E76E62C00762A7D /* InformationViewModel.swift */; };
+		35AA3C1C2E76E71D00762A7D /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AA3C1B2E76E71500762A7D /* MailView.swift */; };
 		35CB55272D795D1F00FFCAA5 /* CourseDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB55262D795D1F00FFCAA5 /* CourseDraftView.swift */; };
 		35CB55292D795D2A00FFCAA5 /* TimetableDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */; };
 		35CB552B2D795D4800FFCAA5 /* CreditDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */; };
@@ -235,6 +237,8 @@
 		35A4C1B92D44BB5000FD7C1B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		35A5DA742D57897F005225A4 /* DonationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationButtonView.swift; sourceTree = "<group>"; };
 		35A858802CF5FE8B00875B3F /* ScoreAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScoreAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		35AA3C192E76E62C00762A7D /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
+		35AA3C1B2E76E71500762A7D /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		35AEEA8E29100FEC006EE3DA /* TimetableWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimetableWidget.entitlements; sourceTree = "<group>"; };
 		35CB55262D795D1F00FFCAA5 /* CourseDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDraftView.swift; sourceTree = "<group>"; };
 		35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDraftView.swift; sourceTree = "<group>"; };
@@ -622,6 +626,7 @@
 		35A4C1372D4206AA00FD7C1B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				35AA3C192E76E62C00762A7D /* InformationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -629,6 +634,7 @@
 		35A4C1382D4206AA00FD7C1B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				35AA3C1B2E76E71500762A7D /* MailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1052,6 +1058,7 @@
 				35891A272D72D9220039B548 /* Course.swift in Sources */,
 				35891A2D2D72EF770039B548 /* CourseEnrollment.swift in Sources */,
 				35A4C1152D41E5A700FD7C1B /* NavigationManager.swift in Sources */,
+				35AA3C1A2E76E63100762A7D /* InformationViewModel.swift in Sources */,
 				35A4C10C2D411F8E00FD7C1B /* ContentViewModel.swift in Sources */,
 				35FE70BC2E75635200ACB341 /* CoursePopupView.swift in Sources */,
 				358457362D57480500C41530 /* CopyrightScreen.swift in Sources */,
@@ -1059,6 +1066,7 @@
 				351D97DB2D54FF19009700BE /* Broadcast.swift in Sources */,
 				35A5DA752D578983005225A4 /* DonationButtonView.swift in Sources */,
 				359624AE2D56284D00853EB0 /* MapViewModel.swift in Sources */,
+				35AA3C1C2E76E71D00762A7D /* MailView.swift in Sources */,
 				351D97D52D54C356009700BE /* YouBikeCardView.swift in Sources */,
 				351D97D12D54BDC5009700BE /* YouBike.swift in Sources */,
 				3595C79C2E769E9D0088F3D4 /* CourseCategoryView.swift in Sources */,
