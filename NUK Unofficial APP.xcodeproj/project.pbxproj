@@ -35,7 +35,6 @@
 		358457302D5747C400C41530 /* DonationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572F2D5747C400C41530 /* DonationScreen.swift */; };
 		358457342D5747EF00C41530 /* ReferenceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457332D5747EF00C41530 /* ReferenceScreen.swift */; };
 		358457362D57480500C41530 /* CopyrightScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457352D57480500C41530 /* CopyrightScreen.swift */; };
-		358457382D57484500C41530 /* PrivacyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457372D57484500C41530 /* PrivacyScreen.swift */; };
 		3584573A2D57485800C41530 /* ContactScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457392D57485800C41530 /* ContactScreen.swift */; };
 		35891A252D72D81E0039B548 /* CourseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A242D72D81A0039B548 /* CourseInfo.swift */; };
 		35891A272D72D9220039B548 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A262D72D9200039B548 /* Course.swift */; };
@@ -187,7 +186,6 @@
 		3584572F2D5747C400C41530 /* DonationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationScreen.swift; sourceTree = "<group>"; };
 		358457332D5747EF00C41530 /* ReferenceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceScreen.swift; sourceTree = "<group>"; };
 		358457352D57480500C41530 /* CopyrightScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightScreen.swift; sourceTree = "<group>"; };
-		358457372D57484500C41530 /* PrivacyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyScreen.swift; sourceTree = "<group>"; };
 		358457392D57485800C41530 /* ContactScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactScreen.swift; sourceTree = "<group>"; };
 		35891A242D72D81A0039B548 /* CourseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfo.swift; sourceTree = "<group>"; };
 		35891A262D72D9200039B548 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -617,7 +615,6 @@
 				3584572D2D56C2B200C41530 /* AuthorScreen.swift */,
 				358457332D5747EF00C41530 /* ReferenceScreen.swift */,
 				358457352D57480500C41530 /* CopyrightScreen.swift */,
-				358457372D57484500C41530 /* PrivacyScreen.swift */,
 				358457392D57485800C41530 /* ContactScreen.swift */,
 			);
 			path = Screens;
@@ -1093,7 +1090,6 @@
 				359624B22D565EF200853EB0 /* AnnotationItemView.swift in Sources */,
 				35A4C1B82D44BA5A00FD7C1B /* APIService.swift in Sources */,
 				358457302D5747C400C41530 /* DonationScreen.swift in Sources */,
-				358457382D57484500C41530 /* PrivacyScreen.swift in Sources */,
 				35891A352D72FF780039B548 /* ScoreScreen.swift in Sources */,
 				359624B02D564D5F00853EB0 /* AnnotationItem.swift in Sources */,
 				351D97D92D54C679009700BE /* YouBikeStationView.swift in Sources */,

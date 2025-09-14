@@ -159,8 +159,6 @@ struct InformationScreen: View {
                     ReferenceScreen()
                 case PathDestination.copyright:
                     CopyrightScreen()
-                case PathDestination.privacy:
-                    PrivacyScreen()
                 case PathDestination.contact:
                     ContactScreen()
                 }
