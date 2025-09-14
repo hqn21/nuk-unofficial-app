@@ -9,6 +9,8 @@ import SwiftUI
 
 struct InformationScreen: View {
     @EnvironmentObject private var navigationManager: NavigationManager
+    @State private var openPolicy: Bool = false
+    @State private var openCalendar: Bool = false
     let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "NULL"
     let buildVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "NULL"
     
@@ -56,7 +58,7 @@ struct InformationScreen: View {
                                 }
                             })
                             Button(action: {
-                                navigationManager.navigate(selection: .information, pathDestination: .privacy)
+                                openPolicy = true
                             }, label: {
                                 HStack {
                                     Text("隱私政策")
@@ -73,16 +75,13 @@ struct InformationScreen: View {
                                     Image(systemName: "chevron.right")
                                 }
                             })
-                            Button(action: {
-                                
-                            }, label: {
+                            ShareLink(item: URL(string: "https://nukapp.haoquan.me")!) {
                                 HStack {
                                     Text("推薦給他人")
                                     Spacer()
                                     Image(systemName: "chevron.right")
                                 }
-                            })
-                            
+                            }
                         }
                         Section(header: Text("關於國立高雄大學")) {
                             Button(action: {
@@ -95,7 +94,7 @@ struct InformationScreen: View {
                                 }
                             })
                             Button(action: {
-                                
+                                openCalendar = true
                             }, label: {
                                 HStack {
                                     Text("行事曆")
@@ -105,6 +104,14 @@ struct InformationScreen: View {
                             })
                         }
                     }
+                    .fullScreenCover(isPresented: $openPolicy, content: {
+                        SafariView(url: URL(string: "https://nukapp.haoquan.me/policy")!)
+                            .edgesIgnoringSafeArea(.all)
+                    })
+                    .fullScreenCover(isPresented: $openCalendar, content: {
+                        SafariView(url: URL(string: "https://sec.nuk.edu.tw/p/412-1002-525.php?Lang=zh-tw")!)
+                            .edgesIgnoringSafeArea(.all)
+                    })
                     .scrollContentBackground(.hidden)
                     .background(Color("GRAY"))
                     .padding(.top, 0.2)
