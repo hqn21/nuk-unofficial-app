@@ -29,7 +29,7 @@ struct TimetableCellView: View {
             .frame(width: courseWidth, height: 14)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .foregroundColor(course?.getCourseCategoryColor() ?? Color("LITTLE_DARK_GRAY"))
+                    .foregroundColor(course?.getCourseCategory().getColor() ?? Color("LITTLE_DARK_GRAY"))
             )
             
             // 課程類別顏色
@@ -38,7 +38,7 @@ struct TimetableCellView: View {
             .frame(width: courseWidth, height: 7)
             .background(
                 Rectangle()
-                    .foregroundColor(course?.getCourseCategoryColor() ?? Color("LITTLE_DARK_GRAY"))
+                    .foregroundColor(course?.getCourseCategory().getColor() ?? Color("LITTLE_DARK_GRAY"))
             )
             .offset(y: -7)
             

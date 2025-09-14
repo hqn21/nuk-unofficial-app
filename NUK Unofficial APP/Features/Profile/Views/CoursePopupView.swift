@@ -69,7 +69,7 @@ struct CoursePopupView: View {
                 Image(systemName: "rectangle.portrait.fill")
                     .resizable()
                     .frame(width: 6, height: 16)
-                    .foregroundColor(course.getCourseCategoryColor())
+                    .foregroundColor(course.getCourseCategory().getColor())
                 Text("\(course.name)")
                     .font(.system(size: 18))
                     .foregroundColor(Color("DARK_GRAY"))
@@ -107,7 +107,7 @@ struct CoursePopupView: View {
                 }
                 HStack(alignment: .top, spacing: 10) {
                     CourseMetadataView(title: "系所", content: "\(viewModel.getDepartmentName(id: course.departmentId) ?? "未知")")
-                    CourseMetadataView(title: "分類", content: "\(course.getCourseCategoryName())")
+                    CourseMetadataView(title: "分類", content: "\(course.getCourseCategory().getName())")
                 }
                 HStack(alignment: .top, spacing: 10) {
                     CourseMetadataView(title: "年級", content: "\(course.grade)")

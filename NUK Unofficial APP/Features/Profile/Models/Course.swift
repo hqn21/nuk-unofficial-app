@@ -8,6 +8,96 @@
 import Foundation
 import SwiftUI
 
+enum CourseCategory {
+    case all
+    case requiredTogether
+    case requiredDepartment
+    case electiveMain
+    case electiveMainThink
+    case electiveMainBeauty
+    case electiveMainCitizen
+    case electiveMainCulture
+    case electiveMainScience
+    case electiveMainEthics
+    case electiveMainOther
+    case electiveSub
+    case electiveSubPeople
+    case electiveSubScience
+    case electiveSubSocial
+    case electiveInterest
+    case electiveDepartment
+    case other
+    case null
+}
+
+extension CourseCategory {
+    func getName() -> String {
+        switch self {
+        case .all:
+            return "學分總計"
+        case .requiredTogether:
+            return "共同必修"
+        case .requiredDepartment:
+            return "系訂必修"
+        case .electiveMain:
+            return "核心通識"
+        case .electiveMainThink:
+            return "思維方法"
+        case .electiveMainBeauty:
+            return "美學素養"
+        case .electiveMainCitizen:
+            return "公民素養"
+        case .electiveMainCulture:
+            return "文化素養"
+        case .electiveMainScience:
+            return "科學素養"
+        case .electiveMainEthics:
+            return "倫理素養"
+        case .electiveMainOther:
+            return "未分類"
+        case .electiveSub:
+            return "博雅通識"
+        case .electiveSubPeople:
+            return "人文科學類"
+        case .electiveSubScience:
+            return "自然科學類"
+        case .electiveSubSocial:
+            return "社會科學類"
+        case .electiveInterest:
+            return "興趣選修"
+        case .electiveDepartment:
+            return "系訂選修"
+        case .other:
+            return "未分類"
+        case .null:
+            return "未知"
+        }
+    }
+    
+    func getColor() -> Color {
+        switch self {
+        case .all:
+            return Color("COURSE_GRAY")
+        case .requiredDepartment:
+            return Color("COURSE_RED")
+        case .electiveDepartment:
+            return Color("COURSE_ORANGE")
+        case .requiredTogether:
+            return Color("COURSE_YELLOW")
+        case .electiveMain, .electiveMainThink, .electiveMainBeauty, .electiveMainCitizen, .electiveMainCulture, .electiveMainScience, .electiveMainEthics, .electiveMainOther:
+            return Color("COURSE_GREEN")
+        case .electiveSub, .electiveSubPeople, .electiveSubSocial, .electiveSubScience:
+            return Color("COURSE_BLUE")
+        case .electiveInterest:
+            return Color("COURSE_PURPLE")
+        case .other:
+            return Color("COURSE_BROWN")
+        case .null:
+            return Color("TIMETABLE_LITTLE_DARK_GRAY")
+        }
+    }
+}
+
 struct Course: Codable, Identifiable {
     let id: String
     let programId: String
@@ -53,28 +143,6 @@ struct Course: Codable, Identifiable {
         self.time = time
         self.teacher = teacher
         self.note = note
-    }
-    
-    enum CourseCategory {
-        case all
-        case requiredTogether
-        case requiredDepartment
-        case electiveMain
-        case electiveMainThink
-        case electiveMainBeauty
-        case electiveMainCitizen
-        case electiveMainCulture
-        case electiveMainScience
-        case electiveMainEthics
-        case electiveMainOther
-        case electiveSub
-        case electiveSubPeople
-        case electiveSubScience
-        case electiveSubSocial
-        case electiveInterest
-        case electiveDepartment
-        case other
-        case null
     }
     
     enum CodingKeys: String, CodingKey {
@@ -219,53 +287,5 @@ struct Course: Codable, Identifiable {
                 }
             }
         }
-    }
-    
-    func getCourseCategoryName() -> String {
-        let courseCategoryNames: [CourseCategory: String] = [
-            .all: "學分總計",
-            .requiredDepartment: "系訂必修",
-            .electiveDepartment: "系訂選修",
-            .requiredTogether: "共同必修",
-            .electiveMain: "核心通識",
-            .electiveMainThink: "思維方法",
-            .electiveMainBeauty: "美學素養",
-            .electiveMainCitizen: "公民素養",
-            .electiveMainCulture: "文化素養",
-            .electiveMainScience: "科學素養",
-            .electiveMainEthics: "倫理素養",
-            .electiveMainOther: "未分類",
-            .electiveSub: "博雅通識",
-            .electiveSubPeople: "人文科學類",
-            .electiveSubSocial: "社會科學類",
-            .electiveSubScience: "自然科學類",
-            .electiveInterest: "興趣選修",
-            .other: "未分類"
-        ]
-        return courseCategoryNames[getCourseCategory()] ?? "未知"
-    }
-    
-    func getCourseCategoryColor() -> Color {
-        let courseCategoryColors: [CourseCategory: String] = [
-            .all: "COURSE_GRAY",
-            .requiredDepartment: "COURSE_RED",
-            .electiveDepartment: "COURSE_ORANGE",
-            .requiredTogether: "COURSE_YELLOW",
-            .electiveMain: "COURSE_GREEN",
-            .electiveMainThink: "COURSE_GREEN",
-            .electiveMainBeauty: "COURSE_GREEN",
-            .electiveMainCitizen: "COURSE_GREEN",
-            .electiveMainCulture: "COURSE_GREEN",
-            .electiveMainScience: "COURSE_GREEN",
-            .electiveMainEthics: "COURSE_GREEN",
-            .electiveMainOther: "COURSE_GREEN",
-            .electiveSub: "COURSE_BLUE",
-            .electiveSubPeople: "COURSE_BLUE",
-            .electiveSubSocial: "COURSE_BLUE",
-            .electiveSubScience: "COURSE_BLUE",
-            .electiveInterest: "COURSE_PURPLE",
-            .other: "COURSE_BROWN"
-        ]
-        return Color(courseCategoryColors[getCourseCategory()] ?? "TIMETABLE_LITTLE_DARK_GRAY")
     }
 }

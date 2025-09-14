@@ -155,7 +155,7 @@ struct CourseDraftView: View {
                                             if course.departmentId != "CC" {
                                                 Text("\(course.courseType)\(course.credit.formatted(.number))/\(course.getTimeString())")
                                             } else {
-                                                Text("\(course.getCourseCategoryName())/\(course.getTimeString())")
+                                                Text("\(course.getCourseCategory().getName())/\(course.getTimeString())")
                                             }
                                         }
                                         .font(.system(size: 12, design: .monospaced))
