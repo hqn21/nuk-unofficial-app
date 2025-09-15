@@ -376,7 +376,7 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
-    func importTimetable() {
+    func importTimetable() -> String {
         let timetableURL: String? = KeychainManager.shared.get(key: "action_timetable_url", type: String.self)
         let timetableHTML: String? = KeychainManager.shared.get(key: "action_timetable_html", type: String.self)
         if let _ = timetableURL, let timetableHTML = timetableHTML {
@@ -385,16 +385,15 @@ class CourseViewModel: ObservableObject {
                 let fontList: [Element] = try doc.select("font").array()
                 
                 if(fontList.count < 1) {
-                    alertMessage = "取得的資訊不包含狀態訊息，請稍後再嘗試並協助問題回報，謝謝"
-                    return
+                    return "取得的資訊不包含狀態訊息，請稍後再嘗試並協助問題回報，謝謝"
                 }
                 
                 let alert: String? = try fontList[0].text()
                 switch alert {
                 case "您的連線已逾時或登錄過程有誤，請重新登錄選課系統！":
-                    alertMessage = "您的帳號或密碼錯誤，請確認後再重新嘗試，謝謝"
+                    return "您的帳號或密碼錯誤，請確認後再重新嘗試，謝謝"
                 case "資料庫中無您的選課資料！":
-                    alertMessage = "目前學校的資料庫沒有您的選課資料，請確認後再重新嘗試，謝謝"
+                    return "目前學校的資料庫沒有您的選課資料，請確認後再重新嘗試，謝謝"
                 default:
                     var rawIds: [String] = []
                     let trList: [Element] = try doc.select("tr").array()
@@ -424,21 +423,19 @@ class CourseViewModel: ObservableObject {
                         }
                     }
                     if !KeychainManager.shared.addOrUpdate(key: "course_confirmed", value: courses) {
-                        alertMessage = "儲存課程清單時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
-                        return
+                        return "儲存課程清單時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
                     }
                     if !KeychainManager.shared.addOrUpdate(key: "timetable_confirmed", value: timetable) {
-                        alertMessage = "儲存課表資訊時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
-                        return
+                        return "儲存課表資訊時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
                     }
                     loadCourseConfirmed()
-                    alertMessage = "成功匯入 \(courses.count) 門課！"
+                    return "成功匯入 \(courses.count) 門課！"
                 }
             } catch {
-                alertMessage = "解析課表資訊時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
+                return "解析課表資訊時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
             }
         } else {
-            alertMessage = "匯入課表失敗，請稍後再試並協助問題回報"
+            return "匯入課表失敗，請稍後再試並協助問題回報"
         }
     }
 }

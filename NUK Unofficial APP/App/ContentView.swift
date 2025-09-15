@@ -16,6 +16,8 @@ struct ContentView: View {
     @StateObject private var viewModel: ContentViewModel = ContentViewModel()
     @StateObject private var youBikeViewModel: YouBikeViewModel = YouBikeViewModel()
     @StateObject private var courseViewModel: CourseViewModel = CourseViewModel()
+    @State private var alertMessage: String = ""
+    @State private var showAlert: Bool = false
     @State private var showWelcomeAlert: Bool = false
     
     var tabSelectionBinding: Binding<TabSelection> {
@@ -106,6 +108,18 @@ struct ContentView: View {
                 Text("common.general.welcome")
             }
         )
+        .alert(
+            "NUK Unofficial APP",
+            isPresented: $showAlert,
+            actions: {
+                Button("確認", action: {
+                    
+                })
+            },
+            message: {
+                Text("\(alertMessage)")
+            }
+        )
         .onAppear() {
             courseViewModel.loadCourse()
             WidgetCenter.shared.reloadAllTimelines()
@@ -119,7 +133,8 @@ struct ContentView: View {
                 navigationManager.tabSelection = .profile
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     navigationManager.navigate(selection: .profile, pathDestination: .timetable)
-                    courseViewModel.importTimetable()
+                    self.alertMessage = courseViewModel.importTimetable()
+                    self.showAlert = true
                 }
             }
         }
