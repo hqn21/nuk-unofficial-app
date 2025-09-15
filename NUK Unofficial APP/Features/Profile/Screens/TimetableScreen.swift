@@ -102,9 +102,11 @@ struct TimetableScreen: View {
             }
             .alert(
                 "個人課表",
-                isPresented: $viewModel.showAlert,
+                isPresented: .constant(viewModel.alertMessage != nil),
                 actions: {
-                    Button("確認", action: {})
+                    Button("確認", action: {
+                        viewModel.alertMessage = nil
+                    })
                 },
                 message: {
                     Text("\(viewModel.alertMessage ?? "未知錯誤")")

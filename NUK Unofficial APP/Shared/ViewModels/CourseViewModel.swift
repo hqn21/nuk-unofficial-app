@@ -21,14 +21,7 @@ class CourseViewModel: ObservableObject {
     @Published var program: [Program] = []
     @Published var courseEnrollment: CourseEnrollment? = nil
     @Published var courseEnrollmentError: Error? = nil
-    @Published var showAlert: Bool = false
-    @Published var alertMessage: String? = nil {
-        didSet {
-            if alertMessage != nil {
-                showAlert = true
-            }
-        }
-    }
+    @Published var alertMessage: String? = nil
     @Published var courseSelected: [Course] = []
     @Published var timetable: [[Course?]] = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
     @Published var courseConfirmed: [Course] = []
