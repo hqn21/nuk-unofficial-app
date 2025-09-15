@@ -15,6 +15,7 @@ struct ContentView: View {
     @EnvironmentObject private var popupManager: PopupManager
     @StateObject private var viewModel: ContentViewModel = ContentViewModel()
     @StateObject private var youBikeViewModel: YouBikeViewModel = YouBikeViewModel()
+    @StateObject private var courseViewModel: CourseViewModel = CourseViewModel()
     @State private var showWelcomeAlert: Bool = false
     
     var tabSelectionBinding: Binding<TabSelection> {
@@ -58,6 +59,7 @@ struct ContentView: View {
                     }
                     .tag(TabSelection.map)
                 ProfileScreen()
+                    .environmentObject(courseViewModel)
                     .tabItem {
                         viewModel.getTabIcon(currentSelection: navigationManager.tabSelection, targetSelection: .profile)
                             .environment(\.symbolVariants, .none)
@@ -105,20 +107,21 @@ struct ContentView: View {
             }
         )
         .onAppear() {
+            courseViewModel.loadCourse()
             WidgetCenter.shared.reloadAllTimelines()
-            
             if !viewModel.hasDisplayedWelcomeMessage() {
                 showWelcomeAlert = true
             }
         }
         .onOpenURL { url in
-            navigationManager.tabSelection = .information
-            navigationManager.navigate(selection: .information, pathDestination: .author)
-            navigationManager.navigate(selection: .information, pathDestination: .donation)
-            navigationManager.navigate(selection: .information, pathDestination: .reference)
-            navigationManager.navigate(selection: .information, pathDestination: .copyright)
-//            let param: String = String(url.absoluteString.dropFirst(9))
-//            self.alertT(title: "NUK Unofficial APP", message: "\(param)", primaryTitle: "確認", primaryAction: {})
+            let param: String = String(url.absoluteString.dropFirst(9))
+            if param == "timetable" {
+                navigationManager.tabSelection = .profile
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                    navigationManager.navigate(selection: .profile, pathDestination: .timetable)
+                    courseViewModel.importTimetable()
+                }
+            }
         }
     }
 }

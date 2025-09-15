@@ -24,13 +24,14 @@
 		351D97E12D550440009700BE /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97E02D550431009700BE /* SafariView.swift */; };
 		351D97E32D5504D5009700BE /* BroadcastCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97E22D5504D5009700BE /* BroadcastCardView.swift */; };
 		351ECD802D7B489400561D55 /* CourseInfoPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351ECD7F2D7B489400561D55 /* CourseInfoPopupView.swift */; };
-		35227A332D3FBBAB0009DAA1 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227A292D3FBBAB0009DAA1 /* KeyChainService.swift */; };
 		35227A342D3FBBAB0009DAA1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227A2C2D3FBBAB0009DAA1 /* ActionViewController.swift */; };
 		35227A352D3FBBAB0009DAA1 /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 35227A2B2D3FBBAB0009DAA1 /* Action.js */; };
 		35227A382D3FBBAB0009DAA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35227A312D3FBBAB0009DAA1 /* Media.xcassets */; };
 		35227A412D3FBBAD0009DAA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */; };
 		35227A422D3FBBAD0009DAA1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */; };
 		354A7A802D4D174D00C0E5F0 /* WeatherPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */; };
+		35580AEE2E77545C0017F735 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1092D41097E00FD7C1B /* KeychainManager.swift */; };
+		35580AF02E7754AF0017F735 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 35580AEF2E7754AF0017F735 /* SwiftSoup */; };
 		3584572E2D56C2B200C41530 /* AuthorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572D2D56C2B200C41530 /* AuthorScreen.swift */; };
 		358457302D5747C400C41530 /* DonationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572F2D5747C400C41530 /* DonationScreen.swift */; };
 		358457342D5747EF00C41530 /* ReferenceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457332D5747EF00C41530 /* ReferenceScreen.swift */; };
@@ -169,7 +170,6 @@
 		351D97E02D550431009700BE /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		351D97E22D5504D5009700BE /* BroadcastCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastCardView.swift; sourceTree = "<group>"; };
 		351ECD7F2D7B489400561D55 /* CourseInfoPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoPopupView.swift; sourceTree = "<group>"; };
-		35227A292D3FBBAB0009DAA1 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
 		35227A2B2D3FBBAB0009DAA1 /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		35227A2C2D3FBBAB0009DAA1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		35227A2D2D3FBBAB0009DAA1 /* TimetableAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimetableAction.entitlements; sourceTree = "<group>"; };
@@ -270,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3500CDE92CF44F310021BDE0 /* UniformTypeIdentifiers.framework in Frameworks */,
+				35580AF02E7754AF0017F735 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,14 +315,6 @@
 				3500FDFF2E34D8E500F4A9AE /* CourseTests.swift */,
 			);
 			path = "NUK Unofficial APP Tests";
-			sourceTree = "<group>";
-		};
-		35227A2A2D3FBBAB0009DAA1 /* service */ = {
-			isa = PBXGroup;
-			children = (
-				35227A292D3FBBAB0009DAA1 /* KeyChainService.swift */,
-			);
-			path = service;
 			sourceTree = "<group>";
 		};
 		352388CA2E6C906000ED1A1A /* .github */ = {
@@ -450,7 +443,6 @@
 		35A4C1042D40D74600FD7C1B /* TimetableAction */ = {
 			isa = PBXGroup;
 			children = (
-				35227A2A2D3FBBAB0009DAA1 /* service */,
 				35227A2B2D3FBBAB0009DAA1 /* Action.js */,
 				35227A2C2D3FBBAB0009DAA1 /* ActionViewController.swift */,
 				35227A2D2D3FBBAB0009DAA1 /* TimetableAction.entitlements */,
@@ -1002,7 +994,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35227A332D3FBBAB0009DAA1 /* KeyChainService.swift in Sources */,
+				35580AEE2E77545C0017F735 /* KeychainManager.swift in Sources */,
 				35227A342D3FBBAB0009DAA1 /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1692,6 +1684,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		35580AEF2E7754AF0017F735 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 359E20A82E3C85210022D001 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		359E20A92E3C85210022D001 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 359E20A82E3C85210022D001 /* XCRemoteSwiftPackageReference "SwiftSoup" */;

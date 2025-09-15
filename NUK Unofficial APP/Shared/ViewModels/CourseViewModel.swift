@@ -11,6 +11,7 @@ import OSLog
 import SwiftUI
 import UIKit
 import Photos
+import SwiftSoup
 
 class CourseViewModel: ObservableObject {
     @Published var hasUpdate: Bool = false
@@ -30,6 +31,8 @@ class CourseViewModel: ObservableObject {
     }
     @Published var courseSelected: [Course] = []
     @Published var timetable: [[Course?]] = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
+    @Published var courseConfirmed: [Course] = []
+    @Published var timetableConfirmed: [[Course?]] = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
     @Published var timetableType: TimetableType = .normal
     
     @MainActor
@@ -193,6 +196,7 @@ class CourseViewModel: ObservableObject {
         return Color("YELLOW")
     }
     
+    @MainActor
     func loadCourseSelected() {
         let courseSelectedFromKeychain: [Course]? = KeychainManager.shared.get(key: "course_selected", type: [Course].self)
         let timetableFromKeychain: [[Course?]]? = KeychainManager.shared.get(key: "timetable_draft", type: [[Course?]].self)
@@ -206,6 +210,29 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
+    func loadCourseConfirmed() {
+        let courseConfirmedFromKeychain: [Course]? = KeychainManager.shared.get(key: "course_confirmed", type: [Course].self)
+        let timetableConfirmedFromKeychain: [[Course?]]? = KeychainManager.shared.get(key: "timetable_confirmed", type: [[Course?]].self)
+        if let courseConfirmedFromKeychain = courseConfirmedFromKeychain, let timetableConfirmedFromKeychain = timetableConfirmedFromKeychain {
+            courseConfirmed = courseConfirmedFromKeychain
+            timetableConfirmed = timetableConfirmedFromKeychain
+        } else {
+            courseConfirmed = []
+            timetableConfirmed = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
+        }
+    }
+    
+    @MainActor
+    func loadCourse() {
+        let courseFromKeychain: [Course]? = KeychainManager.shared.get(key: "course", type: [Course].self)
+        if let courseFromKeychain = courseFromKeychain {
+            course = courseFromKeychain
+        } else {
+            course = []
+        }
+    }
+    
+    @MainActor
     func resetCourseSelected() {
         if !KeychainManager.shared.delete(key: "course_selected") || !KeychainManager.shared.delete(key: "timetable_draft") {
             alertMessage = "清除勾選課程資訊時發生了錯誤"
@@ -213,6 +240,16 @@ class CourseViewModel: ObservableObject {
         }
         loadCourseSelected()
         alertMessage = "成功清除所有所選課程"
+    }
+    
+    @MainActor
+    func resetCourseConfirmed() {
+        if !KeychainManager.shared.delete(key: "course_confirmed") || !KeychainManager.shared.delete(key: "timetable_confirmed") {
+            alertMessage = "清除已匯入的課程資訊時發生了錯誤"
+            return
+        }
+        loadCourseConfirmed()
+        alertMessage = "成功清除所有已匯入的課程資訊"
     }
     
     @MainActor
@@ -285,7 +322,7 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
-    func saveTimetable(timetableType: TimetableType) -> Void {
+    func saveTimetable(timetableType: TimetableType, timetable: [[Course?]]) -> Void {
         let image: UIImage = TimetableView(timetableType: timetableType, timetable: timetable)
             .preferredColorScheme(.light)
             .environment(\.colorScheme, .light)
@@ -326,6 +363,89 @@ class CourseViewModel: ObservableObject {
         if !KeychainManager.shared.addOrUpdate(key: "timetable_draft_type", value: self.timetableType) {
             alertMessage = "儲存課表類型失敗"
             return
+        }
+    }
+    
+    func getCoursesByRawIds(rawIds: [String]) -> [Course] {
+        var rawIds: [String] = rawIds
+        var courses: [Course] = []
+        for singleCourse in course {
+            let singleCourseRawId: String = "\(singleCourse.departmentId)\(singleCourse.courseCode)"
+            for rawId in rawIds {
+                if rawId == singleCourseRawId {
+                    courses.append(singleCourse)
+                    rawIds.remove(at: rawIds.firstIndex(of: rawId)!)
+                    break
+                }
+            }
+        }
+        return courses
+    }
+    
+    @MainActor
+    func importTimetable() {
+        let timetableURL: String? = KeychainManager.shared.get(key: "action_timetable_url", type: String.self)
+        let timetableHTML: String? = KeychainManager.shared.get(key: "action_timetable_html", type: String.self)
+        if let _ = timetableURL, let timetableHTML = timetableHTML {
+            do {
+                let doc: Document = try SwiftSoup.parse(timetableHTML)
+                let fontList: [Element] = try doc.select("font").array()
+                
+                if(fontList.count < 1) {
+                    alertMessage = "取得的資訊不包含狀態訊息，請稍後再嘗試並協助問題回報，謝謝"
+                    return
+                }
+                
+                let alert: String? = try fontList[0].text()
+                switch alert {
+                case "您的連線已逾時或登錄過程有誤，請重新登錄選課系統！":
+                    alertMessage = "您的帳號或密碼錯誤，請確認後再重新嘗試，謝謝"
+                case "資料庫中無您的選課資料！":
+                    alertMessage = "目前學校的資料庫沒有您的選課資料，請確認後再重新嘗試，謝謝"
+                default:
+                    var rawIds: [String] = []
+                    let trList: [Element] = try doc.select("tr").array()
+                    var trIndex: Int = 0
+                    for tr in trList {
+                        if trIndex != 0 {
+                            var trHTML: String = try tr.html()
+                            trHTML = "<table>\(trHTML)</table>"
+                            let trDoc: Document = try SwiftSoup.parse(trHTML)
+                            let tdList: [Element] = try trDoc.select("td").array()
+                            if tdList.count != 10 {
+                                continue
+                            }
+                            rawIds.append(try tdList[1].text())
+                        }
+                        trIndex = trIndex + 1
+                    }
+                    let courses: [Course] = getCoursesByRawIds(rawIds: rawIds)
+                    var timetable: [[Course?]] = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
+                    for course in courses {
+                        if let time = course.time {
+                            for (day, periods) in time.enumerated() {
+                                for period in periods {
+                                    timetable[day][period] = course
+                                }
+                            }
+                        }
+                    }
+                    if !KeychainManager.shared.addOrUpdate(key: "course_confirmed", value: courses) {
+                        alertMessage = "儲存課程清單時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
+                        return
+                    }
+                    if !KeychainManager.shared.addOrUpdate(key: "timetable_confirmed", value: timetable) {
+                        alertMessage = "儲存課表資訊時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
+                        return
+                    }
+                    loadCourseConfirmed()
+                    alertMessage = "成功匯入 \(courses.count) 門課！"
+                }
+            } catch {
+                alertMessage = "解析課表資訊時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
+            }
+        } else {
+            alertMessage = "匯入課表失敗，請稍後再試並協助問題回報"
         }
     }
 }

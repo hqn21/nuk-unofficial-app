@@ -14,7 +14,7 @@ enum Draft {
 }
 
 struct CourseScreen: View {
-    @StateObject private var viewModel: CourseViewModel = CourseViewModel()
+    @EnvironmentObject private var viewModel: CourseViewModel
     @State private var selection: Draft = .course
     
     var body: some View {
