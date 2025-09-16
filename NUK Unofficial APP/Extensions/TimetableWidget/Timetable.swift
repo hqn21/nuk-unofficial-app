@@ -215,7 +215,7 @@ struct Provider: TimelineProvider {
         if let section = section, weekDay >= 0 {
             let course: Course? = timetable[weekDay][section]
             if let course = course {
-                return Color("\(course.getCourseCategory().getColor())")
+                return course.getCourseCategory().getColor()
             }
             return Color("TIMETABLE_LITTLE_DARK_GRAY")
         }
@@ -228,7 +228,7 @@ struct Provider: TimelineProvider {
         if let section = section, weekDay >= 0 {
             let course: Course? = timetable[weekDay][section]
             if let course = course {
-                return Color("\(course.getCourseCategory().getColor())")
+                return course.getCourseCategory().getColor()
             }
             return Color("TIMETABLE_LITTLE_DARK_GRAY")
         }
