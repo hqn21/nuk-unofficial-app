@@ -1,6 +1,6 @@
 //
 //  Action.js
-//  TimetableAction
+//  ScoreAction
 //
 //  Created by Hao-Quan Liu on 2024/11/23.
 //

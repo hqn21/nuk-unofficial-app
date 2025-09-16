@@ -31,7 +31,6 @@
 		35227A422D3FBBAD0009DAA1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */; };
 		354A7A802D4D174D00C0E5F0 /* WeatherPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */; };
 		35580AEE2E77545C0017F735 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1092D41097E00FD7C1B /* KeychainManager.swift */; };
-		35580AF02E7754AF0017F735 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 35580AEF2E7754AF0017F735 /* SwiftSoup */; };
 		3584572E2D56C2B200C41530 /* AuthorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572D2D56C2B200C41530 /* AuthorScreen.swift */; };
 		358457302D5747C400C41530 /* DonationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572F2D5747C400C41530 /* DonationScreen.swift */; };
 		358457342D5747EF00C41530 /* ReferenceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358457332D5747EF00C41530 /* ReferenceScreen.swift */; };
@@ -95,12 +94,14 @@
 		35E471B5283F7E8B0027ABE6 /* NUK Unofficial APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E471B4283F7E8B0027ABE6 /* NUK Unofficial APP.swift */; };
 		35E471B7283F7E8B0027ABE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E471B6283F7E8B0027ABE6 /* ContentView.swift */; };
 		35E471BC283F7E8D0027ABE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E471BB283F7E8D0027ABE6 /* Preview Assets.xcassets */; };
+		35EAB0DC2E78053200B093DC /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1092D41097E00FD7C1B /* KeychainManager.swift */; };
+		35EAB0E02E78064100B093DC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35EAB0DF2E78064100B093DC /* MainInterface.storyboard */; };
+		35EAB0E22E78064400B093DC /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 35EAB0E12E78064400B093DC /* Action.js */; };
 		35F7255D2E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
 		35F7255E2E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
 		35F725602E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
 		35F725612E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
 		35F725652E6B1793002B69CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F725642E6B1793002B69CD /* MainInterface.storyboard */; };
-		35F725672E6B1799002B69CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F725662E6B1799002B69CD /* MainInterface.storyboard */; };
 		35FE70BC2E75635200ACB341 /* CoursePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FE70BB2E75635200ACB341 /* CoursePopupView.swift */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +156,7 @@
 		3500CDE82CF44F310021BDE0 /* TimetableAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimetableAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3500FDF32E34D8C600F4A9AE /* NUK Unofficial APP Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NUK Unofficial APP Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3500FDFF2E34D8E500F4A9AE /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
+		3501BA452E780C4100CA09AF /* ScoreAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScoreAction.entitlements; sourceTree = "<group>"; };
 		350E393E2CF25700007C6E52 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 		351D97C42D51DA9B009700BE /* AirViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirViewModel.swift; sourceTree = "<group>"; };
 		351D97C62D51DB01009700BE /* Air.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air.swift; sourceTree = "<group>"; };
@@ -176,7 +178,6 @@
 		35227A2E2D3FBBAB0009DAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35227A312D3FBBAB0009DAA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
-		35227A3A2D3FBBAD0009DAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		352388CC2E6C906A00ED1A1A /* deploy_testflight.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = deploy_testflight.yml; sourceTree = "<group>"; };
 		354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPopupView.swift; sourceTree = "<group>"; };
@@ -258,9 +259,11 @@
 		35E471B4283F7E8B0027ABE6 /* NUK Unofficial APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NUK Unofficial APP.swift"; sourceTree = "<group>"; };
 		35E471B6283F7E8B0027ABE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		35E471BB283F7E8D0027ABE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		35EAB0DD2E78063100B093DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35EAB0DF2E78064100B093DC /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		35EAB0E12E78064400B093DC /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		35F7255C2E6B170A002B69CD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		35F725642E6B1793002B69CD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		35F725662E6B1799002B69CD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		35FE70BB2E75635200ACB341 /* CoursePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,7 +273,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3500CDE92CF44F310021BDE0 /* UniformTypeIdentifiers.framework in Frameworks */,
-				35580AF02E7754AF0017F735 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,9 +458,11 @@
 		35A4C1062D40D82A00FD7C1B /* ScoreAction */ = {
 			isa = PBXGroup;
 			children = (
+				3501BA452E780C4100CA09AF /* ScoreAction.entitlements */,
+				35EAB0E12E78064400B093DC /* Action.js */,
+				35EAB0DF2E78064100B093DC /* MainInterface.storyboard */,
+				35EAB0DD2E78063100B093DC /* Info.plist */,
 				35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */,
-				35227A3A2D3FBBAD0009DAA1 /* Info.plist */,
-				35F725662E6B1799002B69CD /* MainInterface.storyboard */,
 				35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */,
 			);
 			path = ScoreAction;
@@ -961,7 +965,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35F725672E6B1799002B69CD /* MainInterface.storyboard in Resources */,
+				35EAB0E22E78064400B093DC /* Action.js in Resources */,
+				35EAB0E02E78064100B093DC /* MainInterface.storyboard in Resources */,
 				35227A412D3FBBAD0009DAA1 /* Media.xcassets in Resources */,
 				35F725612E6B170A002B69CD /* Localizable.xcstrings in Resources */,
 			);
@@ -1011,6 +1016,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35EAB0DC2E78053200B093DC /* KeychainManager.swift in Sources */,
 				35227A422D3FBBAD0009DAA1 /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1260,6 +1266,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "NUK Unofficial APP/Extensions/ScoreAction/ScoreAction.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1298,6 +1305,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "NUK Unofficial APP/Extensions/ScoreAction/ScoreAction.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1684,11 +1692,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		35580AEF2E7754AF0017F735 /* SwiftSoup */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 359E20A82E3C85210022D001 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
-			productName = SwiftSoup;
-		};
 		359E20A92E3C85210022D001 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 359E20A82E3C85210022D001 /* XCRemoteSwiftPackageReference "SwiftSoup" */;

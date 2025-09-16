@@ -13,7 +13,8 @@ struct CreditScreen: View {
             Color("GRAY")
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15) {
-                    Text("Hello")
+                    Text("\(KeychainManager.shared.get(key: "action_score_url", type: String.self))")
+                    Text("\(KeychainManager.shared.get(key: "action_score_html", type: String.self))")
                 }
             }
         }

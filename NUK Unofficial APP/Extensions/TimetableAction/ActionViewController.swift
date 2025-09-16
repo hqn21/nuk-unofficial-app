@@ -1,8 +1,8 @@
 //
 //  ActionViewController.swift
-//  ImportTimetable
+//  TimetableAction
 //
-//  Created by Haoquan Liu on 2024/11/25.
+//  Created by Hao-Quan Liu on 2024/11/25.
 //
 
 import UIKit

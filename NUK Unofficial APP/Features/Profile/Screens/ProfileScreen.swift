@@ -23,12 +23,12 @@ struct ProfileScreen: View {
                             .foregroundColor(Color("DARK_GRAY"))
                             .frame(maxWidth: .infinity, alignment: .leading)
                         HStack(spacing: 15) {
-                            NavigationCardView(destination: .course, destinationName: String(localized: "profile.academic.course"))
-                            NavigationCardView(destination: .timetable, destinationName: String(localized: "profile.academic.timetable"))
+                            NavigationCardView(destination: .course, destinationName: String(localized: "profile.academic.course"), enable: true)
+                            NavigationCardView(destination: .timetable, destinationName: String(localized: "profile.academic.timetable"), enable: true)
                         }
                         HStack(spacing: 15) {
-                            NavigationCardView(destination: .score, destinationName: String(localized: "profile.academic.score"))
-                            NavigationCardView(destination: .credit, destinationName: String(localized: "profile.academic.credit"))
+                            NavigationCardView(destination: .score, destinationName: String(localized: "profile.academic.score"), enable: false)
+                            NavigationCardView(destination: .credit, destinationName: String(localized: "profile.academic.credit"), enable: false)
                         }
                         Text("profile.link")
                             .font(.system(size: 14))

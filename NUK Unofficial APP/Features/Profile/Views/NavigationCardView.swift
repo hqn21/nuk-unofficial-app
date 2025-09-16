@@ -9,8 +9,10 @@ import SwiftUI
 
 struct NavigationCardView: View {
     @EnvironmentObject private var navigationManager: NavigationManager
+    @State private var showAlert: Bool = false
     let destination: PathDestination
     let destinationName: String
+    let enable: Bool
     
     var body: some View {
         ZStack {
@@ -31,15 +33,27 @@ struct NavigationCardView: View {
             }
             .padding(10)
         }
+        .alert("\(destinationName)", isPresented: $showAlert,
+            actions: {
+                Button("確認", action: {})
+            },
+            message: {
+                Text("此功能尚未開放")
+            }
+        )
         .onTapGesture {
-            navigationManager.navigate(selection: .profile, pathDestination: destination)
+            if enable {
+                navigationManager.navigate(selection: .profile, pathDestination: destination)
+            } else {
+                showAlert = true
+            }
         }
     }
 }
 
 struct NavigationCardView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationCardView(destination: .timetable, destinationName: "個人課表")
+        NavigationCardView(destination: .timetable, destinationName: "個人課表", enable: true)
             .previewLayout(.sizeThatFits)
             .environmentObject(NavigationManager())
     }

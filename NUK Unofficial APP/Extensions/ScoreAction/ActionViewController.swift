@@ -1,57 +1,66 @@
 //
 //  ActionViewController.swift
-//  ImportScore
+//  ScoreAction
 //
 //  Created by Haoquan Liu on 2024/11/26.
 //
 
 import UIKit
+import Social
 import MobileCoreServices
 import UniformTypeIdentifiers
 
 class ActionViewController: UIViewController {
-
-    @IBOutlet weak var imageView: UIImageView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        // Get the item[s] we're handling from the extension context.
+    // https://stackoverflow.com/questions/70431456/ios-action-extension-cannot-open-containing-app
+    func openApp(param: String) {
+        let scheme = "nukapp://\(param)"
+        guard let appURL = URL(string: scheme) else {
+            print("Invalid URL: \(scheme)")
+            return
+        }
         
-        // For example, look for an image and place it into an image view.
-        // Replace this with something appropriate for the type[s] your extension supports.
-        var imageFound = false
-        for item in self.extensionContext!.inputItems as! [NSExtensionItem] {
-            for provider in item.attachments! {
-                if provider.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
-                    // This is an image. We'll load it, then place it in our image view.
-                    weak var weakImageView = self.imageView
-                    provider.loadItem(forTypeIdentifier: UTType.image.identifier) { (imageURL, error) in
-                        if let imageURL = imageURL as? URL {
-                            Task { @MainActor in
-                                if let strongImageView = weakImageView {
-                                    strongImageView.image = UIImage(data: try! Data(contentsOf: imageURL))
-                                }
-                            }
-                        }
-                    }
-                    
-                    imageFound = true
-                    break
+        // Traverse the responder chain to find an instance of UIApplication
+        var responder = self as UIResponder?
+        responder = (responder as? UIViewController)?.parent
+        
+        while responder != nil && !(responder is UIApplication) {
+            responder = responder?.next
+        }
+        
+        if let application = responder as? UIApplication {
+            // Use the modern open(_:options:completionHandler:) method
+            application.open(appURL, options: [:], completionHandler: { success in
+                if success {
+                    print("Successfully opened app with URL: \(appURL)")
+                } else {
+                    print("Failed to open app with URL: \(appURL)")
                 }
-            }
-            
-            if (imageFound) {
-                // We only handle one image, so stop looking for more.
-                break
-            }
+            })
+        } else {
+            print("UIApplication not found in responder chain.")
         }
     }
 
-    @IBAction func done() {
-        // Return any edited content to the host app.
-        // This template doesn't do anything, so we just echo the passed in items.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // saveHTML
+        let item = extensionContext!.inputItems.first as! NSExtensionItem
+        let propertyList = UTType.propertyList.identifier as String
+        for attachment in item.attachments ?? [] where attachment.hasItemConformingToTypeIdentifier(propertyList) {
+            attachment.loadItem(forTypeIdentifier: propertyList) { (item, error) in
+                guard let dictionary = item as? NSDictionary,
+                      let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
+                      let urlString = results["url"] as? String,
+                      let url = URL(string: urlString),
+                      let urlDomain: String = url.host,
+                      let html: String = results["html"] as? String else {
+                    return
+                }
+                _ = KeychainManager.shared.addOrUpdate(key: "action_score_url", value: urlString)
+                _ = KeychainManager.shared.addOrUpdate(key: "action_score_html", value: html)
+            }
+        }
+        self.openApp(param: "score")
         self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
     }
-
 }
