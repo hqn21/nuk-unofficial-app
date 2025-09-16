@@ -30,6 +30,7 @@ struct NavigationCardView: View {
                     .scaledToFit()
                     .frame(height: 64)
                     .frame(maxWidth: .infinity, alignment: .center)
+                    .grayscale(enable ? 0 : 1)
             }
             .padding(10)
         }
@@ -53,7 +54,7 @@ struct NavigationCardView: View {
 
 struct NavigationCardView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationCardView(destination: .timetable, destinationName: "個人課表", enable: true)
+        NavigationCardView(destination: .timetable, destinationName: "個人課表", enable: false)
             .previewLayout(.sizeThatFits)
             .environmentObject(NavigationManager())
     }
