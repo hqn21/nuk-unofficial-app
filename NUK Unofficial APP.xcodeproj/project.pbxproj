@@ -49,8 +49,6 @@
 		35891A3B2D7344B20039B548 /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A3A2D7344B20039B548 /* TimetableView.swift */; };
 		35891A3D2D73484C0039B548 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A3C2D7348450039B548 /* TimetableViewModel.swift */; };
 		358A1A782E76C6A400A57799 /* CourseCategoryPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A1A772E76C6A400A57799 /* CourseCategoryPopupView.swift */; };
-		35913E4C290956FC00B12D70 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35913E4B290956FC00B12D70 /* KeyChainService.swift */; };
-		35913E4F2909577800B12D70 /* CourseInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35913E4E2909577800B12D70 /* CourseInformation.swift */; };
 		3595C79C2E769E9D0088F3D4 /* CourseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C79B2E769E9D0088F3D4 /* CourseCategoryView.swift */; };
 		359624AE2D56284D00853EB0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624AD2D56284900853EB0 /* MapViewModel.swift */; };
 		359624B02D564D5F00853EB0 /* AnnotationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359624AF2D564D5900853EB0 /* AnnotationItem.swift */; };
@@ -102,6 +100,8 @@
 		35F725602E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
 		35F725612E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
 		35F725652E6B1793002B69CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F725642E6B1793002B69CD /* MainInterface.storyboard */; };
+		35F7B2B32E7907D40053B496 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1092D41097E00FD7C1B /* KeychainManager.swift */; };
+		35F7B2B42E7907DE0053B496 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A262D72D9200039B548 /* Course.swift */; };
 		35FE70BC2E75635200ACB341 /* CoursePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FE70BB2E75635200ACB341 /* CoursePopupView.swift */; };
 /* End PBXBuildFile section */
 
@@ -204,8 +204,6 @@
 		3589B89F2D55EA380019BDAE /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		358A1A772E76C6A400A57799 /* CourseCategoryPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCategoryPopupView.swift; sourceTree = "<group>"; };
 		35910F9D2E69880F00CC32CE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		35913E4B290956FC00B12D70 /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
-		35913E4E2909577800B12D70 /* CourseInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInformation.swift; sourceTree = "<group>"; };
 		35913E5029095A5100B12D70 /* NUK Unofficial APP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "NUK Unofficial APP.entitlements"; sourceTree = "<group>"; };
 		3595C79B2E769E9D0088F3D4 /* CourseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCategoryView.swift; sourceTree = "<group>"; };
 		359624AD2D56284900853EB0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -347,22 +345,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		35913E4A290956EC00B12D70 /* service */ = {
-			isa = PBXGroup;
-			children = (
-				35913E4B290956FC00B12D70 /* KeyChainService.swift */,
-			);
-			path = service;
-			sourceTree = "<group>";
-		};
-		35913E4D2909573D00B12D70 /* struct */ = {
-			isa = PBXGroup;
-			children = (
-				35913E4E2909577800B12D70 /* CourseInformation.swift */,
-			);
-			path = struct;
-			sourceTree = "<group>";
-		};
 		35A4C0F52D40CEF800FD7C1B /* NUK Unofficial APP */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,8 +414,6 @@
 		35A4C1032D40D6FA00FD7C1B /* TimetableWidget */ = {
 			isa = PBXGroup;
 			children = (
-				35913E4D2909573D00B12D70 /* struct */,
-				35913E4A290956EC00B12D70 /* service */,
 				35D842BE28917E53003FB984 /* Timetable.swift */,
 				35D842C028917E56003FB984 /* Assets.xcassets */,
 				35D842C228917E56003FB984 /* Info.plist */,
@@ -1025,9 +1005,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35913E4F2909577800B12D70 /* CourseInformation.swift in Sources */,
+				35F7B2B42E7907DE0053B496 /* Course.swift in Sources */,
+				35F7B2B32E7907D40053B496 /* KeychainManager.swift in Sources */,
 				35D842BF28917E53003FB984 /* Timetable.swift in Sources */,
-				35913E4C290956FC00B12D70 /* KeyChainService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,7 +1347,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1405,7 +1385,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
