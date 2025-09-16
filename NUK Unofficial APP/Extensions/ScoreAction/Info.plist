@@ -7,7 +7,12 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>NSExtensionActivationRule</key>
-			<string>FALSEPREDICATE</string>
+			<dict>
+				<key>NSExtensionActivationSupportsWebPageWithMaxCount</key>
+				<integer>0</integer>
+				<key>NSExtensionActivationSupportsWebURLWithMaxCount</key>
+				<integer>0</integer>
+			</dict>
 			<key>NSExtensionJavaScriptPreprocessingFile</key>
 			<string>Action</string>
 			<key>NSExtensionServiceAllowsFinderPreviewItem</key>
