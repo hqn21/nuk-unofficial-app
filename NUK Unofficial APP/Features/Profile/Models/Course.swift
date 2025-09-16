@@ -241,7 +241,7 @@ struct Course: Codable, Identifiable {
         case "GR":
             return .requiredTogether
         case "CC":
-            switch name[0..<4] {
+            switch name.prefix(4) {
             case "邏輯思維":
                 return .electiveMainThink
             case "哲學基本":
