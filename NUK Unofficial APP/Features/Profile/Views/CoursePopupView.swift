@@ -154,9 +154,6 @@ struct CoursePopupView: View {
                             }
                         }
                         .frame(maxHeight: .infinity, alignment: .top)
-                        .task {
-                            await viewModel.getCourseEnrollment(id: course.id)
-                        }
                     }
                 }
             )
@@ -167,6 +164,9 @@ struct CoursePopupView: View {
                 .foregroundColor(Color("WHITE"))
         )
         .padding(25)
+        .task {
+            await viewModel.getCourseEnrollment(id: course.id)
+        }
     }
 }
 
