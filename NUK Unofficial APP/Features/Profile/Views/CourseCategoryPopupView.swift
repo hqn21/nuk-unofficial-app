@@ -28,38 +28,38 @@ struct CourseCategoryPopupView: View {
                     .foregroundColor(Color("DARK_GRAY"))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
-                HStack(spacing: 10) {
-                    if let requiredCredit = requiredCredit {
-                        Text("需 \(requiredCredit.formatted(.number)) 學分")
-                            .font(.system(size: 12))
-                            .foregroundColor(Color("DARK_GRAY"))
-                            .padding(5)
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor(Color("TAG_GRAY"))
-                            )
-                    }
-                    if let requiredDimension = requiredDimension {
-                        Text("需 \(requiredDimension.formatted(.number)) 向度")
-                            .font(.system(size: 12))
-                            .foregroundColor(Color("DARK_GRAY"))
-                            .padding(5)
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor(Color("TAG_GRAY"))
-                            )
-                    }
-                    if requiredCredit == nil && requiredDimension == nil {
-                        Text("無規定")
-                            .font(.system(size: 12))
-                            .foregroundColor(Color("DARK_GRAY"))
-                            .padding(5)
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor(Color("TAG_GRAY"))
-                            )
-                    }
-                }
+//                HStack(spacing: 10) {
+//                    if let requiredCredit = requiredCredit {
+//                        Text("需 \(requiredCredit.formatted(.number)) 學分")
+//                            .font(.system(size: 12))
+//                            .foregroundColor(Color("DARK_GRAY"))
+//                            .padding(5)
+//                            .background(
+//                                RoundedRectangle(cornerRadius: 8)
+//                                    .foregroundColor(Color("TAG_GRAY"))
+//                            )
+//                    }
+//                    if let requiredDimension = requiredDimension {
+//                        Text("需 \(requiredDimension.formatted(.number)) 向度")
+//                            .font(.system(size: 12))
+//                            .foregroundColor(Color("DARK_GRAY"))
+//                            .padding(5)
+//                            .background(
+//                                RoundedRectangle(cornerRadius: 8)
+//                                    .foregroundColor(Color("TAG_GRAY"))
+//                            )
+//                    }
+//                    if requiredCredit == nil && requiredDimension == nil {
+//                        Text("無規定")
+//                            .font(.system(size: 12))
+//                            .foregroundColor(Color("DARK_GRAY"))
+//                            .padding(5)
+//                            .background(
+//                                RoundedRectangle(cornerRadius: 8)
+//                                    .foregroundColor(Color("TAG_GRAY"))
+//                            )
+//                    }
+//                }
             }
             VStack(alignment: .leading, spacing: 10) {
                 if targetCourses.isEmpty {

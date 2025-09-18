@@ -52,16 +52,16 @@ struct CourseCategoryView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .frame(maxHeight: .infinity, alignment: .center)
                 
-                Text("需 \(requiredCredit == nil ? "--" : String(requiredCredit!.formatted(.number))) 學分")
-                    .font(.system(size: 14))
-                    .foregroundColor(Color("DARK_GRAY"))
-                    .padding(5)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(Color("TAG_GRAY"))
-                    )
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .frame(maxHeight: .infinity, alignment: .bottom)
+//                Text("需 \(requiredCredit == nil ? "--" : String(requiredCredit!.formatted(.number))) 學分")
+//                    .font(.system(size: 14))
+//                    .foregroundColor(Color("DARK_GRAY"))
+//                    .padding(5)
+//                    .background(
+//                        RoundedRectangle(cornerRadius: 8)
+//                            .foregroundColor(Color("TAG_GRAY"))
+//                    )
+//                    .frame(maxWidth: .infinity, alignment: .trailing)
+//                    .frame(maxHeight: .infinity, alignment: .bottom)
             }
             .padding(10)
             .frame(height: 150)
