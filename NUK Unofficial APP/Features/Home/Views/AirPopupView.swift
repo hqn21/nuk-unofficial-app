@@ -13,7 +13,7 @@ struct AirPopupView: View {
     var body: some View {
         VStack(spacing: 10) {
             VStack(spacing: 0) {
-                Text("home.air.title.long")
+                Text("空氣品質")
                     .font(.system(size: 18))
                     .fontWeight(.bold)
                     .foregroundColor(Color("DARK_GRAY"))
@@ -21,9 +21,9 @@ struct AirPopupView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Group {
                     if let air = viewModel.air {
-                        Text(verbatim: "\(viewModel.getDateString(date: air.dateTime))")
+                        Text("\(viewModel.getDateString(date: air.dateTime))")
                     } else {
-                        Text("home.air.error")
+                        Text("目前無法獲取空氣品質")
                     }
                 }
                 .font(.system(size: 14))
@@ -50,13 +50,13 @@ struct AirPopupView: View {
                     HStack(spacing: 5) {
                         Group {
                             if let air = viewModel.air {
-                                Text(verbatim: "\(air.aqi)")
+                                Text("\(air.aqi)")
                             } else {
-                                Text(verbatim: "--")
+                                Text("--")
                             }
                         }
                         .font(.system(size: 14, design: .monospaced))
-                        Text(verbatim: "AQI")
+                        Text("AQI")
                             .font(.system(size: 14, design: .monospaced))
                             .foregroundColor(Color("DARK_GRAY"))
                             .padding(5)
@@ -70,13 +70,13 @@ struct AirPopupView: View {
                     HStack(spacing: 5) {
                         Group {
                             if let air = viewModel.air {
-                                Text(verbatim: "\(air.pm2_5.clean)")
+                                Text("\(air.pm2_5.clean)")
                             } else {
-                                Text(verbatim: "--")
+                                Text("--")
                             }
                         }
                         .font(.system(size: 14, design: .monospaced))
-                        Text(verbatim: "PM2.5")
+                        Text("PM2.5")
                             .font(.system(size: 14, design: .monospaced))
                             .foregroundColor(Color("DARK_GRAY"))
                             .padding(5)
@@ -89,13 +89,13 @@ struct AirPopupView: View {
                     HStack(spacing: 5) {
                         Group {
                             if let air = viewModel.air {
-                                Text(verbatim: "\(air.pm10.clean)")
+                                Text("\(air.pm10.clean)")
                             } else {
-                                Text(verbatim: "--")
+                                Text("--")
                             }
                         }
                         .font(.system(size: 14, design: .monospaced))
-                        Text(verbatim: "PM10")
+                        Text("PM10")
                             .font(.system(size: 14, design: .monospaced))
                             .foregroundColor(Color("DARK_GRAY"))
                             .padding(5)
@@ -108,13 +108,13 @@ struct AirPopupView: View {
                     HStack(spacing: 5) {
                         Group {
                             if let air = viewModel.air {
-                                Text(verbatim: "\(air.so2.clean)")
+                                Text("\(air.so2.clean)")
                             } else {
-                                Text(verbatim: "--")
+                                Text("--")
                             }
                         }
                         .font(.system(size: 14, design: .monospaced))
-                        Text(verbatim: "SO2")
+                        Text("SO2")
                             .font(.system(size: 14, design: .monospaced))
                             .foregroundColor(Color("DARK_GRAY"))
                             .padding(5)
@@ -130,7 +130,7 @@ struct AirPopupView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 VStack(spacing: 10) {
                     HStack(spacing: 5) {
-                        Text(verbatim: "CO")
+                        Text("CO")
                             .font(.system(size: 14, design: .monospaced))
                             .foregroundColor(Color("DARK_GRAY"))
                             .padding(5)
@@ -140,9 +140,9 @@ struct AirPopupView: View {
                             )
                         Group {
                             if let air = viewModel.air {
-                                Text(verbatim: "\(air.co.clean)")
+                                Text("\(air.co.clean)")
                             } else {
-                                Text(verbatim: "--")
+                                Text("--")
                             }
                         }
                         .font(.system(size: 14, design: .monospaced))
@@ -150,7 +150,7 @@ struct AirPopupView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .offset(x: -10)
                     HStack(spacing: 5) {
-                        Text(verbatim: "O3")
+                        Text("O3")
                             .font(.system(size: 14, design: .monospaced))
                             .foregroundColor(Color("DARK_GRAY"))
                             .padding(5)
@@ -160,16 +160,16 @@ struct AirPopupView: View {
                             )
                         Group {
                             if let air = viewModel.air {
-                                Text(verbatim: "\(air.o3.clean)")
+                                Text("\(air.o3.clean)")
                             } else {
-                                Text(verbatim: "--")
+                                Text("--")
                             }
                         }
                         .font(.system(size: 14, design: .monospaced))
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack(spacing: 5) {
-                        Text(verbatim: "NO2")
+                        Text("NO2")
                             .font(.system(size: 14, design: .monospaced))
                             .foregroundColor(Color("DARK_GRAY"))
                             .padding(5)
@@ -179,16 +179,16 @@ struct AirPopupView: View {
                             )
                         Group {
                             if let air = viewModel.air {
-                                Text(verbatim: "\(air.no2.clean)")
+                                Text("\(air.no2.clean)")
                             } else {
-                                Text(verbatim: "--")
+                                Text("--")
                             }
                         }
                         .font(.system(size: 14, design: .monospaced))
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     HStack(spacing: 5) {
-                        Text(verbatim: "NO")
+                        Text("NO")
                             .font(.system(size: 14, design: .monospaced))
                             .foregroundColor(Color("DARK_GRAY"))
                             .padding(5)
@@ -198,9 +198,9 @@ struct AirPopupView: View {
                             )
                         Group {
                             if let air = viewModel.air {
-                                Text(verbatim: "\(air.no.clean)")
+                                Text("\(air.no.clean)")
                             } else {
-                                Text(verbatim: "--")
+                                Text("--")
                             }
                         }
                         .font(.system(size: 14, design: .monospaced))
@@ -212,8 +212,8 @@ struct AirPopupView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
             HStack(alignment: .top, spacing: 0) {
-                Text(verbatim: "※ \(String(localized: "home.air.unit"))：")
-                Text(verbatim: "PM2.5(μg/m³)、PM10(μg/m³)、SO2(ppb)、CO(ppm)、O3(ppb)、NO2(ppb)、NO(ppb)")
+                Text("※ 單位說明：")
+                Text("PM2.5(μg/m³)、PM10(μg/m³)、SO2(ppb)、CO(ppm)、O3(ppb)、NO2(ppb)、NO(ppb)")
             }
             .font(.system(size: 12, design: .monospaced))
             .foregroundColor(Color("DARK_GRAY"))

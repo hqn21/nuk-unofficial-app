@@ -35,22 +35,22 @@ class WeatherViewModel: ObservableObject {
             if let dayDifference = dayDifference {
                 switch dayDifference {
                 case -2:
-                    return String(localized: "common.date.twodaysago")
+                    return "前天"
                 case -1:
-                    return String(localized: "common.date.yesterday")
+                    return "昨天"
                 case 0:
-                    return String(localized: "common.date.today")
+                    return "今天"
                 case 1:
-                    return String(localized: "common.date.tomorrow")
+                    return "明天"
                 case 2:
-                    return String(localized: "common.date.twodayslater")
+                    return "後天"
                 default:
-                    return String(localized: "common.date.dayslater \(dayDifference)")
+                    return "\(dayDifference)天後"
                 }
             }
-            return String(localized: "common.date.daysago 0")
+            return "0天後"
         }
-        return String(localized: "common.date.hour \(hour)")
+        return "\(hour)時"
     }
     
     func getWeatherIcon(dateTime: Date, weather: Int) -> AnyView {

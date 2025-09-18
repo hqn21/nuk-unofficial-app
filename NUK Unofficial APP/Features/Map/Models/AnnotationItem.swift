@@ -9,18 +9,18 @@ import Foundation
 import MapKit
 
 enum AnnotationCategory: String {
-    case youBike = "UBIKE"
-    case building = "BUILDING"
-    case dorm = "ROOM"
+    case youBike = "BikeStationPin"
+    case building = "BuildingPin"
+    case dorm = "DormPin"
     
     var fullName: String {
         switch self {
         case .youBike:
-            return String(localized: "common.youbike.title")
+            return "YouBike 站點"
         case .building:
-            return String(localized: "map.building.title")
+            return "重要建築"
         case .dorm:
-            return String(localized: "map.dorm.title")
+            return "宿舍"
         }
     }
     

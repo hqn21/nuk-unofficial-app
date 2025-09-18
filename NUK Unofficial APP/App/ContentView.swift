@@ -49,7 +49,7 @@ struct ContentView: View {
                     .tabItem {
                         viewModel.getTabIcon(currentSelection: navigationManager.tabSelection, targetSelection: .home)
                             .environment(\.symbolVariants, .none)
-                        Text("home.title")
+                        Text("首頁")
                     }
                     .tag(TabSelection.home)
                 MapScreen()
@@ -57,7 +57,7 @@ struct ContentView: View {
                     .tabItem {
                         viewModel.getTabIcon(currentSelection: navigationManager.tabSelection, targetSelection: .map)
                             .environment(\.symbolVariants, .none)
-                        Text("map.title")
+                        Text("地圖")
                     }
                     .tag(TabSelection.map)
                 ProfileScreen()
@@ -65,14 +65,14 @@ struct ContentView: View {
                     .tabItem {
                         viewModel.getTabIcon(currentSelection: navigationManager.tabSelection, targetSelection: .profile)
                             .environment(\.symbolVariants, .none)
-                        Text("profile.title")
+                        Text("個人")
                     }
                     .tag(TabSelection.profile)
                 InformationScreen()
                     .tabItem {
                         viewModel.getTabIcon(currentSelection: navigationManager.tabSelection, targetSelection: .information)
                             .environment(\.symbolVariants, .none)
-                        Text("information.title")
+                        Text("關於")
                     }
                     .tag(TabSelection.information)
             }
@@ -96,30 +96,18 @@ struct ContentView: View {
             }
         )
         .animation(.spring(), value: popupManager.isPresented())
-        .alert(
-            "NUK Unofficial APP",
-            isPresented: $showWelcomeAlert,
-            actions: {
-                Button("common.general.confirm", action: {
-                    viewModel.setHasDisplayedWelcomeMessage()
-                })
-            },
-            message: {
-                Text("common.general.welcome")
-            }
-        )
-        .alert(
-            "NUK Unofficial APP",
-            isPresented: $showAlert,
-            actions: {
-                Button("確認", action: {
-                    
-                })
-            },
-            message: {
-                Text("\(alertMessage)")
-            }
-        )
+        .alert("NUK Unofficial APP", isPresented: $showWelcomeAlert, actions: {
+            Button("確認", action: {
+                viewModel.setHasDisplayedWelcomeMessage()
+            })
+        }, message: {
+            Text("這款非官方 APP 由高大資工系和藝創系 115 級學生自主開發，希望能不吝嗇前往 App Store 給予我們評分支持，如有遇到問題也可以前往關於頁面的問題回報與我們聯絡，謝謝。")
+        })
+        .alert("NUK Unofficial APP", isPresented: $showAlert, actions: {
+            Button("確認", action: {})
+        }, message: {
+            Text(alertMessage)
+        })
         .onAppear() {
             courseViewModel.loadCourse()
             WidgetCenter.shared.reloadAllTimelines()

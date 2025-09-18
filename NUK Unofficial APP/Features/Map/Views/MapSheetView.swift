@@ -27,7 +27,7 @@ struct MapSheetView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 16)
-                            Text(verbatim: "\(annotationItem.category.fullName)")
+                            Text("\(annotationItem.category.fullName)")
                                 .font(.system(size: 16))
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color("DARK_GRAY"))
@@ -36,7 +36,7 @@ struct MapSheetView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("map.location.info")
+                        Text("地點資訊")
                             .font(.system(size: 14))
                             .fontWeight(.bold)
                             .foregroundColor(Color("DARK_GRAY"))
@@ -45,7 +45,7 @@ struct MapSheetView: View {
                                 RoundedRectangle(cornerRadius: 8)
                                     .foregroundColor(Color("TAG_GRAY"))
                             )
-                        Text(verbatim: "\(annotationItem.description)")
+                        Text("\(annotationItem.description)")
                             .font(.system(size: 16))
                             .fontWeight(.medium)
                             .foregroundColor(Color("DARK_GRAY"))
@@ -57,7 +57,7 @@ struct MapSheetView: View {
                     if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
                         Link(destination: URL(string: "comgooglemaps://?saddr=&daddr=\(annotationItem.coordinate.latitude   ),\(annotationItem.coordinate.longitude)&directionsmode=walking")!, label: {
                             HStack(spacing: 5) {
-                                Text("map.navigation")
+                                Text("導航")
                                     .font(.system(size: 16))
                                     .fontWeight(.bold)
                                 Image(systemName: "figure.walk.circle.fill")
@@ -77,7 +77,7 @@ struct MapSheetView: View {
                             showErrorAlert = true
                         }, label: {
                             HStack(spacing: 5) {
-                                Text("map.navigation")
+                                Text("導航")
                                     .font(.system(size: 16))
                                     .fontWeight(.bold)
                                 Image(systemName: "figure.walk.circle.fill")
@@ -98,7 +98,7 @@ struct MapSheetView: View {
             .frame(maxHeight: .infinity, alignment: .top)
             Divider()
                 .frame(width: .infinity)
-            Text("common.reference")
+            Text("資訊內容請以國立高雄大學官網為準")
                 .font(.system(size: 14))
                 .fontWeight(.regular)
                 .foregroundStyle(Color("DARK_GRAY"))
@@ -106,13 +106,13 @@ struct MapSheetView: View {
         .frame(maxHeight: .infinity, alignment: .top)
         .padding(20)
         .alert(
-            "map.title",
+            "地圖",
             isPresented: $showErrorAlert,
             actions: {
-                Button("common.general.confirm", action: {})
+                Button("確認", action: {})
             },
             message: {
-                Text("map.navigation.error.undefined")
+                Text("您沒有安裝 Google Maps，請確認後重新嘗試。")
             }
         )
     }

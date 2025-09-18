@@ -13,7 +13,7 @@ struct ScoreScreen: View {
             Color("GRAY")
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15) {
-                    Text("Hello")
+                    Text("Hello World")
                 }
             }
         }

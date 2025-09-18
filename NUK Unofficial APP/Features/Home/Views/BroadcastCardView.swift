@@ -18,7 +18,7 @@ struct BroadcastCardView: View {
                 .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
             VStack(spacing: 10) {
                 HStack(spacing: 0) {
-                    Text("home.broadcast.title")
+                    Text("校園公告")
                         .font(.system(size: 18))
                         .fontWeight(.bold)
                         .foregroundColor(Color("DARK_GRAY"))
@@ -46,13 +46,13 @@ struct BroadcastCardView: View {
             .frame(height: 350)
             .padding([.top, .leading, .trailing], 10)
             .alert(
-                "home.broadcast.title",
+                "校園公告",
                 isPresented: $showErrorAlert,
                 actions: {
-                    Button("common.general.confirm", action: {})
+                    Button("確認", action: {})
                 },
                 message: {
-                    Text(verbatim: "\(viewModel.errorMessage ?? String(localized: "common.error.unknown"))")
+                    Text(viewModel.errorMessage ?? "未知錯誤")
                 }
             )
         }

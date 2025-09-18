@@ -15,24 +15,6 @@ struct TimetableScreen: View {
         ZStack(alignment: .top) {
             Color("GRAY")
             VStack(spacing: 0) {
-//                HStack(spacing: 10) {
-//                    Button(action: {
-////                                            getTimetableFromAccount()
-//                    }, label: {
-//                        HStack(spacing: 0) {
-//                            Text("重新取得課表")
-//                                .font(.system(size: 15))
-//                                .foregroundColor(Color("DARK_GRAY"))
-//                                .frame(maxWidth: .infinity, alignment: .center)
-//                        }
-//                        .frame(height: 35)
-//                        .background(
-//                            RoundedRectangle(cornerRadius: 8)
-//                                .foregroundColor(Color("WHITE"))
-//                                .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
-//                        )
-//                    })
-//                }
                 HStack(spacing: 10) {
                     Button(action: {
                         viewModel.resetCourseConfirmed()

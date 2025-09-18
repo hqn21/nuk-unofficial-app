@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "宿舍.png",
+      "filename" : "ubike.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "ubike 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "ubike 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ubike.png",
+      "filename" : "建築.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "建築 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "建築 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

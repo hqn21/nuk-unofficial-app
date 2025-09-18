@@ -22,7 +22,7 @@ struct DonationScreen: View {
                         Divider()
                             .frame(height: 48)
                         HStack(spacing: 10) {
-                            Image("logo")
+                            Image("AppLogo")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 56, height: 56)

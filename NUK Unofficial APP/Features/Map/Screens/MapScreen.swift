@@ -24,13 +24,13 @@ struct MapScreen: View {
                 }
                     .accentColor(Color.blue)
                     .alert(
-                        "map.title",
+                        "地圖",
                         isPresented: $showErrorAlert,
                         actions: {
-                            Button("common.general.confirm", action: {})
+                            Button("確認", action: {})
                         },
                         message: {
-                            Text(verbatim: "\(viewModel.errorMessage ?? String(localized: "common.error.unknown"))")
+                            Text(viewModel.errorMessage ?? "未知錯誤")
                         }
                     )
                     .sheet(isPresented: $viewModel.showSheet, onDismiss: {
@@ -80,7 +80,7 @@ struct MapScreen: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding(15)
             }
-            .navigationTitle("map.title")
+            .navigationTitle("地圖")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear() {
                 viewModel.setYouBikeDescription(youBikes: youBikeViewModel.youBikes)

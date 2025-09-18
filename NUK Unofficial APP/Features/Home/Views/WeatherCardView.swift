@@ -18,7 +18,7 @@ struct WeatherCardView: View {
                 .foregroundColor(Color("WHITE"))
                 .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
             VStack(spacing: 10) {
-                Text("home.weather.title")
+                Text("天氣")
                     .font(.system(size: 18))
                     .fontWeight(.bold)
                     .foregroundColor(Color("DARK_GRAY"))
@@ -44,13 +44,13 @@ struct WeatherCardView: View {
             }
             .padding(10)
             .alert(
-                "home.weather.title.long",
+                "天氣預報",
                 isPresented: $showErrorAlert,
                 actions: {
-                    Button("common.general.confirm", action: {})
+                    Button("確認", action: {})
                 },
                 message: {
-                    Text(verbatim: "\(viewModel.errorMessage ?? String(localized: "common.error.unknown"))")
+                    Text(viewModel.errorMessage ?? "未知錯誤")
                 }
             )
             .onTapGesture {

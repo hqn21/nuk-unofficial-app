@@ -18,7 +18,7 @@ struct YouBikeCardView: View {
                 .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
             VStack(spacing: 10) {
                 HStack(spacing: 0) {
-                    Text("common.youbike.title")
+                    Text("YouBike 站點")
                         .font(.system(size: 18))
                         .fontWeight(.bold)
                         .foregroundColor(Color("DARK_GRAY"))
@@ -58,13 +58,13 @@ struct YouBikeCardView: View {
             }
             .padding(10)
             .alert(
-                "common.youbike.title",
+                "YouBike 站點",
                 isPresented: $showErrorAlert,
                 actions: {
-                    Button("common.general.confirm", action: {})
+                    Button("確認", action: {})
                 },
                 message: {
-                    Text(verbatim: "\(viewModel.errorMessage ?? String(localized: "common.error.unknown"))")
+                    Text(viewModel.errorMessage ?? "未知錯誤")
                 }
             )
         }

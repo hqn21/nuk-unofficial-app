@@ -12,6 +12,7 @@ struct NavigationCardView: View {
     @State private var showAlert: Bool = false
     let destination: PathDestination
     let destinationName: String
+    let destinationImageName: String
     let enable: Bool
     
     var body: some View {
@@ -25,7 +26,7 @@ struct NavigationCardView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color("DARK_GRAY"))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Image("\(destinationName)")
+                Image("\(destinationImageName)")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 64)
@@ -54,7 +55,7 @@ struct NavigationCardView: View {
 
 struct NavigationCardView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationCardView(destination: .timetable, destinationName: "個人課表", enable: false)
+        NavigationCardView(destination: .timetable, destinationName: "個人課表", destinationImageName: "Timetable", enable: false)
             .previewLayout(.sizeThatFits)
             .environmentObject(NavigationManager())
     }

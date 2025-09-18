@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum APIError: Error {
     case invalidURL

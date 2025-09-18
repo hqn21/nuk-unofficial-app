@@ -18,10 +18,10 @@ struct YouBikeStationView: View {
                 .frame(width: 6, height: 28)
                 .foregroundColor(Color("\(viewModel.getAvailableStatus(youBike: youBike).rawValue)"))
             VStack(alignment: .leading, spacing: 0) {
-                Text(verbatim: "\(youBike.name)")
+                Text("\(youBike.name)")
                     .font(.system(size: 16))
                     .foregroundColor(Color("DARK_GRAY"))
-                Text(verbatim: "\(String(localized: "common.youbike.available \(youBike.availableSpace)"))、\(String(localized: "common.youbike.parking \(youBike.parkingSpace - youBike.availableSpace)"))")
+                Text("\(youBike.availableSpace) 輛可借、\(youBike.parkingSpace - youBike.availableSpace) 輛可停")
                     .font(.system(size: 12))
                     .foregroundColor(Color("DARK_GRAY"))
             }

@@ -12,7 +12,7 @@ struct WeatherPopupView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("home.weather.title.long")
+            Text("天氣預報")
                 .font(.system(size: 18))
                 .fontWeight(.bold)
                 .foregroundColor(Color("DARK_GRAY"))

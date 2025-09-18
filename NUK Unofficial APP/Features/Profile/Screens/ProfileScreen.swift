@@ -17,37 +17,37 @@ struct ProfileScreen: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
                         DonationButtonView(goView: true)
-                        Text("profile.academic")
+                        Text("校務系統")
                             .font(.system(size: 14))
                             .fontWeight(.bold)
                             .foregroundColor(Color("DARK_GRAY"))
                             .frame(maxWidth: .infinity, alignment: .leading)
                         HStack(spacing: 15) {
-                            NavigationCardView(destination: .course, destinationName: String(localized: "profile.academic.course"), enable: true)
-                            NavigationCardView(destination: .timetable, destinationName: String(localized: "profile.academic.timetable"), enable: true)
+                            NavigationCardView(destination: .course, destinationName: "課程查詢", destinationImageName: "CourseSearch", enable: true)
+                            NavigationCardView(destination: .timetable, destinationName: "個人課表", destinationImageName: "Timetable", enable: true)
                         }
                         HStack(spacing: 15) {
-                            NavigationCardView(destination: .score, destinationName: String(localized: "profile.academic.score"), enable: false)
-                            NavigationCardView(destination: .credit, destinationName: String(localized: "profile.academic.credit"), enable: false)
+                            NavigationCardView(destination: .score, destinationName: "成績查詢", destinationImageName: "Score", enable: false)
+                            NavigationCardView(destination: .credit, destinationName: "學分分析", destinationImageName: "CreditAnalysis", enable: false)
                         }
-                        Text("profile.link")
+                        Text("快速連結")
                             .font(.system(size: 14))
                             .fontWeight(.bold)
                             .foregroundColor(Color("DARK_GRAY"))
                             .frame(maxWidth: .infinity, alignment: .leading)
                         HStack(spacing: 15) {
-                            LinkCardView(link: "https://course.nuk.edu.tw/Sel/login.asp", linkName: String(localized: "profile.link.course"))
-                            LinkCardView(link: "https://aca.nuk.edu.tw/Student2/login.asp", linkName: String(localized: "profile.link.affair"))
+                            LinkCardView(link: "https://course.nuk.edu.tw/Sel/login.asp", linkName: "選課系統", linkImageName: "CourseSystem")
+                            LinkCardView(link: "https://aca.nuk.edu.tw/Student2/login.asp", linkName: "教務系統", linkImageName: "AcademicSystem")
                         }
                         HStack(spacing: 15) {
-                            LinkCardView(link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: String(localized: "profile.link.dorm"))
-                            LinkCardView(link: "https://stu.nuk.edu.tw/eabsnew/login.asp", linkName: String(localized: "profile.link.leave"))
+                            LinkCardView(link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: "宿舍官網", linkImageName: "Dorm")
+                            LinkCardView(link: "https://stu.nuk.edu.tw/eabsnew/login.asp", linkName: "請假管理", linkImageName: "Leave")
                         }
                     }
                     .padding(15)
                 }
             }
-            .navigationTitle("profile.title")
+            .navigationTitle("個人")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: PathDestination.self) { destination in
                 switch destination {

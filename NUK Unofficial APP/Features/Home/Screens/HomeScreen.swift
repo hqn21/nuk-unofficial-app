@@ -42,7 +42,7 @@ struct HomeScreen: View {
                     }.value
                 }
             }
-            .navigationTitle("home.title")
+            .navigationTitle("首頁")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

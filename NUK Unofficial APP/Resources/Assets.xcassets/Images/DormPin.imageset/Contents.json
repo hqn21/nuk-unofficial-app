@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "rank_2.png",
+      "filename" : "宿舍.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "宿舍 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "宿舍 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

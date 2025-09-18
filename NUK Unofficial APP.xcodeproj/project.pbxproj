@@ -95,10 +95,6 @@
 		35EAB0DC2E78053200B093DC /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1092D41097E00FD7C1B /* KeychainManager.swift */; };
 		35EAB0E02E78064100B093DC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35EAB0DF2E78064100B093DC /* MainInterface.storyboard */; };
 		35EAB0E22E78064400B093DC /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 35EAB0E12E78064400B093DC /* Action.js */; };
-		35F7255D2E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
-		35F7255E2E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
-		35F725602E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
-		35F725612E6B170A002B69CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 35F7255C2E6B170A002B69CD /* Localizable.xcstrings */; };
 		35F725652E6B1793002B69CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F725642E6B1793002B69CD /* MainInterface.storyboard */; };
 		35F7B2B32E7907D40053B496 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1092D41097E00FD7C1B /* KeychainManager.swift */; };
 		35F7B2B42E7907DE0053B496 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35891A262D72D9200039B548 /* Course.swift */; };
@@ -260,7 +256,6 @@
 		35EAB0DD2E78063100B093DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35EAB0DF2E78064100B093DC /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		35EAB0E12E78064400B093DC /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
-		35F7255C2E6B170A002B69CD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		35F725642E6B1793002B69CD /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		35FE70BB2E75635200ACB341 /* CoursePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -406,7 +401,6 @@
 			isa = PBXGroup;
 			children = (
 				35A4C1432D42156F00FD7C1B /* Assets.xcassets */,
-				35F7255C2E6B170A002B69CD /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -929,7 +923,6 @@
 			files = (
 				35227A352D3FBBAB0009DAA1 /* Action.js in Resources */,
 				35F725652E6B1793002B69CD /* MainInterface.storyboard in Resources */,
-				35F725602E6B170A002B69CD /* Localizable.xcstrings in Resources */,
 				35227A382D3FBBAB0009DAA1 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,7 +941,6 @@
 				35EAB0E22E78064400B093DC /* Action.js in Resources */,
 				35EAB0E02E78064100B093DC /* MainInterface.storyboard in Resources */,
 				35227A412D3FBBAD0009DAA1 /* Media.xcassets in Resources */,
-				35F725612E6B170A002B69CD /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,7 +948,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35F7255E2E6B170A002B69CD /* Localizable.xcstrings in Resources */,
 				35D842C128917E56003FB984 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -967,7 +958,6 @@
 			files = (
 				35A4C1A12D421B7300FD7C1B /* LaunchScreen.storyboard in Resources */,
 				35A4C1442D42156F00FD7C1B /* Assets.xcassets in Resources */,
-				35F7255D2E6B170A002B69CD /* Localizable.xcstrings in Resources */,
 				35E471BC283F7E8D0027ABE6 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

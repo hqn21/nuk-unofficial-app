@@ -20,7 +20,7 @@ struct AuthorScreen: View {
                         openSafariHaoQuanLiu = true
                     }, label: {
                         HStack(spacing: 10) {
-                            Image("劉顥權")
+                            Image("Swift")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 48, height: 48)
@@ -28,7 +28,7 @@ struct AuthorScreen: View {
                             Divider()
                                 .frame(height: 32)
                             HStack(spacing: 10) {
-                                Image("男")
+                                Image("Man")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 48, height: 48)
@@ -66,7 +66,7 @@ struct AuthorScreen: View {
                         openSafariZiEnShao = true
                     }, label: {
                         HStack(spacing: 10) {
-                            Image("邵子恩")
+                            Image("Brush")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 48, height: 48)
@@ -74,7 +74,7 @@ struct AuthorScreen: View {
                             Divider()
                                 .frame(height: 32)
                             HStack(spacing: 10) {
-                                Image("女")
+                                Image("Woman")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 48, height: 48)

@@ -21,12 +21,12 @@ struct CourseScreen: View {
         ZStack(alignment: .top) {
             Color("GRAY")
             VStack(spacing: 15) {
-                Picker("profile.academic.course", selection: $selection) {
-                    Text("profile.academic.course.selection")
+                Picker("課程查詢", selection: $selection) {
+                    Text("勾選課程")
                         .tag(Draft.course)
-                    Text("profile.academic.course.timetable")
+                    Text("預覽課表")
                         .tag(Draft.timetable)
-                    Text("profile.academic.course.credit")
+                    Text("學分統計")
                         .tag(Draft.credit)
                 }
                 .pickerStyle(SegmentedPickerStyle())

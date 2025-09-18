@@ -11,6 +11,7 @@ struct LinkCardView: View {
     @State private var openSafari: Bool = false
     let link: String
     let linkName: String
+    let linkImageName: String
     
     var body: some View {
         ZStack {
@@ -23,7 +24,7 @@ struct LinkCardView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color("DARK_GRAY"))
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Image("\(linkName)")
+                Image("\(linkImageName)")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 64)
@@ -42,5 +43,5 @@ struct LinkCardView: View {
 }
 
 #Preview {
-    LinkCardView(link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: "宿舍官網")
+    LinkCardView(link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: "宿舍官網", linkImageName: "Dorm")
 }

@@ -36,17 +36,17 @@ class AirViewModel: ObservableObject {
     }
     
     func getAirIcon(aqi: Int) -> Image {
-        var imageName: String = "AIR_6"
+        var imageName: String = "Air6"
         if aqi < 51 {
-            imageName = "AIR_1"
+            imageName = "Air1"
         } else if aqi < 101 {
-            imageName = "AIR_2"
+            imageName = "Air2"
         } else if aqi < 151 {
-            imageName = "AIR_3"
+            imageName = "Air3"
         } else if aqi < 201 {
-            imageName = "AIR_4"
+            imageName = "Air4"
         } else if aqi < 301 {
-            imageName = "AIR_5"
+            imageName = "Air5"
         }
         return Image("\(imageName)")
     }
