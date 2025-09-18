@@ -79,6 +79,7 @@ struct TimetableScreen: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     ScrollView(.horizontal, showsIndicators: false) {
                         TimetableView(timetableType: viewModel.timetableType, timetable: viewModel.timetableConfirmed)
+                            .padding(.vertical, 5)
                     }
                 }
             }
