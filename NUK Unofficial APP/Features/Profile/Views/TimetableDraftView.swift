@@ -83,15 +83,6 @@ struct TimetableDraftView: View {
                 }
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    
-                }, label: {
-                    Image(systemName: "gearshape.fill")
-                })
-            }
-        }
     }
 }
 

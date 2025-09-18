@@ -187,32 +187,6 @@ struct CourseDraftView: View {
             }
         }
         .padding(.horizontal, 25)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    popupManager.set(popup: AnyView(
-                        CourseInfoPopupView()
-                            .environmentObject(viewModel)
-                    ))
-                }, label: {
-                    ZStack(alignment: .topTrailing) {
-                        Image(systemName: "gearshape.fill")
-                        if viewModel.hasUpdate {
-                            Text("!")
-                                .font(.caption2)
-                                .foregroundColor(Color("WHITE"))
-                                .padding(5)
-                                .background(Color("YELLOW"))
-                                .clipShape(Circle())
-                                .padding(2)
-                                .background(Color("WHITE"))
-                                .clipShape(Circle())
-                                .offset(x: 7, y: -11)
-                        }
-                    }
-                })
-            }
-        }
     }
 }
 
