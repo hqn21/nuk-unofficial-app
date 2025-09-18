@@ -109,7 +109,6 @@ struct ContentView: View {
             Text(alertMessage)
         })
         .onAppear() {
-            courseViewModel.loadCourse()
             WidgetCenter.shared.reloadAllTimelines()
             if !viewModel.hasDisplayedWelcomeMessage() {
                 showWelcomeAlert = true

@@ -94,6 +94,11 @@ struct TimetableScreen: View {
                     Text("\(viewModel.alertMessage ?? "未知錯誤")")
                 }
             )
+            .task {
+                await viewModel.getCourseIfNeeded()
+                await viewModel.getProgramIfNeeded()
+                await viewModel.getDepartmentIfNeeded()
+            }
             .onAppear() {
                 viewModel.loadCourseConfirmed()
                 viewModel.loadTimetableType()

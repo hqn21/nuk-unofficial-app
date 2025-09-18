@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileScreen: View {
     @EnvironmentObject var navigationManager: NavigationManager
+    @EnvironmentObject var viewModel: CourseViewModel
     
     var body: some View {
         NavigationStack(path: $navigationManager.profileNavigationPath) {
@@ -46,6 +47,23 @@ struct ProfileScreen: View {
                     }
                     .padding(15)
                 }
+            }
+            .alert(
+                "個人",
+                isPresented: .constant(viewModel.alertMessage != nil),
+                actions: {
+                    Button("確認", action: {
+                        viewModel.alertMessage = nil
+                    })
+                },
+                message: {
+                    Text("\(viewModel.alertMessage ?? "未知錯誤")")
+                }
+            )
+            .task {
+                await viewModel.getCourseIfNeeded()
+                await viewModel.getProgramIfNeeded()
+                await viewModel.getDepartmentIfNeeded()
             }
             .navigationTitle("個人")
             .navigationBarTitleDisplayMode(.inline)

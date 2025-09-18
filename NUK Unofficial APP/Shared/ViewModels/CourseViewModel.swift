@@ -216,16 +216,6 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
-    func loadCourse() {
-        let courseFromKeychain: [Course]? = KeychainManager.shared.get(key: "course", type: [Course].self)
-        if let courseFromKeychain = courseFromKeychain {
-            course = courseFromKeychain
-        } else {
-            course = []
-        }
-    }
-    
-    @MainActor
     func resetCourseSelected() {
         if !KeychainManager.shared.delete(key: "course_selected") || !KeychainManager.shared.delete(key: "timetable_draft") {
             alertMessage = "清除勾選課程資訊時發生了錯誤"
