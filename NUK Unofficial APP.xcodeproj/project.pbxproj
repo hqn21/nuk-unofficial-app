@@ -84,6 +84,7 @@
 		35CB55292D795D2A00FFCAA5 /* TimetableDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */; };
 		35CB552B2D795D4800FFCAA5 /* CreditDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */; };
 		35CB552D2D7960F500FFCAA5 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */; };
+		35D433332E7C1C17006D31FD /* TimetablePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D433322E7C1C17006D31FD /* TimetablePopup.swift */; };
 		35D842BA28917E53003FB984 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D842B928917E53003FB984 /* WidgetKit.framework */; };
 		35D842BC28917E53003FB984 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D842BB28917E53003FB984 /* SwiftUI.framework */; };
 		35D842BF28917E53003FB984 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D842BE28917E53003FB984 /* Timetable.swift */; };
@@ -235,6 +236,7 @@
 		35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDraftView.swift; sourceTree = "<group>"; };
 		35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditDraftView.swift; sourceTree = "<group>"; };
 		35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		35D433322E7C1C17006D31FD /* TimetablePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetablePopup.swift; sourceTree = "<group>"; };
 		35D4C1B62E3CB71800CB0CA4 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		35D6B8E82E6A1BAD00E54458 /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
 		35D842B728917E52003FB984 /* TimetableWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimetableWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -565,6 +567,7 @@
 				35FE70BB2E75635200ACB341 /* CoursePopupView.swift */,
 				3595C79B2E769E9D0088F3D4 /* CourseCategoryView.swift */,
 				358A1A772E76C6A400A57799 /* CourseCategoryPopupView.swift */,
+				35D433322E7C1C17006D31FD /* TimetablePopup.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1008,6 +1011,7 @@
 				35A4C10A2D41098300FD7C1B /* KeychainManager.swift in Sources */,
 				35CB552D2D7960F500FFCAA5 /* CourseViewModel.swift in Sources */,
 				35A4C13E2D4206E500FD7C1B /* MapScreen.swift in Sources */,
+				35D433332E7C1C17006D31FD /* TimetablePopup.swift in Sources */,
 				35CB55292D795D2A00FFCAA5 /* TimetableDraftView.swift in Sources */,
 				351D97DD2D54FF94009700BE /* BroadcastViewModel.swift in Sources */,
 				35A4C1A72D42767800FD7C1B /* WeatherCardView.swift in Sources */,

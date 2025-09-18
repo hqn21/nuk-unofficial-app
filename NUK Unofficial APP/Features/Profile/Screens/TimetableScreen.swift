@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TimetableScreen: View {
+    @EnvironmentObject private var popupManager: PopupManager
     @EnvironmentObject private var viewModel: CourseViewModel
     let timetableTypeString: [String] = ["完整", "簡略"]
     
@@ -103,6 +104,19 @@ struct TimetableScreen: View {
             .onAppear() {
                 viewModel.loadCourseConfirmed()
                 viewModel.loadTimetableType()
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    popupManager.set(popup: AnyView(
+                        TimetablePopup()
+                    ))
+                }, label: {
+                    ZStack(alignment: .topTrailing) {
+                        Image(systemName: "questionmark.circle.fill")
+                    }
+                })
             }
         }
         .navigationTitle("個人課表")

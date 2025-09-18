@@ -117,8 +117,9 @@ struct ContentView: View {
         .onOpenURL { url in
             let param: String = String(url.absoluteString.dropFirst(9))
             if param == "timetable" {
+                courseViewModel.openSafari = false
                 navigationManager.tabSelection = .profile
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     navigationManager.navigate(selection: .profile, pathDestination: .timetable)
                     self.alertMessage = courseViewModel.importTimetable()
                     self.showAlert = true

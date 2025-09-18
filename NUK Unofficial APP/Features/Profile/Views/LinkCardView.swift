@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LinkCardView: View {
-    @State private var openSafari: Bool = false
+    @EnvironmentObject var viewModel: CourseViewModel
     let link: String
     let linkName: String
     let linkImageName: String
@@ -32,9 +32,9 @@ struct LinkCardView: View {
             }
             .padding(10)
             .onTapGesture {
-                openSafari = true
+                viewModel.openSafari = true
             }
-            .fullScreenCover(isPresented: $openSafari, content: {
+            .fullScreenCover(isPresented: $viewModel.openSafari, content: {
                 SafariView(url: URL(string: "\(link)")!)
                     .edgesIgnoringSafeArea(.all)
             })
