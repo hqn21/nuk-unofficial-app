@@ -51,8 +51,8 @@ class ActionViewController: UIViewController {
                 guard let dictionary = item as? NSDictionary,
                       let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                       let urlString = results["url"] as? String,
-                      let url = URL(string: urlString),
-                      let urlDomain: String = url.host,
+//                      let url = URL(string: urlString),
+//                      let urlDomain: String = url.host,
                       let html: String = results["html"] as? String else {
                     return
                 }
