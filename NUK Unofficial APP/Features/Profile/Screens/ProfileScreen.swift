@@ -10,6 +10,9 @@ import SwiftUI
 struct ProfileScreen: View {
     @EnvironmentObject var navigationManager: NavigationManager
     @EnvironmentObject var viewModel: CourseViewModel
+    @State private var openAcademicSystem: Bool = false
+    @State private var openDorm: Bool = false
+    @State private var openLeave: Bool = false
     
     var body: some View {
         NavigationStack(path: $navigationManager.profileNavigationPath) {
@@ -37,12 +40,12 @@ struct ProfileScreen: View {
                             .foregroundColor(Color("DARK_GRAY"))
                             .frame(maxWidth: .infinity, alignment: .leading)
                         HStack(spacing: 15) {
-                            LinkCardView(link: "https://course.nuk.edu.tw/Sel/login.asp", linkName: "選課系統", linkImageName: "CourseSystem")
-                            LinkCardView(link: "https://aca.nuk.edu.tw/Student2/login.asp", linkName: "教務系統", linkImageName: "AcademicSystem")
+                            LinkCardView(isOpen: $viewModel.openCourseSystem, link: "https://course.nuk.edu.tw/Sel/login.asp", linkName: "選課系統", linkImageName: "CourseSystem")
+                            LinkCardView(isOpen: $openAcademicSystem, link: "https://aca.nuk.edu.tw/Student2/login.asp", linkName: "教務系統", linkImageName: "AcademicSystem")
                         }
                         HStack(spacing: 15) {
-                            LinkCardView(link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: "宿舍官網", linkImageName: "Dorm")
-                            LinkCardView(link: "https://stu.nuk.edu.tw/eabsnew/login.asp", linkName: "請假管理", linkImageName: "Leave")
+                            LinkCardView(isOpen: $openDorm, link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: "宿舍官網", linkImageName: "Dorm")
+                            LinkCardView(isOpen: $openLeave, link: "https://stu.nuk.edu.tw/eabsnew/login.asp", linkName: "請假管理", linkImageName: "Leave")
                         }
                     }
                     .padding(15)

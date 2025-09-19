@@ -27,7 +27,7 @@ class CourseViewModel: ObservableObject {
     @Published var courseConfirmed: [Course] = []
     @Published var timetableConfirmed: [[Course?]] = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
     @Published var timetableType: TimetableType = .normal
-    @Published var openSafari: Bool = false
+    @Published var openCourseSystem: Bool = false
     
     @MainActor
     func checkUpdate() async -> Bool {

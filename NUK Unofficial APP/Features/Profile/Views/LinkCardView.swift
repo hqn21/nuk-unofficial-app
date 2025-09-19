@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LinkCardView: View {
     @EnvironmentObject var viewModel: CourseViewModel
+    @Binding var isOpen: Bool
     let link: String
     let linkName: String
     let linkImageName: String
@@ -32,10 +33,10 @@ struct LinkCardView: View {
             }
             .padding(10)
             .onTapGesture {
-                viewModel.openSafari = true
+                isOpen = true
             }
-            .fullScreenCover(isPresented: $viewModel.openSafari, content: {
-                SafariView(url: URL(string: "\(link)")!)
+            .fullScreenCover(isPresented: $isOpen, content: {
+                SafariView(url: URL(string: link)!)
                     .edgesIgnoringSafeArea(.all)
             })
         }
@@ -43,5 +44,6 @@ struct LinkCardView: View {
 }
 
 #Preview {
-    LinkCardView(link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: "宿舍官網", linkImageName: "Dorm")
+    @Previewable @State var isOpen: Bool = false
+    LinkCardView(isOpen: $isOpen, link: "https://sa.nuk.edu.tw/p/403-1009-419-1.php?Lang=zh-tw", linkName: "宿舍官網", linkImageName: "Dorm")
 }
