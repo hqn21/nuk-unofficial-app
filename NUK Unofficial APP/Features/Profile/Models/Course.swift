@@ -205,13 +205,14 @@ struct Course: Codable, Identifiable {
         if time == nil {
             return "未公佈"
         }
-        let days: [String] = ["一", "二", "三", "四", "五", "六", "日"]
+        let dayString: [String] = ["一", "二", "三", "四", "五", "六", "日"]
+        let periodString: [String] = ["X", "1", "2", "3", "4", "Y", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
         var timeString = ""
         for (idx, periods) in time!.enumerated() {
             if periods.isEmpty {
                 continue
             }
-            timeString = "\(timeString)\(days[idx])\(periods.map { String($0) }.joined(separator: ","))"
+            timeString = "\(timeString)\(dayString[idx])\(periods.map { periodString.indices.contains($0) ? periodString[$0] : "?" }.joined(separator: ","))"
         }
         return timeString
     }
