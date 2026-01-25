@@ -50,6 +50,7 @@ struct CourseTests {
         #expect(course.time == [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [13, 14]])
         #expect(course.teacher == "test_teacher")
         #expect(course.note == "test_note")
+        #expect(course.getTimeString() == "一1,2二3,4三Y,5四6,7五8,9六10,11日12,13")
     }
     
     @Test func save_to_keychain() {
