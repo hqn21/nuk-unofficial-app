@@ -11,6 +11,7 @@ import MessageUI
 struct InformationScreen: View {
     @EnvironmentObject private var navigationManager: NavigationManager
     @StateObject private var viewModel: InformationViewModel = InformationViewModel()
+    @State private var openGithub: Bool = false
     @State private var openPolicy: Bool = false
     @State private var openCalendar: Bool = false
     @State private var openMail: Bool = false
@@ -45,6 +46,15 @@ struct InformationScreen: View {
                                 Text("\(version) (\(buildVersion))")
                                     .foregroundStyle(Color("FOOTER"))
                             }
+                            Button(action: {
+                                openGithub = true
+                            }, label: {
+                                HStack {
+                                    Text("開源專案")
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                }
+                            })
                             Button(action: {
                                 navigationManager.navigate(selection: .information, pathDestination: .reference)
                             }, label: {
@@ -127,6 +137,10 @@ struct InformationScreen: View {
                             })
                         }
                     }
+                    .fullScreenCover(isPresented: $openGithub, content: {
+                        SafariView(url: URL(string: "https://github.com/hqn21/nuk-unofficial-app")!)
+                            .edgesIgnoringSafeArea(.all)
+                    })
                     .fullScreenCover(isPresented: $openPolicy, content: {
                         SafariView(url: URL(string: "https://nukapp.haoquan.me/policy")!)
                             .edgesIgnoringSafeArea(.all)
