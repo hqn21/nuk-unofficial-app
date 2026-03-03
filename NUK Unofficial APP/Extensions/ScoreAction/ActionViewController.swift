@@ -2,7 +2,7 @@
 //  ActionViewController.swift
 //  ScoreAction
 //
-//  Created by Haoquan Liu on 2024/11/26.
+//  Created by Hao-Quan Liu on 2024/11/26.
 //
 
 import UIKit
