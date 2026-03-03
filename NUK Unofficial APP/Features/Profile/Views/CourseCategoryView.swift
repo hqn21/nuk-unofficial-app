@@ -7,20 +7,45 @@
 
 import SwiftUI
 
-struct CourseCategoryView: View {
+struct CourseCategoryView<T: CreditCategorizable>: View {
     @EnvironmentObject private var viewModel: CourseViewModel
     @EnvironmentObject private var popupManager: PopupManager
-    @State var targetCourses: [Course] = []
-    @State var targetCoursesCredit: Double = 0
-    let courses: [Course]
+    private var targetItems: [T] {
+        if courseCategory == .all {
+            return items
+        } else {
+            return items.filter { $0.getCourseCategory().getParent() == courseCategory }
+        }
+    }
+    private var targetCredit: Double {
+        targetItems.reduce(0) { $0 + $1.credit }
+    }
+    let items: [T]
     let courseCategory: CourseCategory
-    let requiredCredit: Double? = nil
-    let requiredDimension: Int? = nil
+    let popupBuilder: (CourseCategory, [T]) -> AnyView
+//    let requiredCredit: Double? = nil
+//    let requiredDimension: Int? = nil
+    
+    init(courses: [Course], courseCategory: CourseCategory) where T == Course {
+            self.items = courses
+            self.courseCategory = courseCategory
+            self.popupBuilder = { category, filtered in
+                AnyView(CourseCategoryPopupView(courseCategory: category, targetCourses: filtered))
+            }
+        }
+        
+    init(grades: [Grade], courseCategory: CourseCategory) where T == Grade {
+        self.items = grades
+        self.courseCategory = courseCategory
+        self.popupBuilder = { category, filtered in
+            AnyView(EmptyView()) // GradeCategoryPopupView(courseCategory: category, targetGrades: filtered)
+        }
+    }
     
     var body: some View {
         Button(action: {
             popupManager.set(popup: AnyView(
-                CourseCategoryPopupView(courseCategory: courseCategory, targetCourses: targetCourses)
+                popupBuilder(courseCategory, targetItems)
                     .environmentObject(viewModel)
             ))
         }, label: {
@@ -39,7 +64,7 @@ struct CourseCategoryView: View {
                 .frame(maxHeight: .infinity, alignment: .top)
                 
                 HStack(alignment: .firstTextBaseline, spacing: 5) {
-                    Text("\(targetCoursesCredit.formatted(.number))")
+                    Text("\(targetCredit.formatted(.number))")
                         .font(.system(size: 40, design: .monospaced))
                         .foregroundColor(Color("DARK_GRAY"))
                         .frame(maxWidth: .infinity, alignment: .trailing)
@@ -71,23 +96,6 @@ struct CourseCategoryView: View {
                     .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
             )
         })
-        .onAppear() {
-            targetCourses = []
-            targetCoursesCredit = 0
-            if courseCategory == .all {
-                targetCourses = courses
-                for course in courses {
-                    targetCoursesCredit += course.credit
-                }
-            } else {
-                for course in courses {
-                    if course.getCourseCategory().getParent() == courseCategory {
-                        targetCourses.append(course)
-                        targetCoursesCredit += course.credit
-                    }
-                }
-            }
-        }
     }
 }
 
