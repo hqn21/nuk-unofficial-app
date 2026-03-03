@@ -111,6 +111,7 @@ extension CourseCategory {
 
 protocol CreditCategorizable {
     var credit: Double { get }
+    var countableCredit: Double { get }
     func getCourseCategory() -> CourseCategory
 }
 
@@ -129,6 +130,7 @@ struct Course: Codable, Identifiable, CreditCategorizable {
     let time: [[Int]]?
     let teacher: String?
     let note: String?
+    var countableCredit: Double { credit }
     
     init(id: String,
         programId: String,

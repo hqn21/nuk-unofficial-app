@@ -18,7 +18,7 @@ struct CourseCategoryView<T: CreditCategorizable>: View {
         }
     }
     private var targetCredit: Double {
-        targetItems.reduce(0) { $0 + $1.credit }
+        targetItems.reduce(0) { $0 + $1.countableCredit }
     }
     let items: [T]
     let courseCategory: CourseCategory

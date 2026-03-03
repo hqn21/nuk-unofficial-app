@@ -17,6 +17,7 @@ struct Grade: Codable, Identifiable, CreditCategorizable {
     let credit: Double
     let midterm: Int?
     let final: Int?
+    var countableCredit: Double { isPassed() ? credit : 0 }
     
     func getCourseCategory() -> CourseCategory {
         switch departmentId {
