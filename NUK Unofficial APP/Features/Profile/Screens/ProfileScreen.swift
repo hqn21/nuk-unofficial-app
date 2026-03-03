@@ -98,4 +98,5 @@ struct ProfileScreen: View {
 #Preview {
     ProfileScreen()
         .environmentObject(NavigationManager())
+        .environmentObject(CourseViewModel())
 }
