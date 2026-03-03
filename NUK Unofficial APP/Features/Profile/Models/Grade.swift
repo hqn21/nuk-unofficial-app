@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Grade: Codable, Identifiable {
+struct Grade: Codable, Identifiable, CreditCategorizable {
     let id: UUID
     let departmentId: String
     let name: String
