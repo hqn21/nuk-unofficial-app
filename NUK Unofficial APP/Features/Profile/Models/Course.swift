@@ -109,7 +109,12 @@ extension CourseCategory {
     }
 }
 
-struct Course: Codable, Identifiable {
+protocol CreditCategorizable {
+    var credit: Double { get }
+    func getCourseCategory() -> CourseCategory
+}
+
+struct Course: Codable, Identifiable, CreditCategorizable {
     let id: String
     let programId: String
     let departmentId: String
