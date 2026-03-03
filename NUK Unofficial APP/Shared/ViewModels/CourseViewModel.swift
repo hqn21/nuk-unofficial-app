@@ -28,6 +28,7 @@ class CourseViewModel: ObservableObject {
     @Published var timetableConfirmed: [[Course?]] = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
     @Published var timetableType: TimetableType = .normal
     @Published var openCourseSystem: Bool = false
+    @Published var transcriptConfirmed: Transcript? = nil
     
     @MainActor
     func checkUpdate() async -> Bool {
@@ -217,6 +218,16 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
+    func loadTranscriptConfirmed() {
+        let transcriptConfirmedFromKeychain: Transcript? = KeychainManager.shared.get(key: "transcript_confirmed", type: Transcript.self)
+        if let transcriptConfirmedFromKeychain = transcriptConfirmedFromKeychain {
+            transcriptConfirmed = transcriptConfirmedFromKeychain
+        } else {
+            transcriptConfirmed = nil
+        }
+    }
+    
+    @MainActor
     func resetCourseSelected() {
         if !KeychainManager.shared.delete(key: "course_selected") || !KeychainManager.shared.delete(key: "timetable_draft") {
             alertMessage = "清除勾選課程資訊時發生了錯誤"
@@ -366,6 +377,51 @@ class CourseViewModel: ObservableObject {
         return courses
     }
     
+    func getSemesterList(semesterGrades: [SemesterGrade]) -> [Semester] {
+        var semesters: [Semester] = []
+        for semesterGrade in semesterGrades {
+            semesters.append(semesterGrade.semester)
+        }
+        semesters.sort {
+            if $0.year != $1.year { return $0.year > $1.year }
+            return $0.term > $1.term
+        }
+        return semesters
+    }
+    
+    func getSemesterName(semester: Semester) -> String {
+        let termName: [Int: String] = [1: "第一學期", 2: "第二學期", 3: "暑修"]
+        return "\(semester.year) 學年度\(termName[semester.term] ?? "未知學期")"
+    }
+    
+    func getSemesterGrade(semester: Semester?) -> SemesterGrade? {
+        if let transcriptConfirmed = transcriptConfirmed, let semester = semester {
+            return transcriptConfirmed.semesterGrades.first {
+                $0.semester.year == semester.year && $0.semester.term == semester.term
+            }
+        } else {
+            return nil
+        }
+    }
+    
+    func getCompletedCredit(grades: [Grade]) -> Double {
+        var completedCredit: Double = 0
+        for grade in grades {
+            if grade.isPassed() {
+                completedCredit += grade.credit
+            }
+        }
+        return completedCredit
+    }
+    
+    func getTotalCredit(grades: [Grade]) -> Double {
+        var totalCredit: Double = 0
+        for grade in grades {
+            totalCredit += grade.credit
+        }
+        return totalCredit
+    }
+    
     @MainActor
     func importTimetable() -> String {
         let timetableURL: String? = KeychainManager.shared.get(key: "action_timetable_url", type: String.self)
@@ -427,6 +483,96 @@ class CourseViewModel: ObservableObject {
             }
         } else {
             return "匯入課表失敗，請稍後再試並協助問題回報"
+        }
+    }
+    
+    @MainActor
+    func importScore() -> String {
+        let scoreURL: String? = KeychainManager.shared.get(key: "action_score_url", type: String.self)
+        let scoreHTML: String? = KeychainManager.shared.get(key: "action_score_html", type: String.self)
+        if let _ = scoreURL, let scoreHTML = scoreHTML {
+            do {
+                let doc: Document = try SwiftSoup.parse(scoreHTML)
+                let fontList: [Element] = try doc.select("font").array()
+                
+                if(fontList.count < 1) {
+                    return "取得的資訊不包含狀態訊息，請稍後再嘗試並協助問題回報，謝謝"
+                }
+                
+                let alert: String? = try fontList[0].text()
+                switch alert {
+                case "您的連線已逾時，請重新登錄後再執行本系統！":
+                    return "您的帳號或密碼錯誤，請確認後再重新嘗試，謝謝"
+                case "目前無您所選擇學年、學期的選課資料，請確認。如有問題請洽教務處！":
+                    return "找不到您在該學年度的學期成績，請確認後再重新嘗試，謝謝"
+                default:
+                    var semesterGrades: [SemesterGrade] = []
+                    let semesterHeaders: [Element] = try doc.select("font[color=#0000FF] > b").array()
+                    let courseTables: [Element] = try doc.select("table[border=1]").array()
+                    let summaryTables: [Element] = try doc.select("table[border=0][style*=color: #800000]:not(:contains(學習成效期中預警))").array()
+                    let cumulativeSummaryTable: Element? = try doc.select("table[border=0][style*=color: #800080][cellpadding=3]").array().first
+                    let profileTable: Element? = try doc.select("table[border=0][style*=color: #800080][cellpadding=2]").array().first
+                    for (index, header) in semesterHeaders.enumerated() {
+                        let numbers = try header.text().matches(of: /\d+/).map { Int($0.output) }
+                        if numbers.count != 2 {
+                            continue
+                        }
+                        let semester: Semester = Semester(id: UUID(), year: numbers[0]!, term: numbers[1]!)
+                        var semesterGrade: SemesterGrade = SemesterGrade(id: UUID(), semester: semester, totalCredit: 0, completedCredit: 0, grades: [])
+                        // Course
+                        let courseTable: Element = courseTables[index]
+                        let courseRows: Elements = try courseTable.select("tr")
+                        for i in 1..<courseRows.count {
+                            let cells: Elements = try courseRows.get(i).select("td")
+                            let rawId: String = try cells.get(0).text().trimmingCharacters(in: .whitespaces)
+                            let splitIndex = rawId.index(rawId.endIndex, offsetBy: -4)
+                            let departmentId = String(rawId[..<splitIndex])
+                            let courseCode: String = String(rawId[splitIndex...])
+                            let name: String = try cells.get(1).text().trimmingCharacters(in: .whitespaces)
+                            let credit: Double = try Double(cells.get(2).text().trimmingCharacters(in: .whitespaces)) ?? 0
+                            let courseType: String = try cells.get(3).text().trimmingCharacters(in: .whitespaces) == "必修" ? "必" : "選"
+                            let midterm: Int? = try Int(cells.get(4).text().trimmingCharacters(in: .whitespaces))
+                            let final: Int? = try Int(cells.get(5).text().trimmingCharacters(in: .whitespaces))
+                            let grade: Grade = Grade(id: UUID(), departmentId: departmentId, name: name, courseCode: courseCode, courseType: courseType, credit: credit, midterm: midterm, final: final)
+                            semesterGrade.grades.append(grade)
+                        }
+                        // Summary
+                        let summaryTable: Element = summaryTables[index]
+                        let cells: Elements = try summaryTable.select("td")
+                        semesterGrade.totalCredit = try cells.get(0).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        semesterGrade.completedCredit = try cells.get(1).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        semesterGrade.averageScore = try cells.get(2).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        semesterGrade.averageGPA = try cells.get(3).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        semesterGrade.classSize = try cells.get(5).text().matches(of: /：([\d.]+)/).first.map { Int($0.1)! }
+                        semesterGrade.rank = try cells.get(4).text().matches(of: /：([\d.]+)/).first.map { Int($0.1)! }
+                        semesterGrade.rankPercentage = try cells.get(6).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        semesterGrades.append(semesterGrade)
+                    }
+                    var transcript: Transcript = Transcript(semesterGrades: semesterGrades)
+                    if let cumulativeSummaryTable = cumulativeSummaryTable {
+                        let cells: Elements = try cumulativeSummaryTable.select("td")
+                        transcript.totalCredit = try cells.get(1).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        transcript.completedCredit = try cells.get(2).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        transcript.averageScore = try cells.get(3).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        transcript.averageGPA = try cells.get(4).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                        transcript.rank = try cells.get(5).text().matches(of: /：([\d.]+)/).first.map { Int($0.1)! }
+                        transcript.rankPercentage = try cells.get(6).text().matches(of: /：([\d.]+)/).first.map { Double($0.1)! }
+                    }
+                    if let profileTable = profileTable {
+                        let cells: Elements = try profileTable.select("td")
+                        transcript.studentId = try cells.get(2).text().matches(of: /：([A-Za-z0-9]+)/).first.map { String($0.1) }
+                    }
+                    if !KeychainManager.shared.addOrUpdate(key: "transcript_confirmed", value: transcript) {
+                        return "儲存成績單時發生了錯誤，請稍後再嘗試並協助問題回報，謝謝"
+                    }
+                    loadTranscriptConfirmed()
+                    return "成功匯入 \(transcript.semesterGrades.count) 個學期的成績！"
+                }
+            } catch {
+                return "解析成績資訊時發生了錯誤，請稍候再嘗試並協助問題回報，謝謝"
+            }
+        } else {
+            return "匯入成績失敗，請稍後再試並協助問題回報"
         }
     }
 }

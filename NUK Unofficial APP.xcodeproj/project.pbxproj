@@ -29,6 +29,8 @@
 		35227A382D3FBBAB0009DAA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35227A312D3FBBAB0009DAA1 /* Media.xcassets */; };
 		35227A412D3FBBAD0009DAA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */; };
 		35227A422D3FBBAD0009DAA1 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */; };
+		352998B92F557850006D5193 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352998B82F55784E006D5193 /* Semester.swift */; };
+		352998BB2F559B90006D5193 /* GradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352998BA2F559B90006D5193 /* GradeView.swift */; };
 		354A7A802D4D174D00C0E5F0 /* WeatherPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */; };
 		35580AEE2E77545C0017F735 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4C1092D41097E00FD7C1B /* KeychainManager.swift */; };
 		3584572E2D56C2B200C41530 /* AuthorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584572D2D56C2B200C41530 /* AuthorScreen.swift */; };
@@ -80,11 +82,14 @@
 		35A8588D2CF5FE8B00875B3F /* ScoreAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 35A858802CF5FE8B00875B3F /* ScoreAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		35AA3C1A2E76E63100762A7D /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AA3C192E76E62C00762A7D /* InformationViewModel.swift */; };
 		35AA3C1C2E76E71D00762A7D /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AA3C1B2E76E71500762A7D /* MailView.swift */; };
+		35B1EC262F52BA23003A97C0 /* SemesterGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1EC252F52BA21003A97C0 /* SemesterGrade.swift */; };
+		35B1EC282F5468D0003A97C0 /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1EC272F5468CD003A97C0 /* Transcript.swift */; };
 		35CB55272D795D1F00FFCAA5 /* CourseDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB55262D795D1F00FFCAA5 /* CourseDraftView.swift */; };
 		35CB55292D795D2A00FFCAA5 /* TimetableDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */; };
 		35CB552B2D795D4800FFCAA5 /* CreditDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */; };
 		35CB552D2D7960F500FFCAA5 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */; };
 		35D433332E7C1C17006D31FD /* TimetablePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D433322E7C1C17006D31FD /* TimetablePopup.swift */; };
+		35D5661A2F51EF24002EEB55 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D566192F51EDBC002EEB55 /* Grade.swift */; };
 		35D842BA28917E53003FB984 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D842B928917E53003FB984 /* WidgetKit.framework */; };
 		35D842BC28917E53003FB984 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D842BB28917E53003FB984 /* SwiftUI.framework */; };
 		35D842BF28917E53003FB984 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D842BE28917E53003FB984 /* Timetable.swift */; };
@@ -177,6 +182,8 @@
 		35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		352388CC2E6C906A00ED1A1A /* deploy_testflight.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = deploy_testflight.yml; sourceTree = "<group>"; };
+		352998B82F55784E006D5193 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
+		352998BA2F559B90006D5193 /* GradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeView.swift; sourceTree = "<group>"; };
 		354A7A7F2D4D174D00C0E5F0 /* WeatherPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPopupView.swift; sourceTree = "<group>"; };
 		35689C312E65CCDB0017BC43 /* LICENSE-ASSETS */ = {isa = PBXFileReference; lastKnownFileType = text; path = "LICENSE-ASSETS"; sourceTree = "<group>"; };
 		35749F942E7C2CEA004A21E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -233,12 +240,15 @@
 		35AA3C192E76E62C00762A7D /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		35AA3C1B2E76E71500762A7D /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		35AEEA8E29100FEC006EE3DA /* TimetableWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimetableWidget.entitlements; sourceTree = "<group>"; };
+		35B1EC252F52BA21003A97C0 /* SemesterGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterGrade.swift; sourceTree = "<group>"; };
+		35B1EC272F5468CD003A97C0 /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
 		35CB55262D795D1F00FFCAA5 /* CourseDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDraftView.swift; sourceTree = "<group>"; };
 		35CB55282D795D2A00FFCAA5 /* TimetableDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableDraftView.swift; sourceTree = "<group>"; };
 		35CB552A2D795D4800FFCAA5 /* CreditDraftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditDraftView.swift; sourceTree = "<group>"; };
 		35CB552C2D7960EE00FFCAA5 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		35D433322E7C1C17006D31FD /* TimetablePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetablePopup.swift; sourceTree = "<group>"; };
 		35D4C1B62E3CB71800CB0CA4 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		35D566192F51EDBC002EEB55 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		35D6B8E82E6A1BAD00E54458 /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
 		35D842B728917E52003FB984 /* TimetableWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimetableWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		35D842B928917E53003FB984 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -448,11 +458,11 @@
 		35A4C1062D40D82A00FD7C1B /* ScoreAction */ = {
 			isa = PBXGroup;
 			children = (
-				3501BA452E780C4100CA09AF /* ScoreAction.entitlements */,
 				35EAB0E12E78064400B093DC /* Action.js */,
-				35EAB0DF2E78064100B093DC /* MainInterface.storyboard */,
-				35EAB0DD2E78063100B093DC /* Info.plist */,
 				35227A392D3FBBAD0009DAA1 /* ActionViewController.swift */,
+				3501BA452E780C4100CA09AF /* ScoreAction.entitlements */,
+				35EAB0DD2E78063100B093DC /* Info.plist */,
+				35EAB0DF2E78064100B093DC /* MainInterface.storyboard */,
 				35227A3D2D3FBBAD0009DAA1 /* Media.xcassets */,
 			);
 			path = ScoreAction;
@@ -537,6 +547,10 @@
 		35A4C1302D4206A800FD7C1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				35B1EC272F5468CD003A97C0 /* Transcript.swift */,
+				35B1EC252F52BA21003A97C0 /* SemesterGrade.swift */,
+				352998B82F55784E006D5193 /* Semester.swift */,
+				35D566192F51EDBC002EEB55 /* Grade.swift */,
 				35891A2C2D72EF710039B548 /* CourseEnrollment.swift */,
 				35891A2A2D72EF570039B548 /* Program.swift */,
 				35891A282D72EF230039B548 /* Department.swift */,
@@ -582,6 +596,7 @@
 				3595C79B2E769E9D0088F3D4 /* CourseCategoryView.swift */,
 				358A1A772E76C6A400A57799 /* CourseCategoryPopupView.swift */,
 				35D433322E7C1C17006D31FD /* TimetablePopup.swift */,
+				352998BA2F559B90006D5193 /* GradeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1031,6 +1046,7 @@
 				35CB55292D795D2A00FFCAA5 /* TimetableDraftView.swift in Sources */,
 				351D97DD2D54FF94009700BE /* BroadcastViewModel.swift in Sources */,
 				35A4C1A72D42767800FD7C1B /* WeatherCardView.swift in Sources */,
+				352998B92F557850006D5193 /* Semester.swift in Sources */,
 				35A4C1A92D42783000FD7C1B /* Weather.swift in Sources */,
 				35A4C1BA2D44BB5100FD7C1B /* Config.swift in Sources */,
 				351D97D32D54BECC009700BE /* YouBikeViewModel.swift in Sources */,
@@ -1055,9 +1071,11 @@
 				359624B42D56653700853EB0 /* MapSheetView.swift in Sources */,
 				35A4C11B2D42051200FD7C1B /* StringProtocol.swift in Sources */,
 				35891A2F2D72F8810039B548 /* NavigationCardView.swift in Sources */,
+				352998BB2F559B90006D5193 /* GradeView.swift in Sources */,
 				351D97DF2D5500F3009700BE /* BroadcastItemView.swift in Sources */,
 				351D97E32D5504D5009700BE /* BroadcastCardView.swift in Sources */,
 				35A4C11C2D42051200FD7C1B /* Float.swift in Sources */,
+				35D5661A2F51EF24002EEB55 /* Grade.swift in Sources */,
 				35A4C11D2D42051200FD7C1B /* UIDevice.swift in Sources */,
 				35A4C11E2D42051200FD7C1B /* View.swift in Sources */,
 				35A4C11F2D42051200FD7C1B /* String.swift in Sources */,
@@ -1069,6 +1087,7 @@
 				354A7A802D4D174D00C0E5F0 /* WeatherPopupView.swift in Sources */,
 				35891A2B2D72EF5A0039B548 /* Program.swift in Sources */,
 				35A4C1A32D424A3300FD7C1B /* PopupManager.swift in Sources */,
+				35B1EC262F52BA23003A97C0 /* SemesterGrade.swift in Sources */,
 				35A4C13A2D4206C500FD7C1B /* HomeScreen.swift in Sources */,
 				35E471B5283F7E8B0027ABE6 /* NUK Unofficial APP.swift in Sources */,
 				359624B22D565EF200853EB0 /* AnnotationItemView.swift in Sources */,
@@ -1083,6 +1102,7 @@
 				35891A3D2D73484C0039B548 /* TimetableViewModel.swift in Sources */,
 				351D97C72D51DB03009700BE /* Air.swift in Sources */,
 				35891A312D72FAE80039B548 /* TimetableScreen.swift in Sources */,
+				35B1EC282F5468D0003A97C0 /* Transcript.swift in Sources */,
 				35891A372D72FF810039B548 /* CreditScreen.swift in Sources */,
 				351D97CF2D52540C009700BE /* AirPopupView.swift in Sources */,
 				35891A3B2D7344B20039B548 /* TimetableView.swift in Sources */,
