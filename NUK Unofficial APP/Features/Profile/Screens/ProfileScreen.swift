@@ -32,7 +32,7 @@ struct ProfileScreen: View {
                         }
                         HStack(spacing: 15) {
                             NavigationCardView(destination: .score, destinationName: "成績查詢", destinationImageName: "Score", enable: true)
-                            NavigationCardView(destination: .credit, destinationName: "學分分析", destinationImageName: "CreditAnalysis", enable: false)
+                            NavigationCardView(destination: .credit, destinationName: "學分分析", destinationImageName: "CreditAnalysis", enable: true)
                         }
                         Text("快速連結")
                             .font(.system(size: 14))
