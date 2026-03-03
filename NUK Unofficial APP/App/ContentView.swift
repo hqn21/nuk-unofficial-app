@@ -124,6 +124,13 @@ struct ContentView: View {
                     self.alertMessage = courseViewModel.importTimetable()
                     self.showAlert = true
                 }
+            } else if param == "score" {
+                navigationManager.tabSelection = .profile
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    navigationManager.navigate(selection: .profile, pathDestination: .score)
+                    self.alertMessage = courseViewModel.importScore()
+                    self.showAlert = true
+                }
             }
         }
     }

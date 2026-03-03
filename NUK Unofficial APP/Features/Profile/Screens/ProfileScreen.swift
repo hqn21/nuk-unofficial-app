@@ -31,7 +31,7 @@ struct ProfileScreen: View {
                             NavigationCardView(destination: .timetable, destinationName: "個人課表", destinationImageName: "Timetable", enable: true)
                         }
                         HStack(spacing: 15) {
-                            NavigationCardView(destination: .score, destinationName: "成績查詢", destinationImageName: "Score", enable: false)
+                            NavigationCardView(destination: .score, destinationName: "成績查詢", destinationImageName: "Score", enable: true)
                             NavigationCardView(destination: .credit, destinationName: "學分分析", destinationImageName: "CreditAnalysis", enable: false)
                         }
                         Text("快速連結")
