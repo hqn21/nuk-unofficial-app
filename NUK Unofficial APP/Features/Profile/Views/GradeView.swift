@@ -36,12 +36,12 @@ struct GradeView: View {
                     VStack(alignment: .leading, spacing: 0) {
                         Text(grade.name)
                             .font(.system(size: 14))
-                        Text("\(String(format: "%g", grade.credit))學分｜期中成績\(grade.midterm == nil ? "未送分" : "\(grade.midterm!)分")")
+                        Text("\(String(format: "%g", grade.credit))學分｜期中成績\(grade.midtermScore == nil ? "未送分" : "\(grade.midtermScore!)分")")
                             .font(.system(size: 12))
                     }
                     Spacer()
                     HStack(alignment: .firstTextBaseline, spacing: 0) {
-                        Text(grade.final?.description ?? "--")
+                        Text(grade.finalScore?.description ?? "--")
                             .font(.system(size: 26))
                         Text("分")
                             .font(.system(size: 14))

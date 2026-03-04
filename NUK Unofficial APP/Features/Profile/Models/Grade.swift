@@ -15,8 +15,8 @@ struct Grade: Codable, Identifiable, CreditCategorizable {
     let courseCode: String
     let courseType: String
     let credit: Double
-    let midterm: Int?
-    let final: Int?
+    let midtermScore: Int?
+    let finalScore: Int?
     var countableCredit: Double { isPassed() ? credit : 0 }
     
     func getCourseCategory() -> CourseCategory {
@@ -104,8 +104,8 @@ struct Grade: Codable, Identifiable, CreditCategorizable {
     }
     
     func isPassed() -> Bool {
-        if let final = final {
-            if final >= 60 {
+        if let finalScore = finalScore {
+            if finalScore >= 60 {
                 return true
             } else {
                 return false
@@ -116,8 +116,8 @@ struct Grade: Codable, Identifiable, CreditCategorizable {
     }
     
     func getColor() -> Color {
-        if let final = final {
-            if final >= 60 {
+        if let finalScore = finalScore {
+            if finalScore >= 60 {
                 return Color("GREEN")
             } else {
                 return Color("RED")
