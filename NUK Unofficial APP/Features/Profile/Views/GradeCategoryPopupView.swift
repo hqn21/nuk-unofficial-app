@@ -73,34 +73,24 @@ struct GradeCategoryPopupView: View {
                         ScrollView(.vertical, showsIndicators: false) {
                             VStack(spacing: 5) {
                                 ForEach(targetGrades) { grade in
-                                    Button(action: {
-                                        popupManager.dismiss()
-//                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
-//                                            popupManager.set(popup: AnyView(
-//                                                CoursePopupView(course: course)
-//                                                    .environmentObject(viewModel)
-//                                            ))
-//                                        }
-                                    }, label: {
-                                        HStack(spacing: 10) {
-                                            VStack(alignment: .leading, spacing: 0) {
-                                                ScrollView(.horizontal, showsIndicators: false) {
-                                                    Text(grade.name)
-                                                        .font(.system(size: 16))
-                                                        .foregroundColor(Color("DARK_GRAY"))
-                                                }
+                                    HStack(spacing: 10) {
+                                        VStack(alignment: .leading, spacing: 0) {
+                                            ScrollView(.horizontal, showsIndicators: false) {
+                                                Text(grade.name)
+                                                    .font(.system(size: 16))
+                                                    .foregroundColor(Color("DARK_GRAY"))
                                             }
-                                            HStack(spacing: 10) {
-                                                Text("期末\(grade.finalScore?.description ?? "--")分/\(grade.credit.formatted(.number))學分")
-                                                        .font(.system(size: 12, design: .monospaced))
-                                                        .foregroundColor(Color("DARK_GRAY"))
-                                                grade.getIcon()
-                                            }
-                                            .fixedSize(horizontal: true, vertical: false)
-                                            .frame(alignment: .trailing)
                                         }
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                    })
+                                        HStack(spacing: 10) {
+                                            Text("期末\(grade.finalScore?.description ?? "--")分/\(grade.credit.formatted(.number))學分")
+                                                    .font(.system(size: 12, design: .monospaced))
+                                                    .foregroundColor(Color("DARK_GRAY"))
+                                            grade.getIcon()
+                                        }
+                                        .fixedSize(horizontal: true, vertical: false)
+                                        .frame(alignment: .trailing)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                                 }
                             }
                             .padding(.bottom, 10)
