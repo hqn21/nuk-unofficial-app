@@ -126,4 +126,19 @@ struct Grade: Codable, Identifiable, CreditCategorizable {
             return Color("LITTLE_DARK_GRAY")
         }
     }
+    
+    func getIcon() -> some View {
+        if let finalScore = finalScore {
+            if finalScore >= 60 {
+                return Image(systemName: "checkmark.circle.fill")
+                    .foregroundStyle(Color("GREEN"))
+            } else {
+                return Image(systemName: "xmark.circle.fill")
+                    .foregroundStyle(Color("RED"))
+            }
+        } else {
+            return Image(systemName: "exclamationmark.circle.fill")
+                .foregroundStyle(Color("YELLOW"))
+        }
+    }
 }

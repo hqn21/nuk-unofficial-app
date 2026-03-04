@@ -38,7 +38,7 @@ struct CourseCategoryView<T: CreditCategorizable>: View {
         self.items = grades
         self.courseCategory = courseCategory
         self.popupBuilder = { category, filtered in
-            AnyView(EmptyView()) // GradeCategoryPopupView(courseCategory: category, targetGrades: filtered)
+            AnyView(GradeCategoryPopupView(courseCategory: category, targetGrades: filtered))
         }
     }
     
