@@ -10,6 +10,7 @@
 		3500CDE92CF44F310021BDE0 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350E393E2CF25700007C6E52 /* UniformTypeIdentifiers.framework */; };
 		3500CDF52CF44F310021BDE0 /* TimetableAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3500CDE82CF44F310021BDE0 /* TimetableAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3500FE002E34D8E500F4A9AE /* CourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3500FDFF2E34D8E500F4A9AE /* CourseTests.swift */; };
+		3508FF272F57C9CE00F338F7 /* GradeCategoryPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508FF262F57C9CE00F338F7 /* GradeCategoryPopupView.swift */; };
 		351D97C52D51DAA2009700BE /* AirViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97C42D51DA9B009700BE /* AirViewModel.swift */; };
 		351D97C72D51DB03009700BE /* Air.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97C62D51DB01009700BE /* Air.swift */; };
 		351D97CB2D525271009700BE /* AirCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351D97CA2D525271009700BE /* AirCardView.swift */; };
@@ -159,6 +160,7 @@
 		3500FDF32E34D8C600F4A9AE /* NUK Unofficial APP Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NUK Unofficial APP Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3500FDFF2E34D8E500F4A9AE /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
 		3501BA452E780C4100CA09AF /* ScoreAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScoreAction.entitlements; sourceTree = "<group>"; };
+		3508FF262F57C9CE00F338F7 /* GradeCategoryPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCategoryPopupView.swift; sourceTree = "<group>"; };
 		350E393E2CF25700007C6E52 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 		351D97C42D51DA9B009700BE /* AirViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirViewModel.swift; sourceTree = "<group>"; };
 		351D97C62D51DB01009700BE /* Air.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				35FE70BB2E75635200ACB341 /* CoursePopupView.swift */,
 				3595C79B2E769E9D0088F3D4 /* CourseCategoryView.swift */,
 				358A1A772E76C6A400A57799 /* CourseCategoryPopupView.swift */,
+				3508FF262F57C9CE00F338F7 /* GradeCategoryPopupView.swift */,
 				35D433322E7C1C17006D31FD /* TimetablePopup.swift */,
 				352998BA2F559B90006D5193 /* GradeView.swift */,
 			);
@@ -1066,6 +1069,7 @@
 				35AA3C1C2E76E71D00762A7D /* MailView.swift in Sources */,
 				351D97D52D54C356009700BE /* YouBikeCardView.swift in Sources */,
 				351D97D12D54BDC5009700BE /* YouBike.swift in Sources */,
+				3508FF272F57C9CE00F338F7 /* GradeCategoryPopupView.swift in Sources */,
 				3595C79C2E769E9D0088F3D4 /* CourseCategoryView.swift in Sources */,
 				351D97C52D51DAA2009700BE /* AirViewModel.swift in Sources */,
 				359624B42D56653700853EB0 /* MapSheetView.swift in Sources */,
