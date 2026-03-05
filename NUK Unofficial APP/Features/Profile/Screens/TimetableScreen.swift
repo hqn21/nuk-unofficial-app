@@ -35,31 +35,32 @@ struct TimetableScreen: View {
                         )
                     })
                     
-                    Menu {
-                        ForEach(0...1, id: \.self) { i in
-                            Button(action: {
-                                viewModel.setTimetableType(timetableType: .init(rawValue: i)!)
-                            }, label: {
-                                Text("\(timetableTypeString[i])")
-                            })
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor(Color("WHITE"))
+                            .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+                            .frame(height: 35)
+                        Menu {
+                            ForEach(0...1, id: \.self) { i in
+                                Button(action: {
+                                    viewModel.setTimetableType(timetableType: .init(rawValue: i)!)
+                                }, label: {
+                                    Text("\(timetableTypeString[i])")
+                                })
+                            }
+                        } label: {
+                            HStack(spacing: 0) {
+                                Text("\(timetableTypeString[viewModel.timetableType.rawValue])")
+                                    .font(.system(size: 15))
+                                    .foregroundColor(Color("DARK_GRAY"))
+                                Spacer()
+                                Image(systemName: "chevron.down")
+                                    .foregroundColor(Color("DARK_GRAY"))
+                            }
+                            .padding(10)
                         }
-                    } label: {
-                        HStack(spacing: 0) {
-                            Text("\(timetableTypeString[viewModel.timetableType.rawValue])")
-                                .font(.system(size: 15))
-                                .foregroundColor(Color("DARK_GRAY"))
-                            Spacer()
-                            Image(systemName: "chevron.down")
-                                .foregroundColor(Color("DARK_GRAY"))
-                        }
-                        .padding(10)
-                        .frame(width: 85, height: 35)
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .foregroundColor(Color("WHITE"))
-                                .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
-                        )
                     }
+                    .frame(width: 85)
                     Button(action: {
                         viewModel.saveTimetable(timetableType: viewModel.timetableType, timetable: viewModel.timetableConfirmed)
                     }, label: {

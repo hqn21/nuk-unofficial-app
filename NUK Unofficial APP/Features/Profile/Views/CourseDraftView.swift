@@ -19,98 +19,99 @@ struct CourseDraftView: View {
     var body: some View {
         VStack(spacing: 15) {
             HStack(spacing: 15) {
-                Menu {
-                    Button(action: {
-                        programSelected = nil
-                    }, label: {
-                        Text("所有部別")
-                    })
-                    ForEach(viewModel.program) { program in
-                        Button(action: {
-                            programSelected = program
-                        }, label: {
-                            Text("\(program.name)")
-                        })
-                    }
-                } label: {
-                    HStack(spacing: 0) {
-                        Text("\(programSelected != nil ? programSelected!.name : "所有部別")")
-                            .font(.system(size: 15))
-                            .foregroundColor(Color("DARK_GRAY"))
-                        
-                        Spacer()
-                        
-                        Image(systemName: "chevron.down")
-                            .foregroundColor(Color("DARK_GRAY"))
-                    }
-                    .padding(10)
-                    .frame(height: 35)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(Color("WHITE"))
-                            .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
-                    )
-                }
-                Menu {
-                    ForEach(0...5, id: \.self) { index in
-                        Button(action: {
-                            gradeSelected = index
-                        }, label: {
-                            Text("\(gradeString[index])年級")
-                        })
-                    }
-                } label: {
-                    HStack(spacing: 0) {
-                        Text("\(gradeString[gradeSelected])年級")
-                            .font(.system(size: 15))
-                            .foregroundColor(Color("DARK_GRAY"))
-                        
-                        Spacer()
-                        
-                        
-                        Image(systemName: "chevron.down")
-                            .foregroundColor(Color("DARK_GRAY"))
-                    }
-                    .padding(10)
-                    .frame(width: 95, height: 35)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(Color("WHITE"))
-                            .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
-                    )
-                }
-            }
-            Menu {
-                Button(action: {
-                    departmentSelected = nil
-                }, label: {
-                    Text("所有系所")
-                })
-                ForEach(viewModel.department) { department in
-                    Button(action: {
-                        departmentSelected = department
-                    }, label: {
-                        Text("\(department.name)")
-                    })
-                }
-            } label: {
-                HStack(spacing: 0) {
-                    Text("\(departmentSelected != nil ? departmentSelected!.name : "所有系所")")
-                        .font(.system(size: 15))
-                        .foregroundColor(Color("DARK_GRAY"))
-                    
-                    Spacer()
-                    
-                    Image(systemName: "chevron.down")
-                        .foregroundColor(Color("DARK_GRAY"))
-                }
-                .padding(10)
-                .frame(height: 35)
-                .background(
+                ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .foregroundColor(Color("WHITE"))
                         .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
-                )
+                        .frame(height: 35)
+                    Menu {
+                        Button(action: {
+                            programSelected = nil
+                        }, label: {
+                            Text("所有部別")
+                        })
+                        ForEach(viewModel.program) { program in
+                            Button(action: {
+                                programSelected = program
+                            }, label: {
+                                Text("\(program.name)")
+                            })
+                        }
+                    } label: {
+                        HStack(spacing: 0) {
+                            Text("\(programSelected != nil ? programSelected!.name : "所有部別")")
+                                .font(.system(size: 15))
+                                .foregroundColor(Color("DARK_GRAY"))
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.down")
+                                .foregroundColor(Color("DARK_GRAY"))
+                        }
+                        .padding(10)
+                    }
+                }
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundColor(Color("WHITE"))
+                        .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+                        .frame(height: 35)
+                    Menu {
+                        ForEach(0...5, id: \.self) { index in
+                            Button(action: {
+                                gradeSelected = index
+                            }, label: {
+                                Text("\(gradeString[index])年級")
+                            })
+                        }
+                    } label: {
+                        HStack(spacing: 0) {
+                            Text("\(gradeString[gradeSelected])年級")
+                                .font(.system(size: 15))
+                                .foregroundColor(Color("DARK_GRAY"))
+                            
+                            Spacer()
+                            
+                            Image(systemName: "chevron.down")
+                                .foregroundColor(Color("DARK_GRAY"))
+                        }
+                        .padding(10)
+                    }
+                }
+                .frame(width: 95)
+            }
+            ZStack {
+                RoundedRectangle(cornerRadius: 8)
+                    .foregroundColor(Color("WHITE"))
+                    .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+                    .frame(height: 35)
+                Menu {
+                    Button(action: {
+                        departmentSelected = nil
+                    }, label: {
+                        Text("所有系所")
+                    })
+                    ForEach(viewModel.department) { department in
+                        Button(action: {
+                            departmentSelected = department
+                        }, label: {
+                            Text("\(department.name)")
+                        })
+                    }
+                } label: {
+                    HStack(spacing: 0) {
+                        Text("\(departmentSelected != nil ? departmentSelected!.name : "所有系所")")
+                            .font(.system(size: 15))
+                            .foregroundColor(Color("DARK_GRAY"))
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.down")
+                            .foregroundColor(Color("DARK_GRAY"))
+                    }
+                    .padding(10)
+                }
             }
             
             if viewModel.course.isEmpty {
