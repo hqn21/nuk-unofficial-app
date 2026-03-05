@@ -15,6 +15,7 @@ struct TimetableScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color("GRAY")
+                .ignoresSafeArea(edges: .bottom)
             VStack(spacing: 0) {
                 HStack(spacing: 10) {
                     Button(action: {

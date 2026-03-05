@@ -25,6 +25,7 @@ struct InformationScreen: View {
         NavigationStack(path: $navigationManager.informationNavigationPath) {
             ZStack {
                 Color("GRAY")
+                    .ignoresSafeArea(edges: .bottom)
                 VStack(spacing: 0) {
                     List {
                         Section(header: Text("關於開發團隊")) {

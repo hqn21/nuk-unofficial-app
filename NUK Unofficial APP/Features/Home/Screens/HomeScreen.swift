@@ -18,6 +18,7 @@ struct HomeScreen: View {
         NavigationView {
             ZStack {
                 Color("GRAY")
+                    .ignoresSafeArea(edges: .bottom)
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 15) {
                         HStack(alignment: .top, spacing: 15) {

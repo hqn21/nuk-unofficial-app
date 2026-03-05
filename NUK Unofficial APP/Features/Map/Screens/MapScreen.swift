@@ -22,6 +22,7 @@ struct MapScreen: View {
                             .environmentObject(viewModel)
                     }
                 }
+                    .ignoresSafeArea(edges: .bottom)
                     .accentColor(Color.blue)
                     .alert(
                         "地圖",

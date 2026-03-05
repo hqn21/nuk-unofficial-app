@@ -62,6 +62,7 @@ struct ReferenceScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color("GRAY")
+                .ignoresSafeArea(edges: .bottom)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15) {
                     ReferenceCellView(name: "天氣資訊", content: "交通部中央氣象局", imageName: "cloud.fill", urlString: "https://www.cwa.gov.tw/")

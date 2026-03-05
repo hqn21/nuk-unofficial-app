@@ -14,6 +14,7 @@ struct AuthorScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color("GRAY")
+                .ignoresSafeArea(edges: .bottom)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15) {
                     Button(action: {

@@ -11,6 +11,7 @@ struct CopyrightScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color("GRAY")
+                .ignoresSafeArea(edges: .bottom)
             ScrollView(.vertical, showsIndicators: false) {
                 Text("NUK Unofficial APP 是由 Hao-Quan Liu 個人運營之非官方 App，與國立高雄大學無任何形式上的合作關係。另外，此 App 中與國立高雄大學的相關內容僅供參考，實際內容以國立高雄大學官網公告為主。")
                     .font(.system(size: 16))

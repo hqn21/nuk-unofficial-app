@@ -15,6 +15,7 @@ struct CreditScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color("GRAY")
+                .ignoresSafeArea(edges: .bottom)
             VStack(spacing: 15) {
                 HStack(spacing: 0) {
                     Text("實際數據以高大官網為主")

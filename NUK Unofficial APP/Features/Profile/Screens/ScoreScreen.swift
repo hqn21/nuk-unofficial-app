@@ -16,6 +16,7 @@ struct ScoreScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color("GRAY")
+                .ignoresSafeArea(edges: .bottom)
             VStack(spacing: 15) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)

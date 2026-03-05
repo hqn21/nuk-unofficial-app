@@ -21,6 +21,7 @@ struct CourseScreen: View {
     var body: some View {
         ZStack(alignment: .top) {
             Color("GRAY")
+                .ignoresSafeArea(edges: .bottom)
             VStack(spacing: 15) {
                 Picker("課程查詢", selection: $selection) {
                     Text("勾選課程")
