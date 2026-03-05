@@ -22,6 +22,7 @@ struct ScoreScreen: View {
                     RoundedRectangle(cornerRadius: 8)
                         .foregroundColor(Color("WHITE"))
                         .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+                        .frame(height: 35)
                     Menu {
                         if let transcriptConfirmed = viewModel.transcriptConfirmed {
                             ForEach(viewModel.getSemesterList(semesterGrades: transcriptConfirmed.semesterGrades)) { semester in
@@ -56,7 +57,6 @@ struct ScoreScreen: View {
                     }
                     .disabled(viewModel.transcriptConfirmed == nil)
                 }
-                .frame(height: 35)
                 .padding([.top, .horizontal], 15)
                 
                 ScrollView(.vertical, showsIndicators: false) {
