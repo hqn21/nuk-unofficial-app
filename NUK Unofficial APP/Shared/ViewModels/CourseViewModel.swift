@@ -326,22 +326,24 @@ class CourseViewModel: ObservableObject {
             .snapshot()
         switch PHPhotoLibrary.authorizationStatus(for: .addOnly) {
         case .notDetermined:
-            PHPhotoLibrary.requestAuthorization(for: .addOnly) {
-                status in
-                switch status {
-                case .authorized:
-                    self.alertMessage = "成功將您的課表存入相簿中"
-                default:
-                    self.alertMessage = "存入相簿失敗，請至設定確認是否給予權限"
+            PHPhotoLibrary.requestAuthorization(for: .addOnly) { status in
+                Task { @MainActor in
+                    switch status {
+                    case .authorized, .limited:
+                        self.alertMessage = "成功將您的課表存入相簿中"
+                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                    default:
+                        self.alertMessage = "存入相簿失敗，請至設定確認是否給予權限"
+                    }
                 }
             }
             
-        case .authorized:
+        case .authorized, .limited:
             alertMessage = "成功將您的課表存入相簿中"
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         default:
             alertMessage = "存入相簿失敗，請至設定確認是否給予權限"
         }
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
     func loadTimetableType() {
