@@ -424,9 +424,21 @@ class CourseViewModel: ObservableObject {
     
     @MainActor
     func importTimetable() -> String {
-        let timetableURL: String? = KeychainManager.shared.get(key: "action_timetable_url", type: String.self)
+        let timetableURLString: String? = KeychainManager.shared.get(key: "action_timetable_url", type: String.self)
         let timetableHTML: String? = KeychainManager.shared.get(key: "action_timetable_html", type: String.self)
-        if let _ = timetableURL, let timetableHTML = timetableHTML {
+        if let timetableURLString = timetableURLString, let timetableURL = URL(string: timetableURLString), let timetableHTML = timetableHTML {
+            if let host = timetableURL.host() {
+                if host != "course.nuk.edu.tw" {
+                    return "這似乎不是國立高雄大學選課系統的頁面，請至快速連結中的選課系統查詢選課結果後再匯入，謝謝"
+                }
+            } else {
+                return "無法辨識此網址，請確認匯入的是國立高雄大學選課系統的選課查詢結果頁面，謝謝"
+            }
+
+            if timetableURL.path() != "/Sel/query3.asp" {
+                return "這似乎不是「選課查詢結果」頁面，請先完成選課查詢後再匯入，謝謝"
+            }
+            
             do {
                 let doc: Document = try SwiftSoup.parse(timetableHTML)
                 let fontList: [Element] = try doc.select("font").array()
@@ -488,9 +500,21 @@ class CourseViewModel: ObservableObject {
     
     @MainActor
     func importScore() -> String {
-        let scoreURL: String? = KeychainManager.shared.get(key: "action_score_url", type: String.self)
+        let scoreURLString: String? = KeychainManager.shared.get(key: "action_score_url", type: String.self)
         let scoreHTML: String? = KeychainManager.shared.get(key: "action_score_html", type: String.self)
-        if let _ = scoreURL, let scoreHTML = scoreHTML {
+        if let scoreURLString = scoreURLString, let scoreURL = URL(string: scoreURLString), let scoreHTML = scoreHTML {
+            if let host = scoreURL.host() {
+                if host != "aca.nuk.edu.tw" {
+                    return "這似乎不是國立高雄大學教務系統的頁面，請至快速連結中的教務系統查詢成績後再匯入，謝謝"
+                }
+            } else {
+                return "無法辨識此網址，請確認匯入的是國立高雄大學教務系統的成績查詢結果頁面，謝謝"
+            }
+
+            if scoreURL.path() != "/Student2/SO/ScoreQuery.asp" {
+                return "這似乎不是「成績查詢結果」頁面，請先完成成績查詢後再匯入，謝謝"
+            }
+            
             do {
                 let doc: Document = try SwiftSoup.parse(scoreHTML)
                 let fontList: [Element] = try doc.select("font").array()
