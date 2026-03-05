@@ -6,7 +6,7 @@ on:
 
 concurrency:
   group: deploy-testflight
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
