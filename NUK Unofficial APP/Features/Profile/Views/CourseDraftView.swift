@@ -49,6 +49,7 @@ struct CourseDraftView: View {
                                 .foregroundColor(Color("DARK_GRAY"))
                         }
                         .padding(10)
+                        .frame(height: 35)
                     }
                 }
                 
@@ -77,6 +78,7 @@ struct CourseDraftView: View {
                                 .foregroundColor(Color("DARK_GRAY"))
                         }
                         .padding(10)
+                        .frame(height: 35)
                     }
                 }
                 .frame(width: 95)
@@ -111,6 +113,7 @@ struct CourseDraftView: View {
                             .foregroundColor(Color("DARK_GRAY"))
                     }
                     .padding(10)
+                    .frame(height: 35)
                 }
             }
             

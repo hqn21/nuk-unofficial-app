@@ -54,6 +54,7 @@ struct ScoreScreen: View {
                                 .foregroundColor(Color("DARK_GRAY"))
                         }
                         .padding(10)
+                        .frame(height: 35)
                     }
                     .disabled(viewModel.transcriptConfirmed == nil)
                 }
