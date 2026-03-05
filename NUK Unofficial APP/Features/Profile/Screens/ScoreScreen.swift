@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ScoreScreen: View {
+    @EnvironmentObject private var popupManager: PopupManager
     @EnvironmentObject private var viewModel: CourseViewModel
     @State private var targetSemester: Semester? = nil
     @State private var targetSemesterGrade: SemesterGrade? = nil
@@ -139,6 +140,19 @@ struct ScoreScreen: View {
                 viewModel.loadTranscriptConfirmed()
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    popupManager.set(popup: AnyView(
+                        GradePopupView()
+                    ))
+                }, label: {
+                    ZStack(alignment: .topTrailing) {
+                        Image(systemName: "questionmark.circle.fill")
+                    }
+                })
+            }
+        }
         .navigationTitle("成績查詢")
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -146,5 +160,6 @@ struct ScoreScreen: View {
 
 #Preview {
     ScoreScreen()
+        .environmentObject(PopupManager())
         .environmentObject(CourseViewModel())
 }

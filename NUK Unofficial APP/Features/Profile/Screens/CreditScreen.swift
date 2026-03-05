@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CreditScreen: View {
+    @EnvironmentObject private var popupManager: PopupManager
     @EnvironmentObject private var viewModel: CourseViewModel
     @State private var grades: [Grade] = []
     
@@ -55,6 +56,19 @@ struct CreditScreen: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    popupManager.set(popup: AnyView(
+                        GradePopupView()
+                    ))
+                }, label: {
+                    ZStack(alignment: .topTrailing) {
+                        Image(systemName: "questionmark.circle.fill")
+                    }
+                })
+            }
+        }
         .navigationTitle("學分分析")
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -62,5 +76,6 @@ struct CreditScreen: View {
 
 #Preview {
     CreditScreen()
+        .environmentObject(PopupManager())
         .environmentObject(CourseViewModel())
 }
