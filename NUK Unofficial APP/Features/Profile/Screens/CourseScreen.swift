@@ -35,16 +35,19 @@ struct CourseScreen: View {
                 .padding(.top, 15)
                 .padding(.horizontal, 25)
                 
-                switch selection {
-                case .course:
+                ZStack {
                     CourseDraftView()
                         .environmentObject(viewModel)
-                case .timetable:
+                        .opacity(selection == .course ? 1 : 0)
+                        .allowsHitTesting(selection == .course)
                     TimetableDraftView()
                         .environmentObject(viewModel)
-                case .credit:
+                        .opacity(selection == .timetable ? 1 : 0)
+                        .allowsHitTesting(selection == .timetable)
                     CreditDraftView()
                         .environmentObject(viewModel)
+                        .opacity(selection == .credit ? 1 : 0)
+                        .allowsHitTesting(selection == .credit)
                 }
             }
             .alert(
@@ -119,4 +122,5 @@ struct CourseScreen: View {
 #Preview {
     CourseScreen()
         .environmentObject(PopupManager())
+        .environmentObject(CourseViewModel())
 }
