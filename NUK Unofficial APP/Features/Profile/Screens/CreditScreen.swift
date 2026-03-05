@@ -51,9 +51,7 @@ struct CreditScreen: View {
             .onAppear {
                 viewModel.loadTranscriptConfirmed()
                 if let transcriptConfirmed = viewModel.transcriptConfirmed {
-                    for semesterGrade in transcriptConfirmed.semesterGrades {
-                        grades.append(contentsOf: semesterGrade.grades)
-                    }
+                    grades = transcriptConfirmed.semesterGrades.flatMap { $0.grades }
                 }
             }
         }
