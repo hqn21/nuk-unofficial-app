@@ -17,7 +17,7 @@ struct TimetableDraftView: View {
         VStack(spacing: 0) {
             HStack(spacing: 10) {
                 Button(action: {
-                    viewModel.resetCourseSelected()
+                    viewModel.confirmResetCourseSelected()
                 }, label: {
                     HStack(spacing: 0) {
                         Text("清除所選課程")

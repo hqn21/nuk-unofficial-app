@@ -22,6 +22,7 @@ class CourseViewModel: ObservableObject {
     @Published var courseEnrollment: CourseEnrollment? = nil
     @Published var courseEnrollmentError: Error? = nil
     @Published var alertMessage: String? = nil
+    @Published var alertConfirmMessage: String? = nil
     @Published var courseSelected: [Course] = []
     @Published var timetable: [[Course?]] = [[Course?]](repeating: [Course?](repeating: nil, count: 15), count: 7)
     @Published var courseConfirmed: [Course] = []
@@ -225,6 +226,11 @@ class CourseViewModel: ObservableObject {
         } else {
             transcriptConfirmed = nil
         }
+    }
+    
+    @MainActor
+    func confirmResetCourseSelected() {
+        alertConfirmMessage = "您確定要清除所有所選課程嗎，此動作無法還原，請謹慎操作"
     }
     
     @MainActor

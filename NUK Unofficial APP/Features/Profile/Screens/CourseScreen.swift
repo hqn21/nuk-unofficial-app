@@ -59,6 +59,22 @@ struct CourseScreen: View {
                     Text("\(viewModel.alertMessage ?? "未知錯誤")")
                 }
             )
+            .alert(
+                "課程查詢",
+                isPresented: .constant(viewModel.alertConfirmMessage != nil),
+                actions: {
+                    Button("取消", role: .cancel, action: {
+                        viewModel.alertConfirmMessage = nil
+                    })
+                    Button("確認", role: .destructive, action: {
+                        viewModel.alertConfirmMessage = nil
+                        viewModel.resetCourseSelected()
+                    })
+                },
+                message: {
+                    Text("\(viewModel.alertConfirmMessage ?? "未知錯誤")")
+                }
+            )
         }
         .onAppear() {
             viewModel.loadCourseSelected()
