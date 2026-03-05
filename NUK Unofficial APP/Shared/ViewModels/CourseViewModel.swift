@@ -319,6 +319,7 @@ class CourseViewModel: ObservableObject {
     @MainActor
     func saveTimetable(timetableType: TimetableType, timetable: [[Course?]]) -> Void {
         let image: UIImage = TimetableView(timetableType: timetableType, timetable: timetable)
+            .background(Color.white)
             .preferredColorScheme(.light)
             .environment(\.colorScheme, .light)
             .ignoresSafeArea(.all)
