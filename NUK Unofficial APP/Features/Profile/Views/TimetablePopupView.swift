@@ -1,5 +1,5 @@
 //
-//  TimetablePopup.swift
+//  TimetablePopupView.swift
 //  NUK Unofficial APP
 //
 //  Created by Hao-Quan Liu on 2025/9/18.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimetablePopup: View {
+struct TimetablePopupView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("匯入課程教學")
@@ -137,5 +137,5 @@ struct TimetablePopup: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    TimetablePopup()
+    TimetablePopupView()
 }

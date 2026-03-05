@@ -110,7 +110,7 @@ struct TimetableScreen: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
                     popupManager.set(popup: AnyView(
-                        TimetablePopup()
+                        TimetablePopupView()
                     ))
                 }, label: {
                     ZStack(alignment: .topTrailing) {
