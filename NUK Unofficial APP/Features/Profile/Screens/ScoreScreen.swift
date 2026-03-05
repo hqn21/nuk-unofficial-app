@@ -72,7 +72,7 @@ struct ScoreScreen: View {
                                 if let targetSemesterGrade = targetSemesterGrade {
                                     if let rank = targetSemesterGrade.rank {
                                         if rank <= 3 {
-                                            Image("rank_\(rank)")
+                                            Image("Rank\(rank)")
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(maxHeight: .infinity, alignment: .center)
