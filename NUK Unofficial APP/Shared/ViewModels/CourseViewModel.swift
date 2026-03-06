@@ -244,6 +244,11 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
+    func confirmResetCourseConfirmed() {
+        alertConfirmMessage = "您確定要清除所有已匯入的課程嗎，此動作無法還原，請謹慎操作"
+    }
+    
+    @MainActor
     func resetCourseConfirmed() {
         if !KeychainManager.shared.delete(key: "course_confirmed") || !KeychainManager.shared.delete(key: "timetable_confirmed") {
             alertMessage = "清除已匯入的課程資訊時發生了錯誤"

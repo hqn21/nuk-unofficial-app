@@ -19,7 +19,7 @@ struct TimetableScreen: View {
             VStack(spacing: 0) {
                 HStack(spacing: 10) {
                     Button(action: {
-                        viewModel.resetCourseConfirmed()
+                        viewModel.confirmResetCourseConfirmed()
                     }, label: {
                         HStack(spacing: 0) {
                             Text("清除匯入課程")
@@ -96,6 +96,22 @@ struct TimetableScreen: View {
                 },
                 message: {
                     Text("\(viewModel.alertMessage ?? "未知錯誤")")
+                }
+            )
+            .alert(
+                "個人課表",
+                isPresented: .constant(viewModel.alertConfirmMessage != nil),
+                actions: {
+                    Button("取消", role: .cancel, action: {
+                        viewModel.alertConfirmMessage = nil
+                    })
+                    Button("確認", role: .destructive, action: {
+                        viewModel.alertConfirmMessage = nil
+                        viewModel.resetCourseConfirmed()
+                    })
+                },
+                message: {
+                    Text("\(viewModel.alertConfirmMessage ?? "未知錯誤")")
                 }
             )
             .task {
