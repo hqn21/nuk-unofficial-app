@@ -63,7 +63,7 @@ struct TimetableDraftView: View {
                 Button(action: {
                     viewModel.saveTimetable(timetableType: viewModel.timetableType, timetable: viewModel.timetable)
                 }, label: {
-                    Image(systemName: "arrow.down.square")
+                    Image(systemName: "square.and.arrow.down.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 15)
