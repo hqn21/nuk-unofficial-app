@@ -259,6 +259,21 @@ class CourseViewModel: ObservableObject {
     }
     
     @MainActor
+    func confirmResetTranscriptConfirmed() {
+        alertConfirmMessage = "您確定要清除所有已匯入的成績嗎，此動作無法還原，請謹慎操作"
+    }
+    
+    @MainActor
+    func resetTranscriptConfirmed() {
+        if !KeychainManager.shared.delete(key: "transcript_confirmed") {
+            alertMessage = "清除已匯入的成績資訊時發生了錯誤"
+            return
+        }
+        loadTranscriptConfirmed()
+        alertMessage = "成功清除所有已匯入的成績資訊"
+    }
+    
+    @MainActor
     func selectCourse(course: Course) -> Void {
         courseSelected.append(course)
         if let time = course.time {

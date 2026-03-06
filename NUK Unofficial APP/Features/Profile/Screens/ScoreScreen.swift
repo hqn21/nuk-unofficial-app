@@ -18,45 +18,62 @@ struct ScoreScreen: View {
             Color("GRAY")
                 .ignoresSafeArea(edges: .bottom)
             VStack(spacing: 15) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 8)
-                        .foregroundColor(Color("WHITE"))
-                        .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
-                        .frame(height: 35)
-                    Menu {
-                        if let transcriptConfirmed = viewModel.transcriptConfirmed {
-                            ForEach(viewModel.getSemesterList(semesterGrades: transcriptConfirmed.semesterGrades)) { semester in
-                                Button(action: {
-                                    targetSemester = semester
-                                    targetSemesterGrade = viewModel.getSemesterGrade(semester: semester)
-                                }, label: {
-                                    Text(viewModel.getSemesterName(semester: semester))
-                                })
-                            }
-                        }
-                    } label: {
-                        HStack(spacing: 0) {
-                            Group {
-                                if viewModel.transcriptConfirmed == nil {
-                                    Text("請先匯入成績")
-                                } else if let targetSemester = targetSemester {
-                                    Text(viewModel.getSemesterName(semester: targetSemester))
-                                } else if viewModel.transcriptConfirmed!.semesterGrades.count == 0 {
-                                    Text("您目前沒有任何可查詢的成績")
-                                } else {
-                                    Text("請選擇想查詢的學期")
+                HStack(spacing: 10) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor(Color("WHITE"))
+                            .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+                            .frame(height: 35)
+                        Menu {
+                            if let transcriptConfirmed = viewModel.transcriptConfirmed {
+                                ForEach(viewModel.getSemesterList(semesterGrades: transcriptConfirmed.semesterGrades)) { semester in
+                                    Button(action: {
+                                        targetSemester = semester
+                                        targetSemesterGrade = viewModel.getSemesterGrade(semester: semester)
+                                    }, label: {
+                                        Text(viewModel.getSemesterName(semester: semester))
+                                    })
                                 }
                             }
-                            .font(.system(size: 15))
-                            .foregroundColor(Color("DARK_GRAY"))
-                            Spacer()
-                            Image(systemName: "chevron.down")
+                        } label: {
+                            HStack(spacing: 0) {
+                                Group {
+                                    if viewModel.transcriptConfirmed == nil {
+                                        Text("請先匯入成績")
+                                    } else if let targetSemester = targetSemester {
+                                        Text(viewModel.getSemesterName(semester: targetSemester))
+                                    } else if viewModel.transcriptConfirmed!.semesterGrades.count == 0 {
+                                        Text("您目前沒有任何可查詢的成績")
+                                    } else {
+                                        Text("請選擇想查詢的學期")
+                                    }
+                                }
+                                .font(.system(size: 15))
                                 .foregroundColor(Color("DARK_GRAY"))
+                                Spacer()
+                                Image(systemName: "chevron.down")
+                                    .foregroundColor(Color("DARK_GRAY"))
+                            }
+                            .padding(10)
+                            .frame(height: 35)
                         }
-                        .padding(10)
-                        .frame(height: 35)
+                        .disabled(viewModel.transcriptConfirmed == nil)
                     }
-                    .disabled(viewModel.transcriptConfirmed == nil)
+                    Button(action: {
+                        viewModel.confirmResetTranscriptConfirmed()
+                    }, label: {
+                        Image(systemName: "trash.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 15)
+                            .foregroundColor(Color("DARK_GRAY"))
+                            .padding(10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .foregroundColor(Color("WHITE"))
+                                    .shadow(color: Color("SHADOW"), radius: 2, x: 0, y: 1)
+                            )
+                    })
                 }
                 .padding([.top, .horizontal], 15)
                 
@@ -135,6 +152,36 @@ struct ScoreScreen: View {
                     .padding(.horizontal, 15)
                 }
             }
+            .alert(
+                "成績查詢",
+                isPresented: .constant(viewModel.alertMessage != nil),
+                actions: {
+                    Button("確認", action: {
+                        viewModel.alertMessage = nil
+                    })
+                },
+                message: {
+                    Text("\(viewModel.alertMessage ?? "未知錯誤")")
+                }
+            )
+            .alert(
+                "成績查詢",
+                isPresented: .constant(viewModel.alertConfirmMessage != nil),
+                actions: {
+                    Button("取消", role: .cancel, action: {
+                        viewModel.alertConfirmMessage = nil
+                    })
+                    Button("確認", role: .destructive, action: {
+                        viewModel.alertConfirmMessage = nil
+                        viewModel.resetTranscriptConfirmed()
+                        targetSemester = nil
+                        targetSemesterGrade = nil
+                    })
+                },
+                message: {
+                    Text("\(viewModel.alertConfirmMessage ?? "未知錯誤")")
+                }
+            )
             .task {
                 await viewModel.getDepartmentIfNeeded()
             }
