@@ -14,6 +14,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
       - name: Set up SSH for accessing the private match repository
         uses: webfactory/ssh-agent@v0.9.0
         with:
@@ -31,4 +35,4 @@ jobs:
             APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
             APP_STORE_CONNECT_API_KEY_IS_KEY_CONTENT_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_IS_KEY_CONTENT_BASE64 }}
             MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-        run: fastlane beta
+        run: bundle exec fastlane beta
