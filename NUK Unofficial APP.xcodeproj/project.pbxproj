@@ -273,6 +273,7 @@
 		35EAB0DD2E78063100B093DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35EAB0DF2E78064100B093DC /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		35EAB0E12E78064400B093DC /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		35EED09D2FEBDBB00047B8AC /* .ruby-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".ruby-version"; sourceTree = "<group>"; };
 		35F3C65D2E7C56D80031167D /* app-store-badge.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "app-store-badge.svg"; sourceTree = "<group>"; };
 		35F3C65E2E7C56D80031167D /* icons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icons.jpg; sourceTree = "<group>"; };
 		35F3C65F2E7C56D80031167D /* not-by-ai-badge.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "not-by-ai-badge.svg"; sourceTree = "<group>"; };
@@ -786,6 +787,7 @@
 				35E43DEF2E6C6EC100E89DD9 /* Gemfile.lock */,
 				35D4C1B62E3CB71800CB0CA4 /* LICENSE */,
 				35689C312E65CCDB0017BC43 /* LICENSE-ASSETS */,
+				35EED09D2FEBDBB00047B8AC /* .ruby-version */,
 				35D90F292E6C802700032747 /* .env */,
 				35910F9D2E69880F00CC32CE /* .gitignore */,
 			);
