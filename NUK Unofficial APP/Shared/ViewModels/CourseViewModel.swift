@@ -585,8 +585,9 @@ class CourseViewModel: ObservableObject {
                             let credit: Double = try Double(cells.get(2).text().trimmingCharacters(in: .whitespaces)) ?? 0
                             let courseType: String = try cells.get(3).text().trimmingCharacters(in: .whitespaces) == "必修" ? "必" : "選"
                             let midtermScore: Int? = try Int(cells.get(4).text().trimmingCharacters(in: .whitespaces))
-                            let finalScore: Int? = try Int(cells.get(5).text().trimmingCharacters(in: .whitespaces))
-                            let grade: Grade = Grade(id: UUID(), departmentId: departmentId, name: name, courseCode: courseCode, courseType: courseType, credit: credit, midtermScore: midtermScore, finalScore: finalScore)
+                            let finalExamScore: Int? = try Int(cells.get(5).text().trimmingCharacters(in: .whitespaces))
+                            let finalScore: Int? = try Int(cells.get(6).text().trimmingCharacters(in: .whitespaces))
+                            let grade: Grade = Grade(id: UUID(), departmentId: departmentId, name: name, courseCode: courseCode, courseType: courseType, credit: credit, midtermScore: midtermScore, finalExamScore: finalExamScore, finalScore: finalScore)
                             semesterGrade.grades.append(grade)
                         }
                         // Summary

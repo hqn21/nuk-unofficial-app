@@ -16,6 +16,7 @@ struct Grade: Codable, Identifiable, CreditCategorizable {
     let courseType: String
     let credit: Double
     let midtermScore: Int?
+    let finalExamScore: Int?
     let finalScore: Int?
     var countableCredit: Double { isPassed() ? credit : 0 }
     
