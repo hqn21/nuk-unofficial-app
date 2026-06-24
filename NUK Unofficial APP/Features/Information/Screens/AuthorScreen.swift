@@ -38,7 +38,7 @@ struct AuthorScreen: View {
                                         .font(.system(size: 18))
                                         .fontWeight(.bold)
                                         .foregroundColor(Color("DARK_GRAY"))
-                                    Text("國立中興大學資訊工程學系")
+                                    Text("國立臺灣大學資訊工程學系碩士班")
                                         .font(.system(size: 12))
                                         .foregroundColor(Color("DARK_GRAY"))
                                 }
